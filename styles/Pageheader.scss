@@ -1,0 +1,18 @@
+@import "variables";
+
+.page-header {
+    margin: 16px 48px;
+
+    h1 {
+        color: $pink;
+        font-family: "Poppins";
+        font-size: 4rem;
+        font-style: italic;
+        font-weight: 100;
+        text-align: right;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+}

@@ -1,0 +1,99 @@
+@import "bootstrap-grid";
+@import "variables";
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,200i,400,600&display=swap');
+
+
+
+body {
+    margin: 0;
+}
+
+html {
+    background-color: $main;
+}
+
+
+
+.intro {
+    min-height: 600px;
+    position: relative;
+
+    .intro-panel {
+        margin-left: 96px;
+
+        p {
+            font-family: 'Poppins';
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 8px;
+        }
+
+        p.message {
+            font-size: 2.5rem;
+            color: $white;
+        }
+
+        p.name {
+            font-size: 5.5rem;
+            color: $green;
+        }
+
+        p.title {
+            font-size: 3.5rem;
+            color: $pink;
+        }
+    }
+
+    .intro-canvas {
+        width: 100%;
+
+        .canvas-panel {
+            width: fit-content;
+            right: 0;
+
+            .relative-panel {
+                position: relative;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+
+    .intro-background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        box-shadow: $shadow;
+    }
+}
+
+
+
+
+
+// .center {
+//     position: relative;
+//     top: 50%;
+//     left: 50%;
+//     -webkit-transform: translate(-50%, -50%);
+//     -ms-transform: translate(-50%, -50%);
+//     transform: translate(-50%, -50%);
+// }
+
+// .center.vertical {
+//     left: auto;
+//     -webkit-transform: translate(0, -50%);
+//     -ms-transform: translate(0, -50%);
+//     transform: translate(0, -50%);
+// }
+
+// .center.horizontal {
+//     top: auto;
+//     -webkit-transform: translate(-50%, 0);
+//     -ms-transform: translate(-50%, 0);
+//     transform: translate(-50%, 0);
+// }

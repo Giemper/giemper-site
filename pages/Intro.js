@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 import Viewport from '../Tools/Viewport';
 
-const color1 = {backgroundColor: 'blue'};
-const color2 = {backgroundColor: 'green'};
-
 const ProfilePicture = (props) => {
     const canvasHeight = props.height / 1.5;
     const canvasMargin = canvasHeight * 0.1;
@@ -89,6 +86,7 @@ const Intro = () => {
             <div className="row align-items-center" style={space}>
                 <div className="col-7">
                     <div className="intro-panel">
+                        <p className="message">Hello I'm</p>
                         <p className="name">Guillermo</p>
                         <p className="name">Magdaleno</p>
                         <p className="title">Software Developer</p>

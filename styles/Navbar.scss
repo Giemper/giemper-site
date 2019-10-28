@@ -39,6 +39,16 @@
     }
 }
 
+.lang-button {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.lang-button.selected {
+    font-weight: 700;
+    opacity: 1;
+}
+
 .nav.scrolled {
     background-color: $secundary;
     box-shadow: $shadow;

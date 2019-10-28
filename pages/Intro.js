@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Viewport from '../Tools/Viewport';
+import Viewport from '../tools/Viewport';
 
 const ProfilePicture = (props) => {
     const canvasHeight = props.height / 1.5;
@@ -31,7 +31,7 @@ const ProfilePicture = (props) => {
                     <div className="canvas-panel">
                         <div className="relative-panel">
                             <canvas id="circleBG" height={canvasHeight + canvasMargin} width={canvasHeight + canvasMargin} />
-                            <img src="/Myself.jpg" style={imageAdapter}/>
+                            <img src="/blank.jpg" style={imageAdapter}/>
                         </div>
                     </div>
                 </div>
@@ -79,17 +79,17 @@ const Intro = () => {
     const backgroundSpace = { height: (viewHeight - 50) + 'px', backgroundColor: 'rgba(0,0,0,0.5)', width: '100%' };
 
     return (
-        <div className="intro">
+        <div className="intro" id="nav_home">
             <div className="intro-background" style={backgroundSpace}>
                 <AnimatedBackground height={viewHeight} width={viewWidth} />
             </div>
             <div className="row align-items-center" style={space}>
                 <div className="col-7">
                     <div className="intro-panel">
-                        <p className="message">Hello I'm</p>
+                        {/* <p className="message">Hello I'm</p>
                         <p className="name">Guillermo</p>
                         <p className="name">Magdaleno</p>
-                        <p className="title">Software Developer</p>
+                        <p className="title">Software Developer</p> */}
                     </div>
                 </div>
                 <div className="col-5">

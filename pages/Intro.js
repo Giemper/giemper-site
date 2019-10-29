@@ -32,7 +32,7 @@ const ProfilePicture = (props) => {
                     <div className="canvas-panel">
                         <div className="relative-panel">
                             <canvas id="circleBG" height={canvasHeight + canvasMargin} width={canvasHeight + canvasMargin} />
-                            <img src="/myself.jpg" style={imageAdapter}/>
+                            <img src="Myself.jpg" style={imageAdapter}/>
                             {/* <img src="/blank.jpg" style={imageAdapter}/> */}
                         </div>
                     </div>

@@ -37,7 +37,7 @@ const Navbar = (props) => {
                 <div className="col">
                     {
                         VALUES_NAVBAR.map((item, index) => (
-                            <Link href={`/#${item.id}`} key={index} replace>
+                            <Link href={`/#${item.id}`} as={`/giemper-site/#${item.id}`} key={index} replace>
                                 <a className="nav-button">
                                     { checkItem(item.title, language.lang) }
                                 </a>

@@ -1,8 +1,6 @@
-@import "bootstrap-grid";
+@import "lib/bootstrap-grid";
 @import "variables";
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,200i,400,600&display=swap');
-
-
 
 body {
     margin: 0;
@@ -12,8 +10,8 @@ html {
     background-color: $main;
 }
 
-h1, h2, h3, h4,
-h5, h6, p, span, li {
+h1, h2, h3, h4, h5
+h6, p, span, li, a {
     color: $white;
     font-family: 'Poppins';
 }
@@ -38,7 +36,7 @@ li {
 }
 
 .page {
-    padding: 48px 0;
+    padding: 64px 0;
 }
 
 .page.shadow {
@@ -58,6 +56,7 @@ li {
             font-weight: 600;
             text-transform: uppercase;
             line-height: 8px;
+            text-shadow: 2px 2px 4px #000000;
         }
 
         p.message {
@@ -90,6 +89,7 @@ li {
             }
 
             img {
+                box-shadow: $shadow;
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -117,20 +117,39 @@ li {
     display: inline-block;
 }
 
+.skill-filter {
+    text-decoration: none;
+    text-align: right;
+    display: block;
+    margin: 4px 0;
+    color: $secundary;
+}
+
+.skill-filter.selected {
+    color: $white;
+}
+
+.skill-line {
+    border-right: 1px solid $white;
+    padding: 4px 24px 0 0px;
+    transition: 50ms;
+}
+
 .box-item {
     background-color: $secundary;
     position: relative;
     padding: 16px 32px;
     margin: 12px 0;
+    box-shadow: $shadow;
 
     h1 {
         margin-block-start: 0;
         margin-block-end: 0;
-        color: $pink;
+        color: $cyan;
     }
 
     h2 {
-        color: $green;
+        color: $orange;
     }
 
     h2, h3, h4 {
@@ -138,4 +157,11 @@ li {
         margin-block-start: 0;
         margin-block-end: 8px;
     }
+}
+
+.globe-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
 }

@@ -1,24 +1,9 @@
-import PageHeader from '../components/PageHeader';
+import { useState, useEffect } from 'react';
 
-const skillList =  [
-    { key: 0, skill: "Java", tags: [""] },
-    { key: 1, skill: "C#", tags: [""] },
-    { key: 2, skill: "C++", tags: [""] },
-    { key: 3, skill: "Javascript", tags: [""] },
-    { key: 4, skill: "HTML", tags: [""] },
-    { key: 5, skill: "CSS", tags: [""] },
-    { key: 6, skill: "PHP", tags: [""] },
-    { key: 7, skill: "VueJS", tags: [""] },
-    { key: 8, skill: "React", tags: [""] },
-    { key: 9, skill: "NodeJS", tags: [""] },
-    { key: 10, skill: "AngularJS", tags: [""] },
-    { key: 11, skill: "jQuery", tags: [""] },
-    { key: 12, skill: "ASP.NET", tags: [""] },
-    { key: 13, skill: "SQL", tags: [""] },
-    { key: 14, skill: "WPF", tags: [""] },
-    { key: 15, skill: "Sharepoint", tags: [""] },
-    { key: 16, skill: "Android Development", tags: [""] }
-];
+import PageHeader from '../components/PageHeader';
+import checkItem from '../tools/checkItem';
+
+import VALUES_SKILLS from '../values/VALUES_SKILLS';
 
 const SkillBox = (props) => (
     <div className="skill-item">
@@ -26,16 +11,52 @@ const SkillBox = (props) => (
     </div>
 );
 
-const Skills = () => {
+const SkillFilter = (props) => {
+
+    
+    const tags = ["All", "Desktop", "Mobile", "Web"];
+    const filter = (e, tag) => {
+        e.preventDefault();
+        props.setFilter(tag);
+    }
+
+    return (
+        <>
+            {
+                tags.map((tag, index) => (
+                    <a  key={index}
+                        href="#"
+                        className={`skill-filter ${(props.filter === tag ? "selected" : "none")}`}
+                        onClick={(e) => filter(e,tag)}>{tag}</a>
+                ))
+            }
+        </>
+    )
+}
+
+const Skills = (props) => {
+    const lang = props.languageNum;
+    const title = ["Skills", "Habilidades"];
+    const [filter, setFilter] = useState('All');
+    
     return (
         <div className="page shadow">
             <div className="container">
-                <PageHeader title="Skills" id="nav_skill"/>
-                {
-                    skillList.map((item) => (
-                        <SkillBox text={item.skill} key={item.key} />
-                    ))
-                }
+                <PageHeader title={checkItem(title, lang)} id="nav_skill"/>
+                <div className="row">
+                    <div className="col-auto skill-line">
+                        <SkillFilter filter={filter} setFilter={setFilter}/>
+                    </div>
+                    <div className="col">
+                        {
+                            VALUES_SKILLS.map((item, index) => {
+                                if(item.tags.includes(filter) || filter === "All")
+                                    return <SkillBox text={item.skill} key={index} />;
+                            })
+                        }
+                    </div>
+                </div>
+
             </div>
         </div>
     );

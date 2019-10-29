@@ -14,5 +14,6 @@ module.exports = withCSS(withSass({
        });
 
        return config;
-   }
+   },
+   assetPrefix: process.env.NODE_ENV === 'production' ? '/giemper-site' : ''
 }));

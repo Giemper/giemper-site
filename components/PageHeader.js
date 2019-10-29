@@ -5,7 +5,7 @@ const PageHeader = (props) => {
     const viewID = "id_" + props.id;
     viewWatcher(viewID);
     
-    const color = { backgroundColor: 'blue', height: '1px', width: '100%', top: '-64px'};
+    const color = { top: '-128px', position: 'relative'};
 
     return (
         <>

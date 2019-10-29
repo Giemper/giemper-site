@@ -13,7 +13,6 @@ class Language extends React.Component {
     setLanguage(lang) {
         this.setLang(lang);
         document.cookie = "language=" + lang;
-        console.log("Idioma nuevo: " + this.lang);
     }
 
     start() {

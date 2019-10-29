@@ -1,31 +1,30 @@
 import PageHeader from '../components/PageHeader';
 import BoxItem from '../components/BoxItem';
 
-const Education = () => {
+import VALUES_EDUCATION from '../values/VALUES_EDUCATION';
+import checkItem from '../tools/checkItem';
+
+const Education = (props) => {
+    const lang = props.languageNum;
+    const title = ["Education", "Educación"];
+
     return (
-        <div className="container">
-            <PageHeader title="Education" id="nav_edu"/>
-            <div className="row">
-                <div className="col">
-                    <BoxItem
-                        title="CETYS University"
-                        position="Computer Science Engineering"
-                        city="Mexicali, Baja California, Mexico"
-                        duration="August 2011 - July 2015" />
-                </div>
-                <div className="col">
-                    <BoxItem
-                        title="Polytechnique Montreal"
-                        position="Software Engineering"
-                        city="Montreal, Quebec, Canada"
-                        duration="August 2014 - December 2014" 
-                        description={["Academic Exchange"]} />
-                </div>
-                <div className="col">
-                    <BoxItem
-                        title="Udacity"
-                        position="Front-End Nanodegree"
-                        city="Online Course" />
+        <div className="page">
+            <div className="container">
+                <PageHeader title={checkItem(title, lang)} id="nav_edu"/>
+                <div className="row">
+                    {
+                        VALUES_EDUCATION.map((item, index) => (
+                            <div className="col" key={index}>
+                                <BoxItem 
+                                    title={checkItem(item.title, lang)}
+                                    position={checkItem(item.position, lang)}
+                                    city={checkItem(item.city, lang)}
+                                    duration={checkItem(item.duration, lang)}
+                                    description={checkItem(item.description, lang)}/>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>

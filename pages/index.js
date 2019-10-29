@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 import Navbar from '../components/Navbar';
 import Language from '../tools/Language';
 import Intro from './Intro';
@@ -13,17 +11,17 @@ import '../styles/pages.scss';
 const Index = () => {
     var tempHeight = { height: '1600px' };
 
-    const lang = new Language();
-    lang.start();
+    const language = new Language();
+    language.start();
 
     return (
         <>
-            <Navbar language={lang} />
+            <Navbar language={language} />
             <Intro />
-            <Who />
-            <Skills />
-            <Experience />
-            <Education />
+            <Who languageNum={language.getLanguage()} />
+            <Skills languageNum={language.getLanguage()}/>
+            <Experience languageNum={language.getLanguage()}/>
+            <Education languageNum={language.getLanguage()}/>
             <div style={tempHeight} />
         </>
     );

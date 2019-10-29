@@ -18,7 +18,8 @@ const ProfilePicture = (props) => {
             canvasRadius + (canvasMargin / 2), 
             canvasRadius, 
             0, 2 * Math.PI);
-        context.fillStyle = 'rgb(68, 71, 90)';
+        // context.fillStyle = 'rgb(68, 71, 90)';
+        context.fillStyle = 'rgba(139, 233, 253, 0.2)';
         context.fill();
     });
 
@@ -31,7 +32,8 @@ const ProfilePicture = (props) => {
                     <div className="canvas-panel">
                         <div className="relative-panel">
                             <canvas id="circleBG" height={canvasHeight + canvasMargin} width={canvasHeight + canvasMargin} />
-                            <img src="/blank.jpg" style={imageAdapter}/>
+                            <img src="/myself.jpg" style={imageAdapter}/>
+                            {/* <img src="/blank.jpg" style={imageAdapter}/> */}
                         </div>
                     </div>
                 </div>
@@ -54,7 +56,7 @@ const AnimatedBackground = (props) => {
         const context = canvas.getContext('2d');
 
         context.beginPath();
-        context.strokeStyle = 'rgb(68, 71, 90)';
+        context.strokeStyle = 'rgba(68, 71, 90, 0.5)';
         context.lineWidth = 3;
         drawLine(context, 0, 0, canvasWidth, canvasHeight - 150);
         drawLine(context, canvasWidth * 0.75, 0, canvasWidth / 2, canvasHeight);
@@ -86,10 +88,10 @@ const Intro = () => {
             <div className="row align-items-center" style={space}>
                 <div className="col-7">
                     <div className="intro-panel">
-                        {/* <p className="message">Hello I'm</p>
+                        <p className="message">Hello I'm</p>
                         <p className="name">Guillermo</p>
                         <p className="name">Magdaleno</p>
-                        <p className="title">Software Developer</p> */}
+                        <p className="title">Software Developer</p>
                     </div>
                 </div>
                 <div className="col-5">

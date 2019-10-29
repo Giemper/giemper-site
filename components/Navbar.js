@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import '../styles/Navbar.scss';
 import VALUES_NAVBAR from '../values/VALUES_NAVBAR';
+import checkItem from '../tools/checkItem';
 
 const Scroll = () => {
     const [navScroll, setNavScroll] = useState(false);
@@ -19,12 +20,10 @@ const Scroll = () => {
 
 const Navbar = (props) => {
     const language = props.language;
-    const values = new VALUES_NAVBAR();
 
     const ChangeToEnglish = (e) => {
         e.preventDefault();
         language.setLanguage(0);
-        
     }
 
     const ChangeToSpanish = (e) => {
@@ -37,10 +36,10 @@ const Navbar = (props) => {
             <div className="row justify-content-between align-items-center">
                 <div className="col">
                     {
-                        values.sections.map((section, index) => (
-                            <Link href={'#' + section.id} key={index}>
+                        VALUES_NAVBAR.map((item, index) => (
+                            <Link href={`/#${item.id}`} key={index} replace>
                                 <a className="nav-button">
-                                    { values.getValueLanguage(index, language.lang) }
+                                    { checkItem(item.title, language.lang) }
                                 </a>
                             </Link>
                         ))
@@ -49,12 +48,13 @@ const Navbar = (props) => {
                 <div className="col-2">
                     <div className="row justify-content-end">
                         <div className="col-auto lang-selection">
+                            <img src="globe.svg" className="globe-icon"/>
                             <a id="Nav_Eng" 
-                                className={"lang-button " + (language.lang == '0' ? "selected" : "none")}
+                                className={`lang-button + ${language.lang == '0' ? "selected" : "none"}`}
                                 onClick={ChangeToEnglish}>EN</a>
                             <span> / </span>
                             <a id="Nav_Esp" 
-                                className={"lang-button " + (language.lang == '1' ? "selected" : "none")}
+                                className={`lang-button + ${language.lang == '1' ? "selected" : "none"}`}
                                 onClick={ChangeToSpanish}>ES</a>
                         </div>
                     </div>

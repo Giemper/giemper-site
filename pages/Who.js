@@ -1,10 +1,15 @@
 import PageHeader from '../components/PageHeader';
 
-const Who = () => {
+import checkItem from '../tools/checkItem';
+
+const Who = (props) => {
+    const lang = props.languageNum;
+    const title = ["Who am I?", "¿Quien Soy?"];
+
     return (
         <div className="page">
             <div className="container">
-                <PageHeader title="Who am I?" id="nav_who" />
+                <PageHeader title={checkItem(title, lang)} id="nav_who" />
                 <div className="who-item">
                     <p>Without getting into a deeper existencial crisis, the easiest way I can start describing myself is</p>
 

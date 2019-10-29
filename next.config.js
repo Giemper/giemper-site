@@ -15,7 +15,7 @@ module.exports = withCSS(withSass({
 
         return config;
     },
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/' : '',
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/giemper-site' : '',
     exportPathMap: function () {
         return {
             '/': { page: '/' }

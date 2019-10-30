@@ -49,11 +49,13 @@ const Navbar = (props) => {
                     <div className="row justify-content-end">
                         <div className="col-auto lang-selection">
                             <img src="globe.svg" className="globe-icon"/>
-                            <a id="Nav_Eng" 
+                            <a  id="Nav_Eng" 
+                                href="#"
                                 className={`lang-button + ${language.lang == '0' ? "selected" : "none"}`}
                                 onClick={ChangeToEnglish}>EN</a>
                             <span> / </span>
-                            <a id="Nav_Esp" 
+                            <a  id="Nav_Esp" 
+                                href="#"
                                 className={`lang-button + ${language.lang == '1' ? "selected" : "none"}`}
                                 onClick={ChangeToSpanish}>ES</a>
                         </div>

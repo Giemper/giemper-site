@@ -5,12 +5,11 @@ import Who from './Who';
 import Skills from './Skills';
 import Experience from './Experience';
 import Education from './Education';
+import Projects from './Projects';
 
 import '../styles/pages.scss';
 
 const Index = () => {
-    var tempHeight = { height: '1600px' };
-
     const language = new Language();
     language.start();
 
@@ -19,10 +18,10 @@ const Index = () => {
             <Navbar language={language} />
             <Intro />
             <Who languageNum={language.getLanguage()} />
-            <Skills languageNum={language.getLanguage()}/>
-            <Experience languageNum={language.getLanguage()}/>
-            <Education languageNum={language.getLanguage()}/>
-            <div style={tempHeight} />
+            <Skills languageNum={language.getLanguage()} />
+            <Experience languageNum={language.getLanguage()} />
+            <Education languageNum={language.getLanguage()} />
+            <Projects languageNum={language.getLanguage()} />
         </>
     );
 }

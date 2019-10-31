@@ -17,18 +17,20 @@ h6, p, span, li, a {
 }
 
 p, span {
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 ul {
-    padding-inline-start: 24px;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
     text-align: justify;
 }
 
 li {
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-    margin-right: 24px;
+    font-size: 1em;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    list-style-type: none;
 }
 
 .content {
@@ -48,11 +50,12 @@ li {
 }
 
 .intro {
+    width: 99%;
     min-height: 600px;
-    position: relative;
+    // position: relative;
 
     .intro-panel {
-        margin-left: 20%;
+        padding-left: 20%;
 
         p {
             font-family: 'Poppins';
@@ -82,7 +85,7 @@ li {
     }
 
     .intro-canvas {
-        width: 100%;
+        width: 99%;
 
         .canvas-panel {
             width: fit-content;
@@ -104,13 +107,13 @@ li {
     .intro-background {
         position: absolute;
         top: 0;
-        right: 0;
+        // right: 0;
+        left: 0;
         box-shadow: $shadow;
     }
 }
 
 .who-item {
-    max-width: 60%;
     text-align: justify;
 }
 
@@ -139,62 +142,6 @@ li {
     transition: 50ms;
 }
 
-.box-item {
-    background-color: $secundary;
-    position: relative;
-    padding: 16px 32px;
-    margin: 12px 0;
-    height: 100%;
-    box-shadow: $shadow;
-
-    h1 {
-        margin-block-start: 0;
-        margin-block-end: 0;
-        color: $cyan;
-    }
-
-    h2 {
-        color: $orange;
-    }
-
-    h2, h3, h4 {
-        // font-size: 1.3rem;
-        margin-block-start: 0;
-        margin-block-end: 8px;
-    }
-}
-
-.globe-icon {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-right: 12px;
-}
-
-.project-item {
-    $preview-border: solid $main;
-    $topbottom: 32px $preview-border;
-
-    border: 1px solid $white;
-    box-shadow: $shadow;
-
-    .project-pad {
-        padding: 32px;
-    }
-
-    .project-preview {
-        width: 60%;
-        border-radius: 24px;
-        border: 12px $preview-border;
-        border-bottom: $topbottom;
-        border-top: $topbottom;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-        box-shadow: $shadow;
-    }
-}
-
 .footer {
     background-color: $red;
     box-shadow: $shadow;
@@ -215,3 +162,76 @@ li {
         border-left: 2px solid $white;
     }
 }
+
+
+
+// Mid size
+@media (max-width: $media-md) {
+    .page {
+        padding-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .who-item {
+        max-width: 100%;
+        font-size: 0.9em;
+        padding: 0 12px;
+    }
+
+    .skill-line {
+        border-right: none;
+        border-bottom: 1px solid $white;
+        padding: 4px 24px 8px 0px;
+        margin-bottom: 16px;
+    }
+
+    .skill-filter {
+        text-align: center;
+        display: inline-block;
+        margin: 4px 16px;
+    }
+
+    .skill-center {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skill-box-center {
+        text-align: center;
+    }
+}
+
+// Small size
+@media (max-width: $media-sm) {
+    .intro {
+        visibility: collapse;
+    }
+
+    .footer {
+        padding: 16px 0;
+        line-height: 0.5;
+    
+        a {
+            text-decoration: none;
+            display: block;
+        }
+    
+        .title {
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+    
+        .foot-block {
+            border-left: 0;
+            padding-bottom: 12px;
+        }
+
+        .foot-links {
+            display: inline-block;
+            padding: 8px 16px 8px 0;
+        }
+    }
+    
+}
+

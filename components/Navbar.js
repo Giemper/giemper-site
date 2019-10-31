@@ -9,7 +9,7 @@ const Scroll = () => {
 
     useEffect(() => {
         document.addEventListener('scroll', () => {
-            (window.scrollY > 200)
+            (window.scrollY > 200 || window.pageYOffset > 200)
                 ? setNavScroll(true)
                 : setNavScroll(false);
         });
@@ -38,7 +38,7 @@ const Navbar = (props) => {
                     {
                         VALUES_NAVBAR.map((item, index) => (
                             <Link href={`/#${item.id}`} as={`/giemper-site/#${item.id}`} key={index} replace>
-                                <a className="nav-button">
+                                <a className="nav-button" draggable="false">
                                     { checkItem(item.title, language.lang) }
                                 </a>
                             </Link>

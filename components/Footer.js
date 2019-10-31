@@ -9,14 +9,18 @@ const Footer = (props) => {
         <div className="footer">
             <div className="container">
                 <div className="row">
-                    <div className="col-6 align-self-end foot-block">
+                    <div className="col-lg-6 col-md-6 col-sm-12 align-self-end foot-block">
                         <p className="title">Guillermo Magdaleno</p>
                         <p>Software Developer</p>
                     </div>
-                    <div className="col-6 align-self-center">
+                    <div className="col-lg-6 col-md-6 col-sm-12 align-self-center">
                         {
-                            sites.map((item) => (
-                                <a href={item.link} target="_bind">{item.site}</a>
+                            sites.map((item, index) => (
+                                <a key={index} 
+                                    className="foot-links"
+                                    href={item.link} 
+                                    target="_bind"  
+                                    draggable="false">{item.site}</a>
                             ))
                         }
                     </div>
@@ -25,3 +29,5 @@ const Footer = (props) => {
         </div>
     );
 }
+
+export default Footer;

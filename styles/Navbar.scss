@@ -8,19 +8,18 @@
     top: 0;
     padding: 0 64px;
     margin-bottom: 64px;
+    font-size: 1.25em;
+    letter-spacing: 2px;
     z-index: 1;
 
     a, span {
         color: $white;
         font-family: 'Poppins';
-        font-size: 1.25rem;
         text-transform: uppercase;
         text-decoration: none;
-        letter-spacing: 2px;
     }
 
     span {
-        font-family: 1rem;
         font-weight: 300;
         margin: 0 4px;
     }
@@ -52,4 +51,48 @@
 .nav.scrolled {
     background-color: $secundary;
     box-shadow: $shadow;
+}
+
+.globe-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+}
+
+// Large size
+@media (max-width: $media-lg) {
+    .nav {
+        font-size: 0.9em;
+    }
+
+    .globe-icon {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+
+// Mid size
+@media (max-width: $media-md) {
+    .nav {
+        font-size: 0.8em;
+        padding: 0 16px;
+
+        .nav-button {
+            margin: 0 8px;
+        }
+    }
+
+    .globe-icon {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+// Min size
+@media (max-width: $media-sm) {
+    .nav {
+        visibility: collapse;
+    }
 }

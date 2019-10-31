@@ -12,8 +12,6 @@ const SkillBox = (props) => (
 );
 
 const SkillFilter = (props) => {
-
-    
     const tags = ["All", "Desktop", "Mobile", "Web"];
     const filter = (e, tag) => {
         e.preventDefault();
@@ -44,10 +42,14 @@ const Skills = (props) => {
             <div className="container">
                 <PageHeader title={checkItem(title, lang)} id="nav_skill"/>
                 <div className="row">
-                    <div className="col-auto skill-line">
-                        <SkillFilter filter={filter} setFilter={setFilter}/>
+                    <div className="col-lg-auto col-md-12 skill-line">
+                        <div className="skill-center">
+                            <SkillFilter 
+                                filter={filter} 
+                                setFilter={setFilter} />
+                        </div>
                     </div>
-                    <div className="col">
+                    <div className="col-lg col-md-12 skill-box-center">
                         {
                             VALUES_SKILLS.map((item, index) => {
                                 if(item.tags.includes(filter) || filter === "All")

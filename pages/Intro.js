@@ -23,8 +23,6 @@ const ProfilePicture = (props) => {
         context.fill();
     });
 
-
-
     return (
         <div className="row justify-content-end">
             <div>
@@ -77,13 +75,13 @@ const AnimatedBackground = (props) => {
 const Intro = () => {
     const { viewHeight, viewWidth } = Viewport();
 
-    const space = { height: (viewHeight - 50) + 'px'};
+    const space = { height: (viewHeight - 50) + "px" };
     const backgroundSpace = { height: (viewHeight - 50) + 'px', backgroundColor: 'rgba(0,0,0,0.5)', width: '100%' };
 
     return (
         <div className="intro" id="nav_home">
             <div className="intro-background" style={backgroundSpace}>
-                <AnimatedBackground height={viewHeight} width={viewWidth} />
+                <AnimatedBackground height={viewHeight} width={viewWidth}   />
             </div>
             <div className="row align-items-center" style={space}>
                 <div className="col-7">

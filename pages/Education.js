@@ -12,10 +12,10 @@ const Education = (props) => {
         <div className="page">
             <div className="container">
                 <PageHeader title={checkItem(title, lang)} id="nav_edu"/>
-                <div className="row">
+                <div className="row box">
                     {
                         VALUES_EDUCATION.map((item, index) => (
-                            <div className="col" key={index}>
+                            <div className="col-lg-4 col-md-12" key={index}>
                                 <BoxItem 
                                     title={checkItem(item.title, lang)}
                                     position={checkItem(item.position, lang)}

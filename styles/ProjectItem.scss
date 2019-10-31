@@ -1,0 +1,103 @@
+@import 'variables';
+
+.project-item {
+    $preview-border: solid $main;
+    $topbottom: 32px $preview-border;
+    font-size: 1.3em;
+    line-height: 1;
+    padding: 0 64px 32px;
+    // margin-bottom: 32px;
+
+
+    .project-pad {
+        padding: 32px;
+        position: relative;
+    }
+
+    .project-text {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        text-align: justify;
+    }
+
+    .project-preview {
+        width: 60%;
+        border-radius: 24px;
+        border: 12px $preview-border;
+        border-bottom: $topbottom;
+        border-top: $topbottom;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        box-shadow: $shadow;
+    }
+
+    .project-link {
+        padding: 8px 24px 8px 0;
+        text-decoration: none;
+    }
+
+    h1 {
+        color: $pink;
+    }
+
+    h3 {
+        color: $cyan;
+    }
+
+    p {
+        line-height: 1.5;
+    }
+
+}
+
+//Large size
+@media (max-width: $media-lg) {
+
+}
+
+//Med size
+@media (max-width: $media-md) {
+    .project-item {
+        padding: 0 32px 32px;
+        font-size: 1em;
+
+        .project-pad {
+            padding: 0;
+        }
+
+        // .project-text {
+        //     position: relative;
+        //     top: 0;
+        //     -ms-transform: translateY(0);
+        //     transform: translateY(0);
+        //     padding-bottom: 48px;
+        // }
+
+        .project-preview {
+            width: 75%;
+        }
+    }
+}
+
+//Small size
+@media (max-width: $media-sm) {
+    .project-pad.order-first {
+        order: 13;
+    }
+
+    .project-item {
+        font-size: 0.9em;
+
+        .project-text {
+            position: relative;
+            top: 0;
+            -ms-transform: translateY(0);
+            transform: translateY(0);
+            padding-bottom: 48px;
+        }
+    }
+}

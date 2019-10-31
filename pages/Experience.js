@@ -12,10 +12,10 @@ const Experience = (props) => {
         <div className="page">
             <div className="container">
                 <PageHeader title={checkItem(title, lang)} id="nav_exp" />
-                <div className="row">
+                <div className="row box">
                     {
                         VALUES_EXPERIENCE.map((item, index) => (
-                            <div className="col-6" key={index}>
+                            <div className="col-lg-6 col-md-12" key={index}>
                                 <BoxItem
                                     title={checkItem(item.title, lang)}
                                     position={checkItem(item.position, lang)}

@@ -1,0 +1,48 @@
+@import "variables";
+
+.box-item {
+    background-color: $secundary-dark;
+    box-shadow: $shadow;
+    position: relative;
+    height: 100%;
+    margin: 12px 0;
+    padding: 32px;
+    line-height: 1.3;
+
+    h1 {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        color: $cyan;
+    }
+
+    h2 {
+        color: $orange;
+    }
+
+    h2, h3, h4 {
+        margin-block-start: 0;
+        margin-block-end: 8px;
+    }
+}
+
+// Mid size
+@media (max-width: $media-md) {
+    .row.box {
+        padding: 8px 0;
+    }
+
+    .box-item {
+        background-color: transparent;
+        box-shadow: none;
+        height: auto;
+        font-size: 0.9em;
+        padding: 4px 16px;
+
+    }
+}
+
+@media (max-width: $media-sm) {
+    .box-item {
+        font-size: 0.9em;
+    }
+}

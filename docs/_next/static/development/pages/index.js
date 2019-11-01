@@ -59,7 +59,13 @@ var BoxItem = function BoxItem(props) {
         lineNumber: 11
       },
       __self: this
-    }, value);
+    }, __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }, value));
   })));
 };
 
@@ -214,7 +220,7 @@ var Navbar = function Navbar(props) {
   };
 
   return __jsx("div", {
-    className: "nav " + (Scroll() ? "scrolled" : "none"),
+    className: "nav ".concat(Scroll() ? "scrolled" : ""),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 35
@@ -234,7 +240,7 @@ var Navbar = function Navbar(props) {
       lineNumber: 37
     },
     __self: this
-  }, _values_VALUES_NAVBAR__WEBPACK_IMPORTED_MODULE_3__["default"].map(function (item, index) {
+  }, props.viewWidth >= 768 - 17 && _values_VALUES_NAVBAR__WEBPACK_IMPORTED_MODULE_3__["default"].map(function (item, index) {
     return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
       href: "/#".concat(item.id),
       as: "/giemper-site/#".concat(item.id),
@@ -255,7 +261,7 @@ var Navbar = function Navbar(props) {
       __self: this
     }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(item.title, language.lang)));
   })), __jsx("div", {
-    className: "col-2",
+    className: "col-auto",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 48
@@ -451,66 +457,66 @@ var ProjectItem = function ProjectItem(props) {
     },
     __self: this
   }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_2__["default"])(availableAt, lang)) : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
-  var order = props.index % 2 == 0 ? 'order-last' : 'order-first'; // const desc = checkItem(props.description, lang);
-  // console.log(desc);
-
+  var order = props.index % 2 == 0 ? 'order-last' : 'order-first';
+  var desc = Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_2__["default"])(props.description, lang);
   return __jsx("div", {
     className: "project-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 31
     },
     __self: this
   }, __jsx("div", {
     className: "row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 32
     },
     __self: this
   }, __jsx("div", {
     className: "col-lg-6 col-md-6 col-sm-12 project-pad",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 33
     },
     __self: this
   }, __jsx("div", {
     className: "project-text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 34
     },
     __self: this
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 35
     },
     __self: this
-  }, props.title), Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_2__["default"])(props.description, lang).map(function (item, index) {
+  }, props.title), desc !== undefined && desc.map(function (item, index) {
     return __jsx("p", {
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 38
       },
       __self: this
     }, item);
   }), projectAvailability, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 42
     },
     __self: this
   }, props.availability !== undefined && props.availability.map(function (item, index) {
     return __jsx("a", {
       key: index,
       href: item.link,
+      target: "_bind",
       className: "project-link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 45
       },
       __self: this
     }, item.title);
@@ -518,7 +524,7 @@ var ProjectItem = function ProjectItem(props) {
     className: "col-lg-6 col-md-6 col-sm-12 project-pad ".concat(order),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 54
     },
     __self: this
   }, projectType)));
@@ -26266,227 +26272,175 @@ var Experience = function Experience(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _tools_Viewport__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tools/Viewport */ "./tools/Viewport.js");
+/* harmony import */ var _styles_Intro_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/Intro.scss */ "./styles/Intro.scss");
+/* harmony import */ var _styles_Intro_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_Intro_scss__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "/mnt/c/Dev/giemper-site/pages/Intro.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // import Viewport from '../tools/Viewport';
 
 
 
 var ProfilePicture = function ProfilePicture(props) {
-  var canvasHeight = props.height / 1.5;
+  var canvasHeight = props.height / 1.5 > 500 ? props.height / 1.5 : 500;
+  var canvasWidth = props.width > 1160 ? 1 : props.width > 992 ? 0.8 : props.width > 768 ? 0.6 : 0.55;
   var canvasMargin = canvasHeight * 0.1;
-  var canvasRadius = canvasHeight / 2;
+  var canvasRadius = (canvasHeight + canvasMargin) / 2 * canvasWidth;
+  var canvasSquare = (canvasHeight - canvasMargin) * canvasWidth;
+  var canvasSize = (canvasHeight + canvasMargin) * canvasWidth;
   var imageAdapter = {
-    width: canvasHeight - canvasMargin + "px",
-    height: canvasHeight - canvasMargin + "px",
-    marginTop: canvasMargin + "px"
+    width: canvasSquare + "px",
+    height: canvasSquare + "px"
   };
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    var canvas = document.getElementById('circleBG');
-    var context = canvas.getContext('2d');
-    context.beginPath();
-    context.arc(canvasRadius + canvasMargin, canvasRadius + canvasMargin / 2, canvasRadius, 0, 2 * Math.PI); // context.fillStyle = 'rgb(68, 71, 90)';
-
-    context.fillStyle = 'rgba(139, 233, 253, 0.2)';
-    context.fill();
+    if (props.width >= 768 - 17) {
+      var canvas = document.getElementById('circleBG');
+      var context = canvas.getContext('2d');
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.beginPath();
+      context.arc(canvasRadius + canvasMargin / 2, canvasRadius, canvasRadius, 0, 2 * Math.PI);
+      context.fillStyle = 'rgba(139, 233, 253, 0.2)';
+      context.fill();
+    }
   });
   return __jsx("div", {
-    className: "row justify-content-end",
+    className: "intro-picture row justify-content-end",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 37
     },
     __self: this
-  }, __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "intro-canvas",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "canvas-panel",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "relative-panel",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
-  }, __jsx("canvas", {
+  }, props.width >= 768 - 17 ? __jsx("canvas", {
     id: "circleBG",
-    height: canvasHeight + canvasMargin,
-    width: canvasHeight + canvasMargin,
+    height: canvasSize,
+    width: canvasSize,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 40
     },
     __self: this
-  }), __jsx("img", {
-    src: "blank.jpg",
+  }) : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null), __jsx("img", {
+    src: props.picture,
     style: imageAdapter,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
-  }))))));
-};
-
-var AnimatedBackground = function AnimatedBackground(props) {
-  var canvasHeight = props.height;
-  var canvasWidth = props.width;
-
-  var drawLine = function drawLine(context, startPointX, startPointY, endPointX, endPointY) {
-    context.moveTo(startPointX, startPointY);
-    context.lineTo(endPointX, endPointY);
-    context.stroke();
-  };
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    var canvas = document.getElementById("animatedBG");
-    var context = canvas.getContext('2d');
-    context.beginPath();
-    context.strokeStyle = 'rgba(68, 71, 90, 0.5)';
-    context.lineWidth = 3;
-    drawLine(context, 0, 0, canvasWidth, canvasHeight - 150);
-    drawLine(context, canvasWidth * 0.75, 0, canvasWidth / 2, canvasHeight);
-    drawLine(context, canvasWidth * 0.43, 0, canvasWidth * 0, canvasHeight * 0.85);
-    drawLine(context, canvasWidth * 0.08, 0, canvasWidth * 0.39, canvasHeight);
-    drawLine(context, canvasWidth, canvasHeight * 0.04, canvasWidth * 0.15, canvasHeight);
-    drawLine(context, 0, canvasHeight * 0.45, canvasWidth * 0.81, canvasHeight);
-    drawLine(context, canvasWidth * 0.51, 0, canvasWidth * 0.62, canvasHeight);
-  });
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("canvas", {
-    id: "animatedBG",
-    height: canvasHeight - 50,
-    width: canvasWidth,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 43
     },
     __self: this
   }));
 };
 
-var Intro = function Intro() {
-  var _Viewport = Object(_tools_Viewport__WEBPACK_IMPORTED_MODULE_1__["default"])(),
-      viewHeight = _Viewport.viewHeight,
-      viewWidth = _Viewport.viewWidth;
-
+var Intro = function Intro(props) {
   var space = {
-    height: viewHeight - 50 + "px"
+    height: props.viewHeight + "px"
   };
-  var backgroundSpace = {
-    height: viewHeight - 50 + 'px',
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    width: '100%'
-  };
+  var image = "Myself.jpg";
   return __jsx("div", {
-    className: "intro",
+    className: "intro page",
     id: "nav_home",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "intro-background",
-    style: backgroundSpace,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: this
-  }, __jsx(AnimatedBackground, {
-    height: viewHeight,
-    width: viewWidth,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 84
-    },
-    __self: this
-  })), __jsx("div", {
-    className: "row align-items-center",
     style: space,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 53
     },
     __self: this
   }, __jsx("div", {
-    className: "col-7",
+    className: "row align-items-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 54
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "col-lg-7 col-md-8 col-sm-12 intro-item text",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
     },
     __self: this
   }, __jsx("div", {
     className: "intro-panel",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 56
     },
     __self: this
   }, __jsx("p", {
     className: "message",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 57
     },
     __self: this
-  }, "Hello I'm"), __jsx("p", {
+  }, "Hello there, I'm"), __jsx("p", {
     className: "name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 58
     },
     __self: this
   }, "Guillermo"), __jsx("p", {
     className: "name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 59
     },
     __self: this
   }, "Magdaleno"), __jsx("p", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 60
     },
     __self: this
   }, "Software Developer"))), __jsx("div", {
-    className: "col-5",
+    className: "col-lg-5 col-md-4 col-sm-12 intro-item picture",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 63
     },
     __self: this
   }, __jsx(ProfilePicture, {
-    height: viewHeight,
-    width: viewWidth,
+    height: props.viewHeight,
+    width: props.viewWidth,
+    picture: image,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 64
     },
     __self: this
   }))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Intro);
+/* harmony default export */ __webpack_exports__["default"] = (Intro); // const CanvasBackground = (props) => {
+//     const canvasHeight = props.height;
+//     const canvasWidth = props.width + 17;
+//     const drawLine = (context, startPointX, startPointY, endPointX, endPointY) => {
+//         context.moveTo(startPointX, startPointY);
+//         context.lineTo(endPointX, endPointY);
+//         context.stroke();
+//     }
+//     useEffect(() => {
+//         const canvas = document.getElementById("line-canvas");
+//         const context = canvas.getContext('2d');
+//         context.clearRect(0, 0, canvas.width, canvas.height);
+//         context.beginPath();
+//         context.strokeStyle = (canvasWidth > 420) 
+//                                 ? 'rgba(68, 71, 90, 0.5)'
+//                                 : 'rgba(68, 71, 90, 0.2)';
+//         context.lineWidth = 3;
+//         drawLine(context, 0, 0, canvasWidth, canvasHeight - 150);
+//         drawLine(context, canvasWidth * 0.75, 0, canvasWidth / 2, canvasHeight);
+//         drawLine(context, canvasWidth * 0.43, 0, canvasWidth * 0, canvasHeight * 0.85);
+//         drawLine(context, canvasWidth * 0.08, 0, canvasWidth * 0.39, canvasHeight);
+//         drawLine(context, canvasWidth, canvasHeight * 0.04, canvasWidth * 0.15, canvasHeight);
+//         drawLine(context, 0, canvasHeight * 0.45, canvasWidth * 0.81, canvasHeight);
+//         drawLine(context, canvasWidth * 0.51, 0, canvasWidth * 0.62, canvasHeight);
+//     });
+//     return (
+//         <canvas id="line-canvas" height={canvasHeight} width={canvasWidth} />
+//     );
+// }
 
 /***/ }),
 
@@ -26501,10 +26455,10 @@ var Intro = function Intro() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_PageHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PageHeader */ "./components/PageHeader.js");
-/* harmony import */ var _components_ProjectItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ProjectItem */ "./components/ProjectItem.js");
-/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
-/* harmony import */ var _values_VALUES_PROJECTS__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../values/VALUES_PROJECTS */ "./values/VALUES_PROJECTS.js");
+/* harmony import */ var _values_VALUES_PROJECTS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../values/VALUES_PROJECTS */ "./values/VALUES_PROJECTS.js");
+/* harmony import */ var _components_PageHeader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/PageHeader */ "./components/PageHeader.js");
+/* harmony import */ var _components_ProjectItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ProjectItem */ "./components/ProjectItem.js");
+/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
 var _jsxFileName = "/mnt/c/Dev/giemper-site/pages/Projects.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -26520,26 +26474,26 @@ var Projects = function Projects(props) {
     className: "page shadow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     },
     __self: this
   }, __jsx("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 12
     },
     __self: this
-  }, __jsx(_components_PageHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_3__["default"])(title, lang),
+  }, __jsx(_components_PageHeader__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(title, lang),
     id: "nav_pro",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 13
     },
     __self: this
-  }), _values_VALUES_PROJECTS__WEBPACK_IMPORTED_MODULE_4__["default"].map(function (item, index) {
-    return __jsx(_components_ProjectItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), _values_VALUES_PROJECTS__WEBPACK_IMPORTED_MODULE_1__["default"].map(function (item, index) {
+    return __jsx(_components_ProjectItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
       key: index,
       index: index,
       title: item.title,
@@ -26551,7 +26505,7 @@ var Projects = function Projects(props) {
       languageNum: lang,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 16
       },
       __self: this
     });
@@ -26814,16 +26768,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_app_polyfill_stable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-app-polyfill/stable */ "./node_modules/react-app-polyfill/stable.js");
 /* harmony import */ var react_app_polyfill_stable__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_app_polyfill_stable__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
-/* harmony import */ var _tools_Language__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../tools/Language */ "./tools/Language.js");
-/* harmony import */ var _Intro__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Intro */ "./pages/Intro.js");
-/* harmony import */ var _Who__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Who */ "./pages/Who.js");
-/* harmony import */ var _Skills__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Skills */ "./pages/Skills.js");
-/* harmony import */ var _Experience__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Experience */ "./pages/Experience.js");
-/* harmony import */ var _Education__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Education */ "./pages/Education.js");
-/* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Projects */ "./pages/Projects.js");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
-/* harmony import */ var _styles_pages_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../styles/pages.scss */ "./styles/pages.scss");
-/* harmony import */ var _styles_pages_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_styles_pages_scss__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _tools_Language__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../tools/Language */ "./tools/Language.js");
+/* harmony import */ var _tools_Viewport__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../tools/Viewport */ "./tools/Viewport.js");
+/* harmony import */ var _Intro__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Intro */ "./pages/Intro.js");
+/* harmony import */ var _Who__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Who */ "./pages/Who.js");
+/* harmony import */ var _Skills__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Skills */ "./pages/Skills.js");
+/* harmony import */ var _Experience__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Experience */ "./pages/Experience.js");
+/* harmony import */ var _Education__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Education */ "./pages/Education.js");
+/* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Projects */ "./pages/Projects.js");
+/* harmony import */ var _styles_pages_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../styles/pages.scss */ "./styles/pages.scss");
+/* harmony import */ var _styles_pages_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_styles_pages_scss__WEBPACK_IMPORTED_MODULE_13__);
 var _jsxFileName = "/mnt/c/Dev/giemper-site/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -26840,65 +26795,72 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 var Index = function Index() {
-  var emptySpace = {
-    height: '600px'
-  };
-  var language = new _tools_Language__WEBPACK_IMPORTED_MODULE_4__["default"]();
+  var language = new _tools_Language__WEBPACK_IMPORTED_MODULE_5__["default"]();
   language.start();
+
+  var _Viewport = Object(_tools_Viewport__WEBPACK_IMPORTED_MODULE_6__["default"])(),
+      viewHeight = _Viewport.viewHeight,
+      viewWidth = _Viewport.viewWidth;
+
+  var adjustedHeight = viewHeight > 930 ? viewHeight - 50 : viewHeight;
+  var adjustedWidth = viewWidth - 17;
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     language: language,
+    viewWidth: adjustedWidth,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 25
     },
     __self: this
-  }), __jsx("div", {
-    style: emptySpace,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }), __jsx(_Who__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    languageNum: language.getLanguage(),
+  }), __jsx(_Intro__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    viewHeight: adjustedHeight,
+    viewWidth: adjustedWidth,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 26
     },
     __self: this
-  }), __jsx(_Skills__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), __jsx(_Who__WEBPACK_IMPORTED_MODULE_8__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 27
     },
     __self: this
-  }), __jsx(_Experience__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), __jsx(_Skills__WEBPACK_IMPORTED_MODULE_9__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
     },
     __self: this
-  }), __jsx(_Education__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), __jsx(_Experience__WEBPACK_IMPORTED_MODULE_10__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 29
     },
     __self: this
-  }), __jsx(_Projects__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }), __jsx(_Education__WEBPACK_IMPORTED_MODULE_11__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 30
     },
     __self: this
-  }), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }), __jsx(_Projects__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 31
+    },
+    __self: this
+  }), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
     },
     __self: this
   }));
@@ -27046,7 +27008,7 @@ var Viewport = function Viewport() {
 
   var setViews = function setViews() {
     setViewHeight(Math.max(document.documentElement.clientHeight, window.innerHeight || 0));
-    setViewWidth(Math.max(document.documentElement.clientHeight, window.innerWidth || 0));
+    setViewWidth(Math.max(document.documentElement.clientWidth, window.innerWidth || 0));
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -27130,7 +27092,7 @@ var VALUES_EXPERIENCE = [{
   position: "Software Engineer",
   city: ["Mexicali, Baja California, Mexico", "Mexicali, Baja California, México"],
   duration: ["October 2015 - Current", "Octubre 2015 - Presente"],
-  description: [["Developed Intranet webpage for Mexicali's HR department. The page helps employees and managers on our site, allowing them to not only keep up to date with our company's news, but also to fill requests for paid time off, inquiries with HR, work authorizations, and even create monetary rewards based on employee's performance.", "Collaborated closely with the HR and Finance departments for the creation of reporting and charting tools, employee self-service platforms, and process automation.", "Refactored the Time & Attendance Tracking system of hourly and salary employees to fit the necessities and policies of the company.", "Managed the local transition of the HR and Finance systems to a new unified corporate payroll and employee management platform."], ["Desarrollo de sitio Intranet para el departamente de Recursos Humanos de Collins Mexicali. El sitio ayuda a empleados y supervisores del sitio permitiendoles no solo a estar al tanto de noticias respecto a nuestra compañia, si no tambien generar solicitudes de Permisos con Goces, consultas con RH, autorizaciones de trabajo, e incluso crear recompenzas monetarias a base del desempeño del empleado.", "Colaboración cercana con los departamentos de RH y Finanzas para la creacion de herramientas de reporteo y graficas, plataformas de auto-servicio para empleados, y automatización de procesos.", "Refactorización del sistema de Puntualidad y Asistencia para seguir las necesidades y políticas de la compañía.", "Manejo de la transición de sistemas de RH y Finanzas a nivel local a una plataforma uniforme a nivel corporativo."]]
+  description: [["Developed Intranet webpage for Mexicali's HR department. The page helps employees and managers on our site, allowing them to not only keep up to date with our company's news, but also to fill requests for paid time off, inquiries with HR, work authorizations, and even create monetary rewards based on employee's performance.", "Collaborated closely with the HR and Finance departments for the creation of reporting and charting tools, employee self-service platforms, and process automation.", "Refactored the Time & Attendance Tracking system of hourly and salary employees to fit the necessities and policies of the company.", "Managed the local transition of the HR and Finance systems to a new unified corporate payroll and employee management platform."], ["Desarrollo de sitio Intranet para el departamento de Recursos Humanos de Collins Mexicali. El sitio ayuda a empleados y supervisores del sitio permitiendoles no solo a estar al tanto de noticias respecto a nuestra compañia, si no tambien generar solicitudes de Permisos con Goces, consultas con RH, autorizaciones de trabajo, e incluso crear recompenzas monetarias a base del desempeño del empleado.", "Colaboración cercana con los departamentos de RH y Finanzas para la creacion de herramientas de reporteo y graficas, plataformas de auto-servicio para empleados, y automatización de procesos.", "Refactorización del sistema de Puntualidad y Asistencia para seguir las necesidades y políticas de la compañía.", "Manejo de la transición de sistemas de RH y Finanzas a nivel local a una plataforma uniforme a nivel corporativo."]]
 }, {
   title: "Honeywell Aerospace",
   position: ["Software Engineer - Intern", "Software Engineer - Practicante"],

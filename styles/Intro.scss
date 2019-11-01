@@ -104,6 +104,11 @@
 @media (max-width: $media-sm) {
     .intro {
         font-size: 1.8em;
+
+        .col-sm-12 {
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+        }
         
         .row.align-items-center {
             -ms-flex-align: inherit !important;

@@ -18,7 +18,7 @@ const ProfilePicture = (props) => {
                             height: canvasSquare + "px" } ;
 
     useEffect(() => {
-        if(props.width > 768) {
+        if(props.width >= 768 - 17) {
         const canvas = document.getElementById('circleBG');
         const context = canvas.getContext('2d');
         context.clearRect(0, 0, canvas.width, canvas.height);
@@ -36,7 +36,7 @@ const ProfilePicture = (props) => {
     return (
         <div className="intro-picture row justify-content-end">
             {
-                (props.width > 768) 
+                (props.width >= (768 - 17)) 
                 ? <canvas id="circleBG" height={canvasSize} width={canvasSize} /> 
                 : <></>
             }

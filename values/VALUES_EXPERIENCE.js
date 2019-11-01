@@ -12,7 +12,7 @@ const VALUES_EXPERIENCE = [
                 "Managed the local transition of the HR and Finance systems to a new unified corporate payroll and employee management platform."
             ],
             [
-                "Desarrollo de sitio Intranet para el departamente de Recursos Humanos de Collins Mexicali. El sitio ayuda a empleados y supervisores del sitio permitiendoles no solo a estar al tanto de noticias respecto a nuestra compañia, si no tambien generar solicitudes de Permisos con Goces, consultas con RH, autorizaciones de trabajo, e incluso crear recompenzas monetarias a base del desempeño del empleado.",
+                "Desarrollo de sitio Intranet para el departamento de Recursos Humanos de Collins Mexicali. El sitio ayuda a empleados y supervisores del sitio permitiendoles no solo a estar al tanto de noticias respecto a nuestra compañia, si no tambien generar solicitudes de Permisos con Goces, consultas con RH, autorizaciones de trabajo, e incluso crear recompenzas monetarias a base del desempeño del empleado.",
                 "Colaboración cercana con los departamentos de RH y Finanzas para la creacion de herramientas de reporteo y graficas, plataformas de auto-servicio para empleados, y automatización de procesos.",
                 "Refactorización del sistema de Puntualidad y Asistencia para seguir las necesidades y políticas de la compañía.",
                 "Manejo de la transición de sistemas de RH y Finanzas a nivel local a una plataforma uniforme a nivel corporativo."

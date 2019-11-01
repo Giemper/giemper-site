@@ -42,9 +42,9 @@ const ProjectItem = (props) => {
                         <div>
                             { props.availability !== undefined &&
                                 props.availability.map((item, index) => (
-                                    <a 
-                                        key={index} 
+                                    <a key={index} 
                                         href={item.link} 
+                                        target="_bind"
                                         className="project-link">{item.title}</a>
                                 ))
                             }

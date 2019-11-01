@@ -8,7 +8,9 @@ const BoxItem = (props) => (
             <ul>
                 { props.description &&
                     props.description.map((value, index) => (
-                        <li key={index}>{value}</li>
+                        <li key={index}>
+                            <p>{value}</p>
+                        </li>
                     ))
                 }
             </ul>

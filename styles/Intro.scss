@@ -1,0 +1,147 @@
+@import 'variables';
+
+.intro {
+    font-size: 3.6em;
+    height: 100%;
+    background-color: #2f3b4b;
+    background: linear-gradient($secundary-dark, $main);
+
+    .page {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 100%;
+    }
+
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+        height: 100%;
+    }
+
+    .circle {
+        width: 50%;
+        border-radius: 180px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 48px;
+        display: block;
+        box-shadow: $shadow;
+    }
+
+    .intro-item {
+        padding-right: 0;
+        padding-left: 0;
+        z-index: 0;
+        order: 1;
+    }
+    
+    .intro-item.text {
+        z-index: 1;
+    }
+
+    .intro-item.picture {
+        order: 2;
+    }
+
+    .intro-panel {
+        padding-left: 15%;
+        width: fit-content;
+
+        p {
+            font-family: 'Poppins';
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 8px;
+            margin-block-start: 0.8em;
+            margin-block-end: 0.6em;
+        }
+
+        p.message {
+            color: $pink;
+        }
+
+        p.name {
+            font-size: 1.6em;
+            color: $white;
+        }
+
+        p.title {
+            line-height: 1;
+            color: $green;
+        }   
+    }
+
+    .intro-picture {
+        canvas, img {
+            top: 50%;
+            right: 0;
+            position: absolute;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        img {
+            box-shadow: $shadow;
+        }
+    }
+}
+
+// Large Size
+@media (max-width: $media-lg) {
+    .intro {
+        font-size: 3em;
+    }
+}
+
+// Mid Size
+@media (max-width: $media-md) {
+    .intro {
+        font-size: 2.5em;
+    }
+}
+
+// Small Size
+@media (max-width: $media-sm) {
+    .intro {
+        font-size: 1.8em;
+        
+        .row.align-items-center {
+            -ms-flex-align: inherit !important;
+            align-items: inherit !important;
+        }
+
+        .intro-panel {
+            padding-left: 0;
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+        }
+
+        .intro-item.picture {
+            order: 0;
+
+        }
+
+        .intro-picture {
+            canvas {
+                visibility: collapse;
+            }
+    
+            img {
+                border-radius: 180px;
+                position: relative;
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+                margin-left: auto;
+                margin-right: auto;
+                top: 20%;
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .intro {
+        font-size: 1.5em;
+    }
+}

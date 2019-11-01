@@ -32,10 +32,10 @@ const Navbar = (props) => {
     }
 
     return (
-        <div className={"nav " + (Scroll() ? "scrolled" : "none")}>
+        <div className={`nav ${Scroll() ? "scrolled" : ""}`}>
             <div className="row justify-content-between align-items-center">
                 <div className="col">
-                    {
+                    { props.viewWidth > 768 &&
                         VALUES_NAVBAR.map((item, index) => (
                             <Link href={`/#${item.id}`} as={`/giemper-site/#${item.id}`} key={index} replace>
                                 <a className="nav-button" draggable="false">
@@ -45,7 +45,7 @@ const Navbar = (props) => {
                         ))
                     }
                 </div>
-                <div className="col-2">
+                <div className="col-auto">
                     <div className="row justify-content-end">
                         <div className="col-auto lang-selection">
                             <img src="globe.svg" className="globe-icon"/>

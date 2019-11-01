@@ -7,10 +7,9 @@
     transition: background-color 300ms;
     top: 0;
     padding: 0 64px;
-    margin-bottom: 64px;
-    font-size: 1.25em;
+    font-size: 1.15em;
     letter-spacing: 2px;
-    z-index: 1;
+    z-index: 3;
 
     a, span {
         color: $white;
@@ -61,7 +60,7 @@
 }
 
 // Large size
-@media (max-width: $media-lg) {
+@media (max-width: 1230px) {
     .nav {
         font-size: 0.9em;
     }
@@ -74,7 +73,7 @@
 
 
 // Mid size
-@media (max-width: $media-md) {
+@media (max-width: 1080px) {
     .nav {
         font-size: 0.8em;
         padding: 0 16px;
@@ -91,8 +90,19 @@
 }
 
 // Min size
-@media (max-width: $media-sm) {
+@media (max-width: 820px) {
     .nav {
-        visibility: collapse;
+        font-size: 1em;
+        padding: 0;
+    }
+
+    .nav.scrolled {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .globe-icon {
+        width: 12px;
+        height: 12px;
     }
 }

@@ -37,11 +37,19 @@ const Navbar = (props) => {
                 <div className="col">
                     { props.viewWidth >= 768 - 17 &&
                         VALUES_NAVBAR.map((item, index) => (
-                            <Link href={`/#${item.id}`} as={`/giemper-site/#${item.id}`} key={index} replace>
-                                <a className="nav-button" draggable="false">
-                                    { checkItem(item.title, language.lang) }
-                                </a>
-                            </Link>
+                            // <Link href={`/#${item.id}`} as={`/giemper-site/#${item.id}`} key={index} replace>
+                            //     <a className="nav-button" draggable="false">
+                            //         { checkItem(item.title, language.lang) }
+                            //     </a>
+                            // </Link>
+                            
+                            <a className="nav-button" draggable="false" key={index} href="#"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById(item.id).scrollIntoView();
+                            }}>
+                                { checkItem(item.title, language.lang) }
+                            </a>
                         ))
                     }
                 </div>

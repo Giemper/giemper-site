@@ -12,6 +12,8 @@ import Education from './Education';
 import Projects from './Projects';
 import '../styles/pages.scss';
 
+import '../demo';
+
 const Index = () => {
     const language = new Language();
     language.start();

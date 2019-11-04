@@ -25,6 +25,20 @@ const VALUES_PROJECTS = [
         availability: [
             { title: "Github", link: "https://github.com/Giemper/Colour" }
         ]
+    },
+    {
+        title: "Giemper.com",
+        type: 'Browser',
+        sourceMain: "videos/Giempercom.webm",
+        sourceFallback: "videos/Giempercom.mp4",
+        description: [
+            [""],
+            [""]
+        ],
+        availability: [
+            { title: "Giemper.com", link: "#nav_home" },
+            { title: "Github", link: "http://github.com/Giemper/giemper-site" }
+        ]
     }
 ];
 

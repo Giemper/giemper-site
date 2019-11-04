@@ -72,7 +72,7 @@
     }
 
     .intro-picture {
-        canvas, img {
+        img, .picture-bg {
             top: 50%;
             right: 0;
             position: absolute;
@@ -82,6 +82,12 @@
 
         img {
             box-shadow: $shadow;
+        }
+
+        .picture-bg {
+            background-color: rgba(139, 233, 253, 0.2);
+            border-radius: 50%;
+            margin-left: 12px;
         }
     }
 }
@@ -124,22 +130,22 @@
 
         .intro-item.picture {
             order: 0;
-
         }
 
         .intro-picture {
-            canvas {
-                visibility: collapse;
-            }
-    
+            
+
             img {
-                border-radius: 180px;
+                border-radius: 50%;
                 position: relative;
                 -ms-transform: translateY(0);
                 transform: translateY(0);
                 margin-left: auto;
                 margin-right: auto;
                 top: 20%;
+
+                // height: initial !important;
+                // width: 30% !important;
             }
         }
     }

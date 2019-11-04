@@ -56,14 +56,15 @@
 
 //Large size
 @media (max-width: $media-lg) {
-
+    .project-item {
+        font-size: 1em;
+    }
 }
 
 //Med size
 @media (max-width: $media-md) {
     .project-item {
         padding: 0 32px 32px;
-        font-size: 1em;
 
         .project-pad {
             padding: 0;
@@ -90,8 +91,6 @@
     }
 
     .project-item {
-        font-size: 0.9em;
-
         .project-text {
             position: relative;
             top: 0;

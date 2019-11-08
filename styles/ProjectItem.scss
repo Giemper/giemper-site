@@ -5,34 +5,59 @@
     $topbottom: 32px $preview-border;
     font-size: 1.3em;
     line-height: 1;
-    padding: 0 64px 32px;
-    // margin-bottom: 32px;
-
+    padding: 0 64px 64px;
 
     .project-pad {
-        padding: 32px;
         position: relative;
     }
 
     .project-text {
-        margin: 0;
+        font-size: 0.8em;
+    }
+
+    .project-text.center,
+    .project-preview.center {
         position: absolute;
         top: 50%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
-        text-align: justify;
     }
 
-    .project-preview {
-        width: 60%;
-        border-radius: 24px;
+    .project-item {
+        margin: 0;
+    }
+
+    .phone-preview, .browser-preview {
         border: 12px $preview-border;
-        border-bottom: $topbottom;
-        border-top: $topbottom;
         margin-left: auto;
         margin-right: auto;
         display: block;
         box-shadow: $shadow;
+    }
+
+    .phone-preview {
+        width: 60%;
+        border-radius: 24px;
+        border-bottom: $topbottom;
+        border-top: $topbottom;
+    }
+
+    .browser-preview {
+        width: 90%;
+        border-radius: 12px;
+        // margin-right: 0;
+    }
+
+    .order-first {
+        .browser-preview {
+            margin-left: 0;
+        }
+    }
+
+    .order-last {
+        .browser-preview {
+            margin-right: 0;
+        }
     }
 
     .project-link {
@@ -65,22 +90,6 @@
 @media (max-width: $media-md) {
     .project-item {
         padding: 0 32px 32px;
-
-        .project-pad {
-            padding: 0;
-        }
-
-        // .project-text {
-        //     position: relative;
-        //     top: 0;
-        //     -ms-transform: translateY(0);
-        //     transform: translateY(0);
-        //     padding-bottom: 48px;
-        // }
-
-        .project-preview {
-            width: 75%;
-        }
     }
 }
 
@@ -92,11 +101,21 @@
 
     .project-item {
         .project-text {
+            padding-bottom: 48px;
+        }
+
+        .project-text.center,
+        .project-preview.center {
             position: relative;
             top: 0;
             -ms-transform: translateY(0);
             transform: translateY(0);
-            padding-bottom: 48px;
+        }
+
+        .browser-preview {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
         }
     }
 }

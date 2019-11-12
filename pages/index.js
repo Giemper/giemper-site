@@ -23,7 +23,7 @@ const Index = () => {
     return (
         <>
             <Navbar language={language} viewWidth={adjustedWidth} />
-            <Intro viewHeight={adjustedHeight} viewWidth={adjustedWidth} />
+            <Intro languageNum={language.getLanguage()} viewHeight={adjustedHeight} viewWidth={adjustedWidth} />
             <Who languageNum={language.getLanguage()} />
             <Skills languageNum={language.getLanguage()} />
             <Experience languageNum={language.getLanguage()} />

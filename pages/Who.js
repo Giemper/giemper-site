@@ -1,25 +1,23 @@
 import PageHeader from '../components/PageHeader';
-
 import checkItem from '../tools/checkItem';
+import VALUES_WHO from '../values/VALUES_WHO';
 
 const Who = (props) => {
     const lang = props.languageNum;
     const title = ["Who am I?", "¿Quien Soy?"];
+    const valuesWho = checkItem(VALUES_WHO, lang);
+    
 
     return (
         <div className="page">
             <div className="container">
                 <PageHeader title={checkItem(title, lang)} id="nav_who" />
-                <div className="col-8 who-item">
-                    <p>Without getting into a deeper existencial crisis, the easiest way I can start describing myself is</p>
-
-                    <p>
-                        I have a Computer Science Engineering degree from <b>CETYS University</b> in Mexicali, Mexico, and did
-                        a half-year academic exchange in the <b>Ecolé Polytechnique</b> of Montreal, Canada.
-                    </p>
-                </div>
-                <div className="col-4">
-                    
+                <div className="col-lg-8 col-md-12 col-sm-12 who-item">
+                    {
+                        valuesWho.map((item, index)=>(
+                            <p key={index}>{item}</p>
+                        ))
+                    }
                 </div>
             </div>
         </div>

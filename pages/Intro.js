@@ -1,3 +1,4 @@
+import checkItem from '../tools/checkItem';
 import '../styles/Intro.scss';
 
 const ProfilePicture = (props) => {
@@ -24,15 +25,17 @@ const ProfilePicture = (props) => {
 }
 
 const Intro = (props) => {
+    const lang = props.languageNum;
     const space = { height: (props.viewHeight) + "px" };
     const image = "Myself.jpg";
+    const hello = ["Hello there, I'm", "Bienvenido, soy"];
 
     return (
         <div className="intro page" id="nav_home" style={space}>
             <div className="row align-items-center">
                 <div className="col-lg-7 col-md-8 col-sm-12 intro-item text">
                     <div className="intro-panel">
-                        <p className="message">Hello there, I'm</p>
+                        <p className="message">{checkItem(hello, lang)}</p>
                         <p className="name">Guillermo</p>
                         <p className="name">Magdaleno</p>
                         <p className="title">Software Developer</p>

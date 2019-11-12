@@ -12,6 +12,7 @@ const VALUES_SKILLS = [
     { skill: "NextJS", tags: ["Web"] },
     { skill: "AngularJS", tags: ["Web"] },
     { skill: "jQuery", tags: ["Web"] },
+    { skill: "Bootstrap", tags: ["Web"] },
     { skill: "ASP.NET", tags: ["Web"] },
     { skill: ".NET", tags: ["Desktop"]},
     { skill: "PHP", tags: ["Web"] },
@@ -19,6 +20,7 @@ const VALUES_SKILLS = [
     { skill: "LINQ", tags: ["Desktop", "Web"] },
     { skill: "WPF", tags: ["Desktop"] },
     { skill: "Sharepoint", tags: ["Web"] },
+    { skill: "Azure", tags: ["Web"] },
     { skill: "Android Development", tags: ["Mobile"] },
     { skill: "Firebase", tags: ["Mobile"] }
 ];

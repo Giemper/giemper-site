@@ -1,4 +1,5 @@
 import '../styles/ProjectItem.scss';
+import SkillBox from '../components/SkillBox';
 import checkItem from '../tools/checkItem';
 
 const Preview = (props) => {
@@ -15,6 +16,7 @@ const ProjectItem = (props) => {
     const lang = props.languageNum;
     const descriptions = checkItem(props.description, lang);
     const availableAt = ["Available at", "Displonible en"];
+    const madeWith = ["Made with", "Hecho con"];
     const order = (props.index % 2 == 0) ? 'order-last' : 'order-first';
     const textClasses = (props.type === 'Phone' || props.type === 'Browser') 
                         ? "col-lg-6 col-md-6 col-sm-12 project-pad"
@@ -37,6 +39,19 @@ const ProjectItem = (props) => {
                             descriptions.map((item, index) => ( 
                                 <p key={index}>{item}</p>
                             ))
+                        }
+                        {
+                            props.skills !== undefined &&
+                            <>
+                                <h3>{checkItem(madeWith, lang)}</h3>
+                                <div>
+                                    {
+                                        props.skills.map((item, index) => (
+                                            <SkillBox text={item} key={index}/>
+                                        ))
+                                    }
+                                </div>
+                            </>
                         }
                         { 
                             props.availability !== undefined &&

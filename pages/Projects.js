@@ -21,6 +21,7 @@ const Projects = (props) => {
                             sourceMain={item.sourceMain}
                             sourceFallback={item.sourceFallback}
                             description={item.description}
+                            skills={item.skills}
                             availability={item.availability}
                             languageNum={lang} />
                     ))

@@ -1,15 +1,9 @@
 import { useState, useEffect } from 'react';
-
 import PageHeader from '../components/PageHeader';
+import SkillBox from '../components/SkillBox';
 import checkItem from '../tools/checkItem';
-
 import VALUES_SKILLS from '../values/VALUES_SKILLS';
 
-const SkillBox = (props) => (
-    <div className="skill-item">
-        <span>{props.text}</span>
-    </div>
-);
 
 const SkillFilter = (props) => {
     const tags = ["All", "Desktop", "Mobile", "Web"];

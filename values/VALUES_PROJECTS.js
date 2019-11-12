@@ -16,6 +16,7 @@ const VALUES_PROJECTS = [
                 "El proposito era no solo reportar la asistencia y desempeño, si no tambien balancear la carga de trabajo al asignar automaticamente lo siguentes trabajos entre empleados."
             ]
         ],
+        skills: ["Java", "Android Development", "Firebase"],
         availability: [
             { title: "Play Store", link: "https://play.google.com/store/apps/details?id=com.giemper.ecocarwash" },
             { title: "Github", link: "https://github.com/Giemper/EcoCarWash" }
@@ -36,6 +37,7 @@ const VALUES_PROJECTS = [
                 "La meta de Colour es ser un seleccionador de colores minimalista, para cuando uno este en necesidad de escoger una referencia de color rapida para un proyecto."
             ]
         ],
+        skills: ["Java", "Android Development"],
         availability: [
             { title: "Github", link: "https://github.com/Giemper/Colour" }
         ]
@@ -58,6 +60,7 @@ const VALUES_PROJECTS = [
                 "Dato Curioso: El dominio se llama Giemper.com gracias a las iniciales de mi nombre completo.", 
                 "Guillermo Magdaleno Perez. GMP. Gee-Em-Pe. Giemper."]
         ],
+        skills: ["React", "NextJS", "SASS"],
         availability: [
             { title: "Giemper.com", link: "#nav_home" },
             { title: "Github", link: "https://github.com/Giemper/giemper-site" }
@@ -66,8 +69,8 @@ const VALUES_PROJECTS = [
     {
         title: "Posada 2016",
         type: "Browser",
-        sourceMain: "videos/Giempercom.webm",
-        sourceFallback: "videos/Giempercom.mp4",
+        sourceMain: "videos/Posada.webm",
+        sourceFallback: "videos/Posada.mp4",
         description: [
             [
                 "Since high school, every year around Christmas eve a my friends and I organized a Secret Santa gift exchange amoung ourselves. While we all get along, there are sometimes when you just don't want to get matched with someone specific.",
@@ -82,6 +85,7 @@ const VALUES_PROJECTS = [
                 "Aunque seguimos haciendo nuestra fiesta Navideña Anual, tristemente 2016 fue el ultimo año del intercambio de regalos. Quizas deberia pronto darle otra oportunidad a este proyecto."
             ]
         ],
+        skills: ["AngularJS", "PHP", "SQL", "jQuery"],
         availability: [
             { title: "Github", link: "https://github.com/Giemper/Posada2016" }
         ]
@@ -89,6 +93,7 @@ const VALUES_PROJECTS = [
     {
         title: "HRPoint",
         type: "None",
+        skills: ["VueJS", "jQuery", "Sharepoint", ".NET", "SQL", "Azure"],
         description: [
             [
                 "HRPoint is the intranet webpage for Collins Aerospace Mexicali.",

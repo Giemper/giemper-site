@@ -18,11 +18,11 @@ const ProjectItem = (props) => {
     const availableAt = ["Available at", "Displonible en"];
     const madeWith = ["Made with", "Hecho con"];
     const order = (props.index % 2 == 0) ? 'order-last' : 'order-first';
-    const textClasses = (props.type === 'Phone' || props.type === 'Browser') 
-                        ? "col-lg-6 col-md-6 col-sm-12 project-pad"
+    const textClasses = (props.type === 'Phone') ? "col-lg-6 col-md-6 col-sm-12 project-pad"
+                        : (props.type === 'Browser') ? "col-lg-6 col-md-6 col-sm-12 project-pad"
                         : "col-12 project-pad";
-    const previewClasses = (props.type === 'Phone' || props.type === 'Browser')  
-                        ? "col-lg-6 col-md-6 col-sm-12 project-pad " + order
+    const previewClasses = (props.type === 'Phone') ? "col-lg-6 col-md-6 col-sm-12 project-pad " + order
+                        : (props.type === 'Browser') ? "col-lg-6 col-md-6 col-sm-12 project-pad " + order
                         : "";
     const textCenter = (props.type === 'Phone') ? "center" : "";
     const previewCenter = (props.type === 'Phone') ? "" : "center";

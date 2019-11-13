@@ -5,7 +5,7 @@
     $topbottom: 32px $preview-border;
     font-size: 1.3em;
     line-height: 1;
-    padding: 0 64px 64px;
+    padding: 48px;
 
     .project-pad {
         position: relative;
@@ -45,18 +45,21 @@
     .browser-preview {
         width: 90%;
         border-radius: 12px;
-        // margin-right: 0;
     }
 
     .order-first {
         .browser-preview {
-            margin-left: 0;
+            // margin-left: 0;
+            transform: translateX(-10%);
+            width: 105%;
         }
     }
 
     .order-last {
         .browser-preview {
-            margin-right: 0;
+            // margin-right: 0;
+            transform: translateX(3%);
+            width: 105%;
         }
     }
 
@@ -95,6 +98,10 @@
 @media (max-width: $media-md) {
     .project-item {
         padding: 0 32px 32px;
+
+        .phone-preview {
+            width: 80%;
+        }
     }
 }
 
@@ -118,9 +125,25 @@
         }
 
         .browser-preview {
-            width: 100%;
+            width: 90%;
             margin-right: auto;
             margin-left: auto;
+        }
+
+        .phone-preview {
+            width: 70%;
+        }
+
+        .order-first {
+            .browser-preview {
+                transform: initial;
+            }
+        }
+    
+        .order-last {
+            .browser-preview {
+                transform: initial;
+            }
         }
     }
 }

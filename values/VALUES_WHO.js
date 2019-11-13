@@ -1,7 +1,7 @@
 const VALUES_WHO = [
     [
-        "Without getting into an existencial crisis, ",
-        "I have a Computer Science degree from CETYS University in Mexicali, Mexico, and did a half-year academic exchange in the Ecolé Polytechnique of Montreal, Canada."
+        "Without getting into an existencial crisis, I can describe myself as a guy from the border town of Mexicali, Baja California, Mexico. I've been working as a Software Developer for more than four years",
+        "I got my Computer Science degree at CETYS University Mexicali, and did a semester of academic exchange in the Ecolé Polytechnique of Montreal, Canada."
     ],
     [
         ""

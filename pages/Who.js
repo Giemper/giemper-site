@@ -12,7 +12,8 @@ const Who = (props) => {
             <div className="container">
                 <PageHeader title={checkItem(title, lang)} id="nav_who" />
                 <div className="col-lg-7 col-md-12 col-sm-12 who-item">
-                    {
+                    { 
+                        valuesWho !== undefined &&
                         valuesWho.map((item, index)=>(
                             <p key={index}>{item}</p>
                         ))

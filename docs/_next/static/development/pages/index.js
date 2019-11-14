@@ -241,44 +241,46 @@ var Navbar = function Navbar(props) {
     },
     __self: this
   }, props.viewWidth >= 768 - 17 && _values_VALUES_NAVBAR__WEBPACK_IMPORTED_MODULE_3__["default"].map(function (item, index) {
-    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/#".concat(item.id),
-      as: "/giemper-site/#".concat(item.id),
-      key: index,
-      replace: true,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 40
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "nav-button",
-      draggable: "false",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 41
-      },
-      __self: this
-    }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(item.title, language.lang)));
+    return (// <Link href={`/#${item.id}`} as={`/giemper-site/#${item.id}`} key={index} replace>
+      //     <a className="nav-button" draggable="false">
+      //         { checkItem(item.title, language.lang) }
+      //     </a>
+      // </Link>
+      __jsx("a", {
+        className: "nav-button",
+        draggable: "false",
+        key: index,
+        href: "#",
+        onClick: function onClick(e) {
+          e.preventDefault();
+          document.getElementById(item.id).scrollIntoView();
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46
+        },
+        __self: this
+      }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(item.title, language.lang))
+    );
   })), __jsx("div", {
     className: "col-auto",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 56
     },
     __self: this
   }, __jsx("div", {
     className: "row justify-content-end",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 57
     },
     __self: this
   }, __jsx("div", {
     className: "col-auto lang-selection",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 58
     },
     __self: this
   }, __jsx("img", {
@@ -286,7 +288,7 @@ var Navbar = function Navbar(props) {
     className: "globe-icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 59
     },
     __self: this
   }), __jsx("a", {
@@ -296,13 +298,13 @@ var Navbar = function Navbar(props) {
     onClick: ChangeToEnglish,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 60
     },
     __self: this
   }, "EN"), __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 64
     },
     __self: this
   }, " / "), __jsx("a", {
@@ -312,7 +314,7 @@ var Navbar = function Navbar(props) {
     onClick: ChangeToSpanish,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 65
     },
     __self: this
   }, "ES"))))));
@@ -391,26 +393,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _styles_ProjectItem_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/ProjectItem.scss */ "./styles/ProjectItem.scss");
 /* harmony import */ var _styles_ProjectItem_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_ProjectItem_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
+/* harmony import */ var _components_SkillBox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/SkillBox */ "./components/SkillBox.js");
+/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
 var _jsxFileName = "/mnt/c/Dev/giemper-site/components/ProjectItem.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-var Browser = function Browser() {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
-};
 
-var Phone = function Phone(props) {
+var Preview = function Preview(props) {
+  var type = props.type === 'Phone' ? "phone-preview" : "browser-preview";
   return __jsx("video", {
-    className: "project-preview",
+    className: type,
     autoPlay: true,
     loop: true,
     muted: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 8
     },
     __self: this
   }, __jsx("source", {
@@ -418,7 +419,7 @@ var Phone = function Phone(props) {
     type: "video/webm",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 9
     },
     __self: this
   }), __jsx("source", {
@@ -426,7 +427,7 @@ var Phone = function Phone(props) {
     type: "video/mp4",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 10
     },
     __self: this
   }));
@@ -434,81 +435,92 @@ var Phone = function Phone(props) {
 
 var ProjectItem = function ProjectItem(props) {
   var lang = props.languageNum;
-  var availableAt = ["Available at:", "Displonible en:"];
-  var projectType = props.type === 'Phone' ? __jsx(Phone, {
-    main: props.sourceMain,
-    fallback: props.sourceFallback,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: this
-  }) : __jsx(Browser, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  });
-  var projectAvailability = props.availability !== undefined ? __jsx("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
-  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_2__["default"])(availableAt, lang)) : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+  var descriptions = Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_3__["default"])(props.description, lang);
+  var availableAt = ["Available at", "Displonible en"];
+  var madeWith = ["Made with", "Hecho con"];
   var order = props.index % 2 == 0 ? 'order-last' : 'order-first';
-  var desc = Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_2__["default"])(props.description, lang);
+  var textClasses = props.type === 'Phone' ? "col-lg-6 col-md-6 col-sm-12 project-pad" : props.type === 'Browser' ? "col-lg-6 col-md-6 col-sm-12 project-pad" : "col-12 project-pad";
+  var previewClasses = props.type === 'Phone' ? "col-lg-6 col-md-6 col-sm-12 project-pad " + order : props.type === 'Browser' ? "col-lg-6 col-md-6 col-sm-12 project-pad " + order : "";
+  var textCenter = props.type === 'Phone' ? "center" : "";
+  var previewCenter = props.type === 'Phone' ? "" : "center";
   return __jsx("div", {
     className: "project-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "row",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
     },
     __self: this
   }, __jsx("div", {
-    className: "col-lg-6 col-md-6 col-sm-12 project-pad",
+    className: "row",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33
     },
     __self: this
   }, __jsx("div", {
-    className: "project-text",
+    className: textClasses,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 34
     },
     __self: this
-  }, __jsx("h1", {
+  }, __jsx("div", {
+    className: "project-text ".concat(textCenter),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 35
     },
     __self: this
-  }, props.title), desc !== undefined && desc.map(function (item, index) {
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }, props.title), descriptions !== undefined && descriptions.map(function (item, index) {
     return __jsx("p", {
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 40
       },
       __self: this
     }, item);
-  }), projectAvailability, __jsx("div", {
+  }), props.skills !== undefined && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 46
     },
     __self: this
-  }, props.availability !== undefined && props.availability.map(function (item, index) {
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_3__["default"])(madeWith, lang)), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: this
+  }, props.skills.map(function (item, index) {
+    return __jsx(_components_SkillBox__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: item,
+      key: index,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50
+      },
+      __self: this
+    });
+  }))), props.availability !== undefined && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_3__["default"])(availableAt, lang)), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: this
+  }, props.availability.map(function (item, index) {
     return __jsx("a", {
       key: index,
       href: item.link,
@@ -516,21 +528,73 @@ var ProjectItem = function ProjectItem(props) {
       className: "project-link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 63
       },
       __self: this
     }, item.title);
-  })))), __jsx("div", {
-    className: "col-lg-6 col-md-6 col-sm-12 project-pad ".concat(order),
+  }))))), props.sourceMain !== undefined && __jsx("div", {
+    className: previewClasses,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 77
     },
     __self: this
-  }, projectType)));
+  }, __jsx("div", {
+    className: "project-preview ".concat(previewCenter),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: this
+  }, __jsx(Preview, {
+    type: props.type,
+    main: props.sourceMain,
+    fallback: props.sourceFallback,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: this
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProjectItem);
+
+/***/ }),
+
+/***/ "./components/SkillBox.js":
+/*!********************************!*\
+  !*** ./components/SkillBox.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/mnt/c/Dev/giemper-site/components/SkillBox.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var SkillBox = function SkillBox(props) {
+  return __jsx("div", {
+    className: "skill-item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 2
+    },
+    __self: this
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: this
+  }, props.text));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SkillBox);
 
 /***/ }),
 
@@ -23721,6 +23785,1035 @@ __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerat
 
 /***/ }),
 
+/***/ "./node_modules/react-fast-compare/index.js":
+/*!**************************************************!*\
+  !*** ./node_modules/react-fast-compare/index.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var isArray = Array.isArray;
+var keyList = Object.keys;
+var hasProp = Object.prototype.hasOwnProperty;
+var hasElementType = typeof Element !== 'undefined';
+
+function equal(a, b) {
+  // fast-deep-equal index.js 2.0.1
+  if (a === b) return true;
+
+  if (a && b && typeof a == 'object' && typeof b == 'object') {
+    var arrA = isArray(a)
+      , arrB = isArray(b)
+      , i
+      , length
+      , key;
+
+    if (arrA && arrB) {
+      length = a.length;
+      if (length != b.length) return false;
+      for (i = length; i-- !== 0;)
+        if (!equal(a[i], b[i])) return false;
+      return true;
+    }
+
+    if (arrA != arrB) return false;
+
+    var dateA = a instanceof Date
+      , dateB = b instanceof Date;
+    if (dateA != dateB) return false;
+    if (dateA && dateB) return a.getTime() == b.getTime();
+
+    var regexpA = a instanceof RegExp
+      , regexpB = b instanceof RegExp;
+    if (regexpA != regexpB) return false;
+    if (regexpA && regexpB) return a.toString() == b.toString();
+
+    var keys = keyList(a);
+    length = keys.length;
+
+    if (length !== keyList(b).length)
+      return false;
+
+    for (i = length; i-- !== 0;)
+      if (!hasProp.call(b, keys[i])) return false;
+    // end fast-deep-equal
+
+    // start react-fast-compare
+    // custom handling for DOM elements
+    if (hasElementType && a instanceof Element && b instanceof Element)
+      return a === b;
+
+    // custom handling for React
+    for (i = length; i-- !== 0;) {
+      key = keys[i];
+      if (key === '_owner' && a.$$typeof) {
+        // React-specific: avoid traversing React elements' _owner.
+        //  _owner contains circular references
+        // and is not needed when comparing the actual elements (and not their owners)
+        // .$$typeof and ._store on just reasonable markers of a react element
+        continue;
+      } else {
+        // all other properties should be traversed as usual
+        if (!equal(a[key], b[key])) return false;
+      }
+    }
+    // end react-fast-compare
+
+    // fast-deep-equal index.js 2.0.1
+    return true;
+  }
+
+  return a !== a && b !== b;
+}
+// end fast-deep-equal
+
+module.exports = function exportedEqual(a, b) {
+  try {
+    return equal(a, b);
+  } catch (error) {
+    if ((error.message && error.message.match(/stack|recursion/i)) || (error.number === -2146828260)) {
+      // warn on circular references, don't crash
+      // browsers give this different errors name and messages:
+      // chrome/safari: "RangeError", "Maximum call stack size exceeded"
+      // firefox: "InternalError", too much recursion"
+      // edge: "Error", "Out of stack space"
+      console.warn('Warning: react-fast-compare does not handle circular references.', error.name, error.message);
+      return false;
+    }
+    // some other error. we should definitely know about these
+    throw error;
+  }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-helmet/lib/Helmet.js":
+/*!*************************************************!*\
+  !*** ./node_modules/react-helmet/lib/Helmet.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports.__esModule = true;
+exports.Helmet = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactSideEffect = __webpack_require__(/*! react-side-effect */ "./node_modules/react-side-effect/lib/index.js");
+
+var _reactSideEffect2 = _interopRequireDefault(_reactSideEffect);
+
+var _reactFastCompare = __webpack_require__(/*! react-fast-compare */ "./node_modules/react-fast-compare/index.js");
+
+var _reactFastCompare2 = _interopRequireDefault(_reactFastCompare);
+
+var _HelmetUtils = __webpack_require__(/*! ./HelmetUtils.js */ "./node_modules/react-helmet/lib/HelmetUtils.js");
+
+var _HelmetConstants = __webpack_require__(/*! ./HelmetConstants.js */ "./node_modules/react-helmet/lib/HelmetConstants.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Helmet = function Helmet(Component) {
+    var _class, _temp;
+
+    return _temp = _class = function (_React$Component) {
+        _inherits(HelmetWrapper, _React$Component);
+
+        function HelmetWrapper() {
+            _classCallCheck(this, HelmetWrapper);
+
+            return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+        }
+
+        HelmetWrapper.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps) {
+            return !(0, _reactFastCompare2.default)(this.props, nextProps);
+        };
+
+        HelmetWrapper.prototype.mapNestedChildrenToProps = function mapNestedChildrenToProps(child, nestedChildren) {
+            if (!nestedChildren) {
+                return null;
+            }
+
+            switch (child.type) {
+                case _HelmetConstants.TAG_NAMES.SCRIPT:
+                case _HelmetConstants.TAG_NAMES.NOSCRIPT:
+                    return {
+                        innerHTML: nestedChildren
+                    };
+
+                case _HelmetConstants.TAG_NAMES.STYLE:
+                    return {
+                        cssText: nestedChildren
+                    };
+            }
+
+            throw new Error("<" + child.type + " /> elements are self-closing and can not contain children. Refer to our API for more information.");
+        };
+
+        HelmetWrapper.prototype.flattenArrayTypeChildren = function flattenArrayTypeChildren(_ref) {
+            var _extends2;
+
+            var child = _ref.child,
+                arrayTypeChildren = _ref.arrayTypeChildren,
+                newChildProps = _ref.newChildProps,
+                nestedChildren = _ref.nestedChildren;
+
+            return _extends({}, arrayTypeChildren, (_extends2 = {}, _extends2[child.type] = [].concat(arrayTypeChildren[child.type] || [], [_extends({}, newChildProps, this.mapNestedChildrenToProps(child, nestedChildren))]), _extends2));
+        };
+
+        HelmetWrapper.prototype.mapObjectTypeChildren = function mapObjectTypeChildren(_ref2) {
+            var _extends3, _extends4;
+
+            var child = _ref2.child,
+                newProps = _ref2.newProps,
+                newChildProps = _ref2.newChildProps,
+                nestedChildren = _ref2.nestedChildren;
+
+            switch (child.type) {
+                case _HelmetConstants.TAG_NAMES.TITLE:
+                    return _extends({}, newProps, (_extends3 = {}, _extends3[child.type] = nestedChildren, _extends3.titleAttributes = _extends({}, newChildProps), _extends3));
+
+                case _HelmetConstants.TAG_NAMES.BODY:
+                    return _extends({}, newProps, {
+                        bodyAttributes: _extends({}, newChildProps)
+                    });
+
+                case _HelmetConstants.TAG_NAMES.HTML:
+                    return _extends({}, newProps, {
+                        htmlAttributes: _extends({}, newChildProps)
+                    });
+            }
+
+            return _extends({}, newProps, (_extends4 = {}, _extends4[child.type] = _extends({}, newChildProps), _extends4));
+        };
+
+        HelmetWrapper.prototype.mapArrayTypeChildrenToProps = function mapArrayTypeChildrenToProps(arrayTypeChildren, newProps) {
+            var newFlattenedProps = _extends({}, newProps);
+
+            Object.keys(arrayTypeChildren).forEach(function (arrayChildName) {
+                var _extends5;
+
+                newFlattenedProps = _extends({}, newFlattenedProps, (_extends5 = {}, _extends5[arrayChildName] = arrayTypeChildren[arrayChildName], _extends5));
+            });
+
+            return newFlattenedProps;
+        };
+
+        HelmetWrapper.prototype.warnOnInvalidChildren = function warnOnInvalidChildren(child, nestedChildren) {
+            if (true) {
+                if (!_HelmetConstants.VALID_TAG_NAMES.some(function (name) {
+                    return child.type === name;
+                })) {
+                    if (typeof child.type === "function") {
+                        return (0, _HelmetUtils.warn)("You may be attempting to nest <Helmet> components within each other, which is not allowed. Refer to our API for more information.");
+                    }
+
+                    return (0, _HelmetUtils.warn)("Only elements types " + _HelmetConstants.VALID_TAG_NAMES.join(", ") + " are allowed. Helmet does not support rendering <" + child.type + "> elements. Refer to our API for more information.");
+                }
+
+                if (nestedChildren && typeof nestedChildren !== "string" && (!Array.isArray(nestedChildren) || nestedChildren.some(function (nestedChild) {
+                    return typeof nestedChild !== "string";
+                }))) {
+                    throw new Error("Helmet expects a string as a child of <" + child.type + ">. Did you forget to wrap your children in braces? ( <" + child.type + ">{``}</" + child.type + "> ) Refer to our API for more information.");
+                }
+            }
+
+            return true;
+        };
+
+        HelmetWrapper.prototype.mapChildrenToProps = function mapChildrenToProps(children, newProps) {
+            var _this2 = this;
+
+            var arrayTypeChildren = {};
+
+            _react2.default.Children.forEach(children, function (child) {
+                if (!child || !child.props) {
+                    return;
+                }
+
+                var _child$props = child.props,
+                    nestedChildren = _child$props.children,
+                    childProps = _objectWithoutProperties(_child$props, ["children"]);
+
+                var newChildProps = (0, _HelmetUtils.convertReactPropstoHtmlAttributes)(childProps);
+
+                _this2.warnOnInvalidChildren(child, nestedChildren);
+
+                switch (child.type) {
+                    case _HelmetConstants.TAG_NAMES.LINK:
+                    case _HelmetConstants.TAG_NAMES.META:
+                    case _HelmetConstants.TAG_NAMES.NOSCRIPT:
+                    case _HelmetConstants.TAG_NAMES.SCRIPT:
+                    case _HelmetConstants.TAG_NAMES.STYLE:
+                        arrayTypeChildren = _this2.flattenArrayTypeChildren({
+                            child: child,
+                            arrayTypeChildren: arrayTypeChildren,
+                            newChildProps: newChildProps,
+                            nestedChildren: nestedChildren
+                        });
+                        break;
+
+                    default:
+                        newProps = _this2.mapObjectTypeChildren({
+                            child: child,
+                            newProps: newProps,
+                            newChildProps: newChildProps,
+                            nestedChildren: nestedChildren
+                        });
+                        break;
+                }
+            });
+
+            newProps = this.mapArrayTypeChildrenToProps(arrayTypeChildren, newProps);
+            return newProps;
+        };
+
+        HelmetWrapper.prototype.render = function render() {
+            var _props = this.props,
+                children = _props.children,
+                props = _objectWithoutProperties(_props, ["children"]);
+
+            var newProps = _extends({}, props);
+
+            if (children) {
+                newProps = this.mapChildrenToProps(children, newProps);
+            }
+
+            return _react2.default.createElement(Component, newProps);
+        };
+
+        _createClass(HelmetWrapper, null, [{
+            key: "canUseDOM",
+
+
+            // Component.peek comes from react-side-effect:
+            // For testing, you may use a static peek() method available on the returned component.
+            // It lets you get the current state without resetting the mounted instance stack.
+            // Don’t use it for anything other than testing.
+
+            /**
+             * @param {Object} base: {"target": "_blank", "href": "http://mysite.com/"}
+             * @param {Object} bodyAttributes: {"className": "root"}
+             * @param {String} defaultTitle: "Default Title"
+             * @param {Boolean} defer: true
+             * @param {Boolean} encodeSpecialCharacters: true
+             * @param {Object} htmlAttributes: {"lang": "en", "amp": undefined}
+             * @param {Array} link: [{"rel": "canonical", "href": "http://mysite.com/example"}]
+             * @param {Array} meta: [{"name": "description", "content": "Test description"}]
+             * @param {Array} noscript: [{"innerHTML": "<img src='http://mysite.com/js/test.js'"}]
+             * @param {Function} onChangeClientState: "(newState) => console.log(newState)"
+             * @param {Array} script: [{"type": "text/javascript", "src": "http://mysite.com/js/test.js"}]
+             * @param {Array} style: [{"type": "text/css", "cssText": "div { display: block; color: blue; }"}]
+             * @param {String} title: "Title"
+             * @param {Object} titleAttributes: {"itemprop": "name"}
+             * @param {String} titleTemplate: "MySite.com - %s"
+             */
+            set: function set(canUseDOM) {
+                Component.canUseDOM = canUseDOM;
+            }
+        }]);
+
+        return HelmetWrapper;
+    }(_react2.default.Component), _class.propTypes = {
+        base: _propTypes2.default.object,
+        bodyAttributes: _propTypes2.default.object,
+        children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]),
+        defaultTitle: _propTypes2.default.string,
+        defer: _propTypes2.default.bool,
+        encodeSpecialCharacters: _propTypes2.default.bool,
+        htmlAttributes: _propTypes2.default.object,
+        link: _propTypes2.default.arrayOf(_propTypes2.default.object),
+        meta: _propTypes2.default.arrayOf(_propTypes2.default.object),
+        noscript: _propTypes2.default.arrayOf(_propTypes2.default.object),
+        onChangeClientState: _propTypes2.default.func,
+        script: _propTypes2.default.arrayOf(_propTypes2.default.object),
+        style: _propTypes2.default.arrayOf(_propTypes2.default.object),
+        title: _propTypes2.default.string,
+        titleAttributes: _propTypes2.default.object,
+        titleTemplate: _propTypes2.default.string
+    }, _class.defaultProps = {
+        defer: true,
+        encodeSpecialCharacters: true
+    }, _class.peek = Component.peek, _class.rewind = function () {
+        var mappedState = Component.rewind();
+        if (!mappedState) {
+            // provide fallback if mappedState is undefined
+            mappedState = (0, _HelmetUtils.mapStateOnServer)({
+                baseTag: [],
+                bodyAttributes: {},
+                encodeSpecialCharacters: true,
+                htmlAttributes: {},
+                linkTags: [],
+                metaTags: [],
+                noscriptTags: [],
+                scriptTags: [],
+                styleTags: [],
+                title: "",
+                titleAttributes: {}
+            });
+        }
+
+        return mappedState;
+    }, _temp;
+};
+
+var NullComponent = function NullComponent() {
+    return null;
+};
+
+var HelmetSideEffects = (0, _reactSideEffect2.default)(_HelmetUtils.reducePropsToState, _HelmetUtils.handleClientStateChange, _HelmetUtils.mapStateOnServer)(NullComponent);
+
+var HelmetExport = Helmet(HelmetSideEffects);
+HelmetExport.renderStatic = HelmetExport.rewind;
+
+exports.Helmet = HelmetExport;
+exports.default = HelmetExport;
+
+/***/ }),
+
+/***/ "./node_modules/react-helmet/lib/HelmetConstants.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-helmet/lib/HelmetConstants.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+exports.__esModule = true;
+var ATTRIBUTE_NAMES = exports.ATTRIBUTE_NAMES = {
+    BODY: "bodyAttributes",
+    HTML: "htmlAttributes",
+    TITLE: "titleAttributes"
+};
+
+var TAG_NAMES = exports.TAG_NAMES = {
+    BASE: "base",
+    BODY: "body",
+    HEAD: "head",
+    HTML: "html",
+    LINK: "link",
+    META: "meta",
+    NOSCRIPT: "noscript",
+    SCRIPT: "script",
+    STYLE: "style",
+    TITLE: "title"
+};
+
+var VALID_TAG_NAMES = exports.VALID_TAG_NAMES = Object.keys(TAG_NAMES).map(function (name) {
+    return TAG_NAMES[name];
+});
+
+var TAG_PROPERTIES = exports.TAG_PROPERTIES = {
+    CHARSET: "charset",
+    CSS_TEXT: "cssText",
+    HREF: "href",
+    HTTPEQUIV: "http-equiv",
+    INNER_HTML: "innerHTML",
+    ITEM_PROP: "itemprop",
+    NAME: "name",
+    PROPERTY: "property",
+    REL: "rel",
+    SRC: "src"
+};
+
+var REACT_TAG_MAP = exports.REACT_TAG_MAP = {
+    accesskey: "accessKey",
+    charset: "charSet",
+    class: "className",
+    contenteditable: "contentEditable",
+    contextmenu: "contextMenu",
+    "http-equiv": "httpEquiv",
+    itemprop: "itemProp",
+    tabindex: "tabIndex"
+};
+
+var HELMET_PROPS = exports.HELMET_PROPS = {
+    DEFAULT_TITLE: "defaultTitle",
+    DEFER: "defer",
+    ENCODE_SPECIAL_CHARACTERS: "encodeSpecialCharacters",
+    ON_CHANGE_CLIENT_STATE: "onChangeClientState",
+    TITLE_TEMPLATE: "titleTemplate"
+};
+
+var HTML_TAG_MAP = exports.HTML_TAG_MAP = Object.keys(REACT_TAG_MAP).reduce(function (obj, key) {
+    obj[REACT_TAG_MAP[key]] = key;
+    return obj;
+}, {});
+
+var SELF_CLOSING_TAGS = exports.SELF_CLOSING_TAGS = [TAG_NAMES.NOSCRIPT, TAG_NAMES.SCRIPT, TAG_NAMES.STYLE];
+
+var HELMET_ATTRIBUTE = exports.HELMET_ATTRIBUTE = "data-react-helmet";
+
+/***/ }),
+
+/***/ "./node_modules/react-helmet/lib/HelmetUtils.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-helmet/lib/HelmetUtils.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {exports.__esModule = true;
+exports.warn = exports.requestAnimationFrame = exports.reducePropsToState = exports.mapStateOnServer = exports.handleClientStateChange = exports.convertReactPropstoHtmlAttributes = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _objectAssign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
+
+var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
+var _HelmetConstants = __webpack_require__(/*! ./HelmetConstants.js */ "./node_modules/react-helmet/lib/HelmetConstants.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var encodeSpecialCharacters = function encodeSpecialCharacters(str) {
+    var encode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+    if (encode === false) {
+        return String(str);
+    }
+
+    return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;");
+};
+
+var getTitleFromPropsList = function getTitleFromPropsList(propsList) {
+    var innermostTitle = getInnermostProperty(propsList, _HelmetConstants.TAG_NAMES.TITLE);
+    var innermostTemplate = getInnermostProperty(propsList, _HelmetConstants.HELMET_PROPS.TITLE_TEMPLATE);
+
+    if (innermostTemplate && innermostTitle) {
+        // use function arg to avoid need to escape $ characters
+        return innermostTemplate.replace(/%s/g, function () {
+            return innermostTitle;
+        });
+    }
+
+    var innermostDefaultTitle = getInnermostProperty(propsList, _HelmetConstants.HELMET_PROPS.DEFAULT_TITLE);
+
+    return innermostTitle || innermostDefaultTitle || undefined;
+};
+
+var getOnChangeClientState = function getOnChangeClientState(propsList) {
+    return getInnermostProperty(propsList, _HelmetConstants.HELMET_PROPS.ON_CHANGE_CLIENT_STATE) || function () {};
+};
+
+var getAttributesFromPropsList = function getAttributesFromPropsList(tagType, propsList) {
+    return propsList.filter(function (props) {
+        return typeof props[tagType] !== "undefined";
+    }).map(function (props) {
+        return props[tagType];
+    }).reduce(function (tagAttrs, current) {
+        return _extends({}, tagAttrs, current);
+    }, {});
+};
+
+var getBaseTagFromPropsList = function getBaseTagFromPropsList(primaryAttributes, propsList) {
+    return propsList.filter(function (props) {
+        return typeof props[_HelmetConstants.TAG_NAMES.BASE] !== "undefined";
+    }).map(function (props) {
+        return props[_HelmetConstants.TAG_NAMES.BASE];
+    }).reverse().reduce(function (innermostBaseTag, tag) {
+        if (!innermostBaseTag.length) {
+            var keys = Object.keys(tag);
+
+            for (var i = 0; i < keys.length; i++) {
+                var attributeKey = keys[i];
+                var lowerCaseAttributeKey = attributeKey.toLowerCase();
+
+                if (primaryAttributes.indexOf(lowerCaseAttributeKey) !== -1 && tag[lowerCaseAttributeKey]) {
+                    return innermostBaseTag.concat(tag);
+                }
+            }
+        }
+
+        return innermostBaseTag;
+    }, []);
+};
+
+var getTagsFromPropsList = function getTagsFromPropsList(tagName, primaryAttributes, propsList) {
+    // Calculate list of tags, giving priority innermost component (end of the propslist)
+    var approvedSeenTags = {};
+
+    return propsList.filter(function (props) {
+        if (Array.isArray(props[tagName])) {
+            return true;
+        }
+        if (typeof props[tagName] !== "undefined") {
+            warn("Helmet: " + tagName + " should be of type \"Array\". Instead found type \"" + _typeof(props[tagName]) + "\"");
+        }
+        return false;
+    }).map(function (props) {
+        return props[tagName];
+    }).reverse().reduce(function (approvedTags, instanceTags) {
+        var instanceSeenTags = {};
+
+        instanceTags.filter(function (tag) {
+            var primaryAttributeKey = void 0;
+            var keys = Object.keys(tag);
+            for (var i = 0; i < keys.length; i++) {
+                var attributeKey = keys[i];
+                var lowerCaseAttributeKey = attributeKey.toLowerCase();
+
+                // Special rule with link tags, since rel and href are both primary tags, rel takes priority
+                if (primaryAttributes.indexOf(lowerCaseAttributeKey) !== -1 && !(primaryAttributeKey === _HelmetConstants.TAG_PROPERTIES.REL && tag[primaryAttributeKey].toLowerCase() === "canonical") && !(lowerCaseAttributeKey === _HelmetConstants.TAG_PROPERTIES.REL && tag[lowerCaseAttributeKey].toLowerCase() === "stylesheet")) {
+                    primaryAttributeKey = lowerCaseAttributeKey;
+                }
+                // Special case for innerHTML which doesn't work lowercased
+                if (primaryAttributes.indexOf(attributeKey) !== -1 && (attributeKey === _HelmetConstants.TAG_PROPERTIES.INNER_HTML || attributeKey === _HelmetConstants.TAG_PROPERTIES.CSS_TEXT || attributeKey === _HelmetConstants.TAG_PROPERTIES.ITEM_PROP)) {
+                    primaryAttributeKey = attributeKey;
+                }
+            }
+
+            if (!primaryAttributeKey || !tag[primaryAttributeKey]) {
+                return false;
+            }
+
+            var value = tag[primaryAttributeKey].toLowerCase();
+
+            if (!approvedSeenTags[primaryAttributeKey]) {
+                approvedSeenTags[primaryAttributeKey] = {};
+            }
+
+            if (!instanceSeenTags[primaryAttributeKey]) {
+                instanceSeenTags[primaryAttributeKey] = {};
+            }
+
+            if (!approvedSeenTags[primaryAttributeKey][value]) {
+                instanceSeenTags[primaryAttributeKey][value] = true;
+                return true;
+            }
+
+            return false;
+        }).reverse().forEach(function (tag) {
+            return approvedTags.push(tag);
+        });
+
+        // Update seen tags with tags from this instance
+        var keys = Object.keys(instanceSeenTags);
+        for (var i = 0; i < keys.length; i++) {
+            var attributeKey = keys[i];
+            var tagUnion = (0, _objectAssign2.default)({}, approvedSeenTags[attributeKey], instanceSeenTags[attributeKey]);
+
+            approvedSeenTags[attributeKey] = tagUnion;
+        }
+
+        return approvedTags;
+    }, []).reverse();
+};
+
+var getInnermostProperty = function getInnermostProperty(propsList, property) {
+    for (var i = propsList.length - 1; i >= 0; i--) {
+        var props = propsList[i];
+
+        if (props.hasOwnProperty(property)) {
+            return props[property];
+        }
+    }
+
+    return null;
+};
+
+var reducePropsToState = function reducePropsToState(propsList) {
+    return {
+        baseTag: getBaseTagFromPropsList([_HelmetConstants.TAG_PROPERTIES.HREF], propsList),
+        bodyAttributes: getAttributesFromPropsList(_HelmetConstants.ATTRIBUTE_NAMES.BODY, propsList),
+        defer: getInnermostProperty(propsList, _HelmetConstants.HELMET_PROPS.DEFER),
+        encode: getInnermostProperty(propsList, _HelmetConstants.HELMET_PROPS.ENCODE_SPECIAL_CHARACTERS),
+        htmlAttributes: getAttributesFromPropsList(_HelmetConstants.ATTRIBUTE_NAMES.HTML, propsList),
+        linkTags: getTagsFromPropsList(_HelmetConstants.TAG_NAMES.LINK, [_HelmetConstants.TAG_PROPERTIES.REL, _HelmetConstants.TAG_PROPERTIES.HREF], propsList),
+        metaTags: getTagsFromPropsList(_HelmetConstants.TAG_NAMES.META, [_HelmetConstants.TAG_PROPERTIES.NAME, _HelmetConstants.TAG_PROPERTIES.CHARSET, _HelmetConstants.TAG_PROPERTIES.HTTPEQUIV, _HelmetConstants.TAG_PROPERTIES.PROPERTY, _HelmetConstants.TAG_PROPERTIES.ITEM_PROP], propsList),
+        noscriptTags: getTagsFromPropsList(_HelmetConstants.TAG_NAMES.NOSCRIPT, [_HelmetConstants.TAG_PROPERTIES.INNER_HTML], propsList),
+        onChangeClientState: getOnChangeClientState(propsList),
+        scriptTags: getTagsFromPropsList(_HelmetConstants.TAG_NAMES.SCRIPT, [_HelmetConstants.TAG_PROPERTIES.SRC, _HelmetConstants.TAG_PROPERTIES.INNER_HTML], propsList),
+        styleTags: getTagsFromPropsList(_HelmetConstants.TAG_NAMES.STYLE, [_HelmetConstants.TAG_PROPERTIES.CSS_TEXT], propsList),
+        title: getTitleFromPropsList(propsList),
+        titleAttributes: getAttributesFromPropsList(_HelmetConstants.ATTRIBUTE_NAMES.TITLE, propsList)
+    };
+};
+
+var rafPolyfill = function () {
+    var clock = Date.now();
+
+    return function (callback) {
+        var currentTime = Date.now();
+
+        if (currentTime - clock > 16) {
+            clock = currentTime;
+            callback(currentTime);
+        } else {
+            setTimeout(function () {
+                rafPolyfill(callback);
+            }, 0);
+        }
+    };
+}();
+
+var cafPolyfill = function cafPolyfill(id) {
+    return clearTimeout(id);
+};
+
+var requestAnimationFrame = typeof window !== "undefined" ? window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || rafPolyfill : global.requestAnimationFrame || rafPolyfill;
+
+var cancelAnimationFrame = typeof window !== "undefined" ? window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || cafPolyfill : global.cancelAnimationFrame || cafPolyfill;
+
+var warn = function warn(msg) {
+    return console && typeof console.warn === "function" && console.warn(msg);
+};
+
+var _helmetCallback = null;
+
+var handleClientStateChange = function handleClientStateChange(newState) {
+    if (_helmetCallback) {
+        cancelAnimationFrame(_helmetCallback);
+    }
+
+    if (newState.defer) {
+        _helmetCallback = requestAnimationFrame(function () {
+            commitTagChanges(newState, function () {
+                _helmetCallback = null;
+            });
+        });
+    } else {
+        commitTagChanges(newState);
+        _helmetCallback = null;
+    }
+};
+
+var commitTagChanges = function commitTagChanges(newState, cb) {
+    var baseTag = newState.baseTag,
+        bodyAttributes = newState.bodyAttributes,
+        htmlAttributes = newState.htmlAttributes,
+        linkTags = newState.linkTags,
+        metaTags = newState.metaTags,
+        noscriptTags = newState.noscriptTags,
+        onChangeClientState = newState.onChangeClientState,
+        scriptTags = newState.scriptTags,
+        styleTags = newState.styleTags,
+        title = newState.title,
+        titleAttributes = newState.titleAttributes;
+
+    updateAttributes(_HelmetConstants.TAG_NAMES.BODY, bodyAttributes);
+    updateAttributes(_HelmetConstants.TAG_NAMES.HTML, htmlAttributes);
+
+    updateTitle(title, titleAttributes);
+
+    var tagUpdates = {
+        baseTag: updateTags(_HelmetConstants.TAG_NAMES.BASE, baseTag),
+        linkTags: updateTags(_HelmetConstants.TAG_NAMES.LINK, linkTags),
+        metaTags: updateTags(_HelmetConstants.TAG_NAMES.META, metaTags),
+        noscriptTags: updateTags(_HelmetConstants.TAG_NAMES.NOSCRIPT, noscriptTags),
+        scriptTags: updateTags(_HelmetConstants.TAG_NAMES.SCRIPT, scriptTags),
+        styleTags: updateTags(_HelmetConstants.TAG_NAMES.STYLE, styleTags)
+    };
+
+    var addedTags = {};
+    var removedTags = {};
+
+    Object.keys(tagUpdates).forEach(function (tagType) {
+        var _tagUpdates$tagType = tagUpdates[tagType],
+            newTags = _tagUpdates$tagType.newTags,
+            oldTags = _tagUpdates$tagType.oldTags;
+
+
+        if (newTags.length) {
+            addedTags[tagType] = newTags;
+        }
+        if (oldTags.length) {
+            removedTags[tagType] = tagUpdates[tagType].oldTags;
+        }
+    });
+
+    cb && cb();
+
+    onChangeClientState(newState, addedTags, removedTags);
+};
+
+var flattenArray = function flattenArray(possibleArray) {
+    return Array.isArray(possibleArray) ? possibleArray.join("") : possibleArray;
+};
+
+var updateTitle = function updateTitle(title, attributes) {
+    if (typeof title !== "undefined" && document.title !== title) {
+        document.title = flattenArray(title);
+    }
+
+    updateAttributes(_HelmetConstants.TAG_NAMES.TITLE, attributes);
+};
+
+var updateAttributes = function updateAttributes(tagName, attributes) {
+    var elementTag = document.getElementsByTagName(tagName)[0];
+
+    if (!elementTag) {
+        return;
+    }
+
+    var helmetAttributeString = elementTag.getAttribute(_HelmetConstants.HELMET_ATTRIBUTE);
+    var helmetAttributes = helmetAttributeString ? helmetAttributeString.split(",") : [];
+    var attributesToRemove = [].concat(helmetAttributes);
+    var attributeKeys = Object.keys(attributes);
+
+    for (var i = 0; i < attributeKeys.length; i++) {
+        var attribute = attributeKeys[i];
+        var value = attributes[attribute] || "";
+
+        if (elementTag.getAttribute(attribute) !== value) {
+            elementTag.setAttribute(attribute, value);
+        }
+
+        if (helmetAttributes.indexOf(attribute) === -1) {
+            helmetAttributes.push(attribute);
+        }
+
+        var indexToSave = attributesToRemove.indexOf(attribute);
+        if (indexToSave !== -1) {
+            attributesToRemove.splice(indexToSave, 1);
+        }
+    }
+
+    for (var _i = attributesToRemove.length - 1; _i >= 0; _i--) {
+        elementTag.removeAttribute(attributesToRemove[_i]);
+    }
+
+    if (helmetAttributes.length === attributesToRemove.length) {
+        elementTag.removeAttribute(_HelmetConstants.HELMET_ATTRIBUTE);
+    } else if (elementTag.getAttribute(_HelmetConstants.HELMET_ATTRIBUTE) !== attributeKeys.join(",")) {
+        elementTag.setAttribute(_HelmetConstants.HELMET_ATTRIBUTE, attributeKeys.join(","));
+    }
+};
+
+var updateTags = function updateTags(type, tags) {
+    var headElement = document.head || document.querySelector(_HelmetConstants.TAG_NAMES.HEAD);
+    var tagNodes = headElement.querySelectorAll(type + "[" + _HelmetConstants.HELMET_ATTRIBUTE + "]");
+    var oldTags = Array.prototype.slice.call(tagNodes);
+    var newTags = [];
+    var indexToDelete = void 0;
+
+    if (tags && tags.length) {
+        tags.forEach(function (tag) {
+            var newElement = document.createElement(type);
+
+            for (var attribute in tag) {
+                if (tag.hasOwnProperty(attribute)) {
+                    if (attribute === _HelmetConstants.TAG_PROPERTIES.INNER_HTML) {
+                        newElement.innerHTML = tag.innerHTML;
+                    } else if (attribute === _HelmetConstants.TAG_PROPERTIES.CSS_TEXT) {
+                        if (newElement.styleSheet) {
+                            newElement.styleSheet.cssText = tag.cssText;
+                        } else {
+                            newElement.appendChild(document.createTextNode(tag.cssText));
+                        }
+                    } else {
+                        var value = typeof tag[attribute] === "undefined" ? "" : tag[attribute];
+                        newElement.setAttribute(attribute, value);
+                    }
+                }
+            }
+
+            newElement.setAttribute(_HelmetConstants.HELMET_ATTRIBUTE, "true");
+
+            // Remove a duplicate tag from domTagstoRemove, so it isn't cleared.
+            if (oldTags.some(function (existingTag, index) {
+                indexToDelete = index;
+                return newElement.isEqualNode(existingTag);
+            })) {
+                oldTags.splice(indexToDelete, 1);
+            } else {
+                newTags.push(newElement);
+            }
+        });
+    }
+
+    oldTags.forEach(function (tag) {
+        return tag.parentNode.removeChild(tag);
+    });
+    newTags.forEach(function (tag) {
+        return headElement.appendChild(tag);
+    });
+
+    return {
+        oldTags: oldTags,
+        newTags: newTags
+    };
+};
+
+var generateElementAttributesAsString = function generateElementAttributesAsString(attributes) {
+    return Object.keys(attributes).reduce(function (str, key) {
+        var attr = typeof attributes[key] !== "undefined" ? key + "=\"" + attributes[key] + "\"" : "" + key;
+        return str ? str + " " + attr : attr;
+    }, "");
+};
+
+var generateTitleAsString = function generateTitleAsString(type, title, attributes, encode) {
+    var attributeString = generateElementAttributesAsString(attributes);
+    var flattenedTitle = flattenArray(title);
+    return attributeString ? "<" + type + " " + _HelmetConstants.HELMET_ATTRIBUTE + "=\"true\" " + attributeString + ">" + encodeSpecialCharacters(flattenedTitle, encode) + "</" + type + ">" : "<" + type + " " + _HelmetConstants.HELMET_ATTRIBUTE + "=\"true\">" + encodeSpecialCharacters(flattenedTitle, encode) + "</" + type + ">";
+};
+
+var generateTagsAsString = function generateTagsAsString(type, tags, encode) {
+    return tags.reduce(function (str, tag) {
+        var attributeHtml = Object.keys(tag).filter(function (attribute) {
+            return !(attribute === _HelmetConstants.TAG_PROPERTIES.INNER_HTML || attribute === _HelmetConstants.TAG_PROPERTIES.CSS_TEXT);
+        }).reduce(function (string, attribute) {
+            var attr = typeof tag[attribute] === "undefined" ? attribute : attribute + "=\"" + encodeSpecialCharacters(tag[attribute], encode) + "\"";
+            return string ? string + " " + attr : attr;
+        }, "");
+
+        var tagContent = tag.innerHTML || tag.cssText || "";
+
+        var isSelfClosing = _HelmetConstants.SELF_CLOSING_TAGS.indexOf(type) === -1;
+
+        return str + "<" + type + " " + _HelmetConstants.HELMET_ATTRIBUTE + "=\"true\" " + attributeHtml + (isSelfClosing ? "/>" : ">" + tagContent + "</" + type + ">");
+    }, "");
+};
+
+var convertElementAttributestoReactProps = function convertElementAttributestoReactProps(attributes) {
+    var initProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    return Object.keys(attributes).reduce(function (obj, key) {
+        obj[_HelmetConstants.REACT_TAG_MAP[key] || key] = attributes[key];
+        return obj;
+    }, initProps);
+};
+
+var convertReactPropstoHtmlAttributes = function convertReactPropstoHtmlAttributes(props) {
+    var initAttributes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    return Object.keys(props).reduce(function (obj, key) {
+        obj[_HelmetConstants.HTML_TAG_MAP[key] || key] = props[key];
+        return obj;
+    }, initAttributes);
+};
+
+var generateTitleAsReactComponent = function generateTitleAsReactComponent(type, title, attributes) {
+    var _initProps;
+
+    // assigning into an array to define toString function on it
+    var initProps = (_initProps = {
+        key: title
+    }, _initProps[_HelmetConstants.HELMET_ATTRIBUTE] = true, _initProps);
+    var props = convertElementAttributestoReactProps(attributes, initProps);
+
+    return [_react2.default.createElement(_HelmetConstants.TAG_NAMES.TITLE, props, title)];
+};
+
+var generateTagsAsReactComponent = function generateTagsAsReactComponent(type, tags) {
+    return tags.map(function (tag, i) {
+        var _mappedTag;
+
+        var mappedTag = (_mappedTag = {
+            key: i
+        }, _mappedTag[_HelmetConstants.HELMET_ATTRIBUTE] = true, _mappedTag);
+
+        Object.keys(tag).forEach(function (attribute) {
+            var mappedAttribute = _HelmetConstants.REACT_TAG_MAP[attribute] || attribute;
+
+            if (mappedAttribute === _HelmetConstants.TAG_PROPERTIES.INNER_HTML || mappedAttribute === _HelmetConstants.TAG_PROPERTIES.CSS_TEXT) {
+                var content = tag.innerHTML || tag.cssText;
+                mappedTag.dangerouslySetInnerHTML = { __html: content };
+            } else {
+                mappedTag[mappedAttribute] = tag[attribute];
+            }
+        });
+
+        return _react2.default.createElement(type, mappedTag);
+    });
+};
+
+var getMethodsForTag = function getMethodsForTag(type, tags, encode) {
+    switch (type) {
+        case _HelmetConstants.TAG_NAMES.TITLE:
+            return {
+                toComponent: function toComponent() {
+                    return generateTitleAsReactComponent(type, tags.title, tags.titleAttributes, encode);
+                },
+                toString: function toString() {
+                    return generateTitleAsString(type, tags.title, tags.titleAttributes, encode);
+                }
+            };
+        case _HelmetConstants.ATTRIBUTE_NAMES.BODY:
+        case _HelmetConstants.ATTRIBUTE_NAMES.HTML:
+            return {
+                toComponent: function toComponent() {
+                    return convertElementAttributestoReactProps(tags);
+                },
+                toString: function toString() {
+                    return generateElementAttributesAsString(tags);
+                }
+            };
+        default:
+            return {
+                toComponent: function toComponent() {
+                    return generateTagsAsReactComponent(type, tags);
+                },
+                toString: function toString() {
+                    return generateTagsAsString(type, tags, encode);
+                }
+            };
+    }
+};
+
+var mapStateOnServer = function mapStateOnServer(_ref) {
+    var baseTag = _ref.baseTag,
+        bodyAttributes = _ref.bodyAttributes,
+        encode = _ref.encode,
+        htmlAttributes = _ref.htmlAttributes,
+        linkTags = _ref.linkTags,
+        metaTags = _ref.metaTags,
+        noscriptTags = _ref.noscriptTags,
+        scriptTags = _ref.scriptTags,
+        styleTags = _ref.styleTags,
+        _ref$title = _ref.title,
+        title = _ref$title === undefined ? "" : _ref$title,
+        titleAttributes = _ref.titleAttributes;
+    return {
+        base: getMethodsForTag(_HelmetConstants.TAG_NAMES.BASE, baseTag, encode),
+        bodyAttributes: getMethodsForTag(_HelmetConstants.ATTRIBUTE_NAMES.BODY, bodyAttributes, encode),
+        htmlAttributes: getMethodsForTag(_HelmetConstants.ATTRIBUTE_NAMES.HTML, htmlAttributes, encode),
+        link: getMethodsForTag(_HelmetConstants.TAG_NAMES.LINK, linkTags, encode),
+        meta: getMethodsForTag(_HelmetConstants.TAG_NAMES.META, metaTags, encode),
+        noscript: getMethodsForTag(_HelmetConstants.TAG_NAMES.NOSCRIPT, noscriptTags, encode),
+        script: getMethodsForTag(_HelmetConstants.TAG_NAMES.SCRIPT, scriptTags, encode),
+        style: getMethodsForTag(_HelmetConstants.TAG_NAMES.STYLE, styleTags, encode),
+        title: getMethodsForTag(_HelmetConstants.TAG_NAMES.TITLE, { title: title, titleAttributes: titleAttributes }, encode)
+    };
+};
+
+exports.convertReactPropstoHtmlAttributes = convertReactPropstoHtmlAttributes;
+exports.handleClientStateChange = handleClientStateChange;
+exports.mapStateOnServer = mapStateOnServer;
+exports.reducePropsToState = reducePropsToState;
+exports.requestAnimationFrame = requestAnimationFrame;
+exports.warn = warn;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
 /***/ "./node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -23973,6 +25066,148 @@ exports.isSuspense = isSuspense;
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/react-side-effect/lib/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/react-side-effect/lib/index.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var React__default = _interopDefault(React);
+var shallowEqual = _interopDefault(__webpack_require__(/*! shallowequal */ "./node_modules/shallowequal/index.js"));
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+
+var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+function withSideEffect(reducePropsToState, handleStateChangeOnClient, mapStateOnServer) {
+  if (typeof reducePropsToState !== 'function') {
+    throw new Error('Expected reducePropsToState to be a function.');
+  }
+
+  if (typeof handleStateChangeOnClient !== 'function') {
+    throw new Error('Expected handleStateChangeOnClient to be a function.');
+  }
+
+  if (typeof mapStateOnServer !== 'undefined' && typeof mapStateOnServer !== 'function') {
+    throw new Error('Expected mapStateOnServer to either be undefined or a function.');
+  }
+
+  function getDisplayName(WrappedComponent) {
+    return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+  }
+
+  return function wrap(WrappedComponent) {
+    if (typeof WrappedComponent !== 'function') {
+      throw new Error('Expected WrappedComponent to be a React component.');
+    }
+
+    var mountedInstances = [];
+    var state;
+
+    function emitChange() {
+      state = reducePropsToState(mountedInstances.map(function (instance) {
+        return instance.props;
+      }));
+
+      if (SideEffect.canUseDOM) {
+        handleStateChangeOnClient(state);
+      } else if (mapStateOnServer) {
+        state = mapStateOnServer(state);
+      }
+    }
+
+    var SideEffect =
+    /*#__PURE__*/
+    function (_Component) {
+      _inheritsLoose(SideEffect, _Component);
+
+      function SideEffect() {
+        return _Component.apply(this, arguments) || this;
+      }
+
+      // Try to use displayName of wrapped component
+      // Expose canUseDOM so tests can monkeypatch it
+      SideEffect.peek = function peek() {
+        return state;
+      };
+
+      SideEffect.rewind = function rewind() {
+        if (SideEffect.canUseDOM) {
+          throw new Error('You may only call rewind() on the server. Call peek() to read the current state.');
+        }
+
+        var recordedState = state;
+        state = undefined;
+        mountedInstances = [];
+        return recordedState;
+      };
+
+      var _proto = SideEffect.prototype;
+
+      _proto.shouldComponentUpdate = function shouldComponentUpdate(nextProps) {
+        return !shallowEqual(nextProps, this.props);
+      };
+
+      _proto.componentWillMount = function componentWillMount() {
+        mountedInstances.push(this);
+        emitChange();
+      };
+
+      _proto.componentDidUpdate = function componentDidUpdate() {
+        emitChange();
+      };
+
+      _proto.componentWillUnmount = function componentWillUnmount() {
+        var index = mountedInstances.indexOf(this);
+        mountedInstances.splice(index, 1);
+        emitChange();
+      };
+
+      _proto.render = function render() {
+        return React__default.createElement(WrappedComponent, this.props);
+      };
+
+      return SideEffect;
+    }(React.Component);
+
+    _defineProperty(SideEffect, "displayName", "SideEffect(" + getDisplayName(WrappedComponent) + ")");
+
+    _defineProperty(SideEffect, "canUseDOM", canUseDOM);
+
+    return SideEffect;
+  };
+}
+
+module.exports = withSideEffect;
 
 
 /***/ }),
@@ -24721,6 +25956,63 @@ try {
   // problems, please detail your unique predicament in a GitHub issue.
   Function("r", "regeneratorRuntime = r")(runtime);
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/shallowequal/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/shallowequal/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//
+
+module.exports = function shallowEqual(objA, objB, compare, compareContext) {
+  var ret = compare ? compare.call(compareContext, objA, objB) : void 0;
+
+  if (ret !== void 0) {
+    return !!ret;
+  }
+
+  if (objA === objB) {
+    return true;
+  }
+
+  if (typeof objA !== "object" || !objA || typeof objB !== "object" || !objB) {
+    return false;
+  }
+
+  var keysA = Object.keys(objA);
+  var keysB = Object.keys(objB);
+
+  if (keysA.length !== keysB.length) {
+    return false;
+  }
+
+  var bHasOwnProperty = Object.prototype.hasOwnProperty.bind(objB);
+
+  // Test for A's keys different from B.
+  for (var idx = 0; idx < keysA.length; idx++) {
+    var key = keysA[idx];
+
+    if (!bHasOwnProperty(key)) {
+      return false;
+    }
+
+    var valueA = objA[key];
+    var valueB = objB[key];
+
+    ret = compare ? compare.call(compareContext, valueA, valueB, key) : void 0;
+
+    if (ret === false || (ret === void 0 && valueA !== valueB)) {
+      return false;
+    }
+  }
+
+  return true;
+};
 
 
 /***/ }),
@@ -26095,6 +27387,65 @@ if (!self.fetch) {
 
 /***/ }),
 
+/***/ "./pages/Contact.js":
+/*!**************************!*\
+  !*** ./pages/Contact.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_PageHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PageHeader */ "./components/PageHeader.js");
+/* harmony import */ var _values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../values/VALUES_CONTACT */ "./values/VALUES_CONTACT.js");
+/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
+var _jsxFileName = "/mnt/c/Dev/giemper-site/pages/Contact.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+var Contact = function Contact(props) {
+  var lang = props.languageNum;
+  var title = ["Contact", "Contacto"];
+  return __jsx("div", {
+    className: "page",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "container",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, __jsx(_components_PageHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    title: Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_3__["default"])(title, lang),
+    id: "nav_cont",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, "Let's get in contact")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Contact);
+
+/***/ }),
+
 /***/ "./pages/Education.js":
 /*!****************************!*\
   !*** ./pages/Education.js ***!
@@ -26125,14 +27476,14 @@ var Education = function Education(props) {
     className: "page",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     },
     __self: this
   }, __jsx("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 12
     },
     __self: this
   }, __jsx(_components_PageHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -26140,14 +27491,14 @@ var Education = function Education(props) {
     id: "nav_edu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 13
     },
     __self: this
   }), __jsx("div", {
     className: "row box",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 14
     },
     __self: this
   }, _values_VALUES_EDUCATION__WEBPACK_IMPORTED_MODULE_3__["default"].map(function (item, index) {
@@ -26156,7 +27507,7 @@ var Education = function Education(props) {
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 17
       },
       __self: this
     }, __jsx(_components_BoxItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -26167,7 +27518,7 @@ var Education = function Education(props) {
       description: Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(item.description, lang),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 18
       },
       __self: this
     }));
@@ -26272,36 +27623,53 @@ var Experience = function Experience(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styles_Intro_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/Intro.scss */ "./styles/Intro.scss");
-/* harmony import */ var _styles_Intro_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_Intro_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
+/* harmony import */ var _styles_Intro_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/Intro.scss */ "./styles/Intro.scss");
+/* harmony import */ var _styles_Intro_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_Intro_scss__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/mnt/c/Dev/giemper-site/pages/Intro.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // import Viewport from '../tools/Viewport';
+
 
 
 
 var ProfilePicture = function ProfilePicture(props) {
-  var canvasHeight = props.height / 1.5 > 500 ? props.height / 1.5 : 500;
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("none"),
+      stop = _useState[0],
+      setStop = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("initial"),
+      topState = _useState2[0],
+      setTopState = _useState2[1];
+
+  var canvasHeight = props.height / 1.5 > 500 ? props.height / 1.5 : 450;
   var canvasWidth = props.width > 1160 ? 1 : props.width > 992 ? 0.8 : props.width > 768 ? 0.6 : 0.55;
+  var canvasPhone = props.width >= 751 ? true : false;
   var canvasMargin = canvasHeight * 0.1;
-  var canvasRadius = (canvasHeight + canvasMargin) / 2 * canvasWidth;
   var canvasSquare = (canvasHeight - canvasMargin) * canvasWidth;
-  var canvasSize = (canvasHeight + canvasMargin) * canvasWidth;
+  var canvasSize = canvasPhone ? (canvasHeight + canvasMargin) * canvasWidth : 0;
   var imageAdapter = {
     width: canvasSquare + "px",
-    height: canvasSquare + "px"
+    height: canvasSquare + "px",
+    top: topState
+  };
+  var bgAdapter = {
+    width: canvasSize + "px",
+    height: canvasSize + "px",
+    top: topState
   };
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (props.width >= 768 - 17) {
-      var canvas = document.getElementById('circleBG');
-      var context = canvas.getContext('2d');
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      context.beginPath();
-      context.arc(canvasRadius + canvasMargin / 2, canvasRadius, canvasRadius, 0, 2 * Math.PI);
-      context.fillStyle = 'rgba(139, 233, 253, 0.2)';
-      context.fill();
-    }
+    document.addEventListener('scroll', function () {
+      var maxTop = props.height <= 720 ? props.height : 720;
+
+      if (window.scrollY > maxTop) {
+        setStop("stop");
+        setTopState(maxTop + "px");
+      } else {
+        setStop("none");
+        setTopState("initial");
+      }
+    });
   });
   return __jsx("div", {
     className: "intro-picture row justify-content-end",
@@ -26310,137 +27678,111 @@ var ProfilePicture = function ProfilePicture(props) {
       lineNumber: 37
     },
     __self: this
-  }, props.width >= 768 - 17 ? __jsx("canvas", {
-    id: "circleBG",
-    height: canvasSize,
-    width: canvasSize,
+  }, __jsx("div", {
+    className: "picture-bg fix-bg ".concat(stop),
+    style: bgAdapter,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 38
     },
     __self: this
-  }) : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null), __jsx("img", {
-    src: props.picture,
+  }), __jsx("img", {
+    className: "fix-img ".concat(stop),
+    src: props.source,
     style: imageAdapter,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 39
     },
     __self: this
   }));
 };
 
 var Intro = function Intro(props) {
+  var lang = props.languageNum;
   var space = {
     height: props.viewHeight + "px"
   };
   var image = "Myself.jpg";
+  var hello = ["Hello there, I'm", "Bienvenido, soy"];
   return __jsx("div", {
     className: "intro page",
     id: "nav_home",
     style: space,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 51
     },
     __self: this
   }, __jsx("div", {
     className: "row align-items-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 52
     },
     __self: this
   }, __jsx("div", {
     className: "col-lg-7 col-md-8 col-sm-12 intro-item text",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 53
     },
     __self: this
   }, __jsx("div", {
     className: "intro-panel",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 54
     },
     __self: this
   }, __jsx("p", {
     className: "message",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 55
     },
     __self: this
-  }, "Hello there, I'm"), __jsx("p", {
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_1__["default"])(hello, lang)), __jsx("p", {
     className: "name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 56
     },
     __self: this
   }, "Guillermo"), __jsx("p", {
     className: "name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 57
     },
     __self: this
   }, "Magdaleno"), __jsx("p", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 58
     },
     __self: this
   }, "Software Developer"))), __jsx("div", {
     className: "col-lg-5 col-md-4 col-sm-12 intro-item picture",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 61
     },
     __self: this
   }, __jsx(ProfilePicture, {
     height: props.viewHeight,
     width: props.viewWidth,
-    picture: image,
+    source: image,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 62
     },
     __self: this
   }))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Intro); // const CanvasBackground = (props) => {
-//     const canvasHeight = props.height;
-//     const canvasWidth = props.width + 17;
-//     const drawLine = (context, startPointX, startPointY, endPointX, endPointY) => {
-//         context.moveTo(startPointX, startPointY);
-//         context.lineTo(endPointX, endPointY);
-//         context.stroke();
-//     }
-//     useEffect(() => {
-//         const canvas = document.getElementById("line-canvas");
-//         const context = canvas.getContext('2d');
-//         context.clearRect(0, 0, canvas.width, canvas.height);
-//         context.beginPath();
-//         context.strokeStyle = (canvasWidth > 420) 
-//                                 ? 'rgba(68, 71, 90, 0.5)'
-//                                 : 'rgba(68, 71, 90, 0.2)';
-//         context.lineWidth = 3;
-//         drawLine(context, 0, 0, canvasWidth, canvasHeight - 150);
-//         drawLine(context, canvasWidth * 0.75, 0, canvasWidth / 2, canvasHeight);
-//         drawLine(context, canvasWidth * 0.43, 0, canvasWidth * 0, canvasHeight * 0.85);
-//         drawLine(context, canvasWidth * 0.08, 0, canvasWidth * 0.39, canvasHeight);
-//         drawLine(context, canvasWidth, canvasHeight * 0.04, canvasWidth * 0.15, canvasHeight);
-//         drawLine(context, 0, canvasHeight * 0.45, canvasWidth * 0.81, canvasHeight);
-//         drawLine(context, canvasWidth * 0.51, 0, canvasWidth * 0.62, canvasHeight);
-//     });
-//     return (
-//         <canvas id="line-canvas" height={canvasHeight} width={canvasWidth} />
-//     );
-// }
+/* harmony default export */ __webpack_exports__["default"] = (Intro);
 
 /***/ }),
 
@@ -26501,6 +27843,7 @@ var Projects = function Projects(props) {
       sourceMain: item.sourceMain,
       sourceFallback: item.sourceFallback,
       description: item.description,
+      skills: item.skills,
       availability: item.availability,
       languageNum: lang,
       __source: {
@@ -26528,8 +27871,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_PageHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PageHeader */ "./components/PageHeader.js");
-/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
-/* harmony import */ var _values_VALUES_SKILLS__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../values/VALUES_SKILLS */ "./values/VALUES_SKILLS.js");
+/* harmony import */ var _components_SkillBox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/SkillBox */ "./components/SkillBox.js");
+/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
+/* harmony import */ var _values_VALUES_SKILLS__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../values/VALUES_SKILLS */ "./values/VALUES_SKILLS.js");
 var _jsxFileName = "/mnt/c/Dev/giemper-site/pages/Skills.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -26538,22 +27882,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-var SkillBox = function SkillBox(props) {
-  return __jsx("div", {
-    className: "skill-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
-  }, __jsx("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
-  }, props.text));
-};
 
 var SkillFilter = function SkillFilter(props) {
   var tags = ["All", "Desktop", "Mobile", "Web"];
@@ -26573,7 +27901,7 @@ var SkillFilter = function SkillFilter(props) {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 19
       },
       __self: this
     }, tag);
@@ -26592,43 +27920,43 @@ var Skills = function Skills(props) {
     className: "page shadow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 35
     },
     __self: this
   }, __jsx("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 36
     },
     __self: this
   }, __jsx(_components_PageHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_2__["default"])(title, lang),
+    title: Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_3__["default"])(title, lang),
     id: "nav_skill",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 37
     },
     __self: this
   }), __jsx("div", {
     className: "row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 38
     },
     __self: this
   }, __jsx("div", {
     className: "col-lg-auto col-md-12 skill-line",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 39
     },
     __self: this
   }, __jsx("div", {
     className: "skill-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 40
     },
     __self: this
   }, __jsx(SkillFilter, {
@@ -26636,23 +27964,23 @@ var Skills = function Skills(props) {
     setFilter: setFilter,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 41
     },
     __self: this
   }))), __jsx("div", {
     className: "col-lg col-md-12 skill-box-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 46
     },
     __self: this
-  }, _values_VALUES_SKILLS__WEBPACK_IMPORTED_MODULE_3__["default"].map(function (item, index) {
-    if (item.tags.includes(filter) || filter === "All") return __jsx(SkillBox, {
+  }, _values_VALUES_SKILLS__WEBPACK_IMPORTED_MODULE_4__["default"].map(function (item, index) {
+    if (item.tags.includes(filter) || filter === "All") return __jsx(_components_SkillBox__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: item.skill,
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 50
       },
       __self: this
     });
@@ -26676,27 +28004,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_PageHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PageHeader */ "./components/PageHeader.js");
 /* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
+/* harmony import */ var _values_VALUES_WHO__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../values/VALUES_WHO */ "./values/VALUES_WHO.js");
 var _jsxFileName = "/mnt/c/Dev/giemper-site/pages/Who.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 var Who = function Who(props) {
   var lang = props.languageNum;
   var title = ["Who am I?", "¿Quien Soy?"];
+  var valuesWho = Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_2__["default"])(_values_VALUES_WHO__WEBPACK_IMPORTED_MODULE_3__["default"], lang);
   return __jsx("div", {
-    className: "page",
+    className: "page who-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     },
     __self: this
   }, __jsx("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: this
   }, __jsx(_components_PageHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -26704,48 +28035,26 @@ var Who = function Who(props) {
     id: "nav_who",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }), __jsx("div", {
-    className: "col-8 who-item",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 13
     },
     __self: this
-  }, __jsx("p", {
+  }), __jsx("div", {
+    className: "col-lg-7 col-md-12 col-sm-12 who-item",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     },
     __self: this
-  }, "Without getting into a deeper existencial crisis, the easiest way I can start describing myself is"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
-  }, "I have a Computer Science Engineering degree from ", __jsx("b", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
-  }, "CETYS University"), " in Mexicali, Mexico, and did a half-year academic exchange in the ", __jsx("b", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
-  }, "Ecol\xE9 Polytechnique"), " of Montreal, Canada.")), __jsx("div", {
-    className: "col-4",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  })));
+  }, valuesWho.map(function (item, index) {
+    return __jsx("p", {
+      key: index,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }, item);
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Who);
@@ -26767,18 +28076,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_app_polyfill_ie11__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_app_polyfill_ie11__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_app_polyfill_stable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-app-polyfill/stable */ "./node_modules/react-app-polyfill/stable.js");
 /* harmony import */ var react_app_polyfill_stable__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_app_polyfill_stable__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
-/* harmony import */ var _tools_Language__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../tools/Language */ "./tools/Language.js");
-/* harmony import */ var _tools_Viewport__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../tools/Viewport */ "./tools/Viewport.js");
-/* harmony import */ var _Intro__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Intro */ "./pages/Intro.js");
-/* harmony import */ var _Who__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Who */ "./pages/Who.js");
-/* harmony import */ var _Skills__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Skills */ "./pages/Skills.js");
-/* harmony import */ var _Experience__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Experience */ "./pages/Experience.js");
-/* harmony import */ var _Education__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Education */ "./pages/Education.js");
-/* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Projects */ "./pages/Projects.js");
-/* harmony import */ var _styles_pages_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../styles/pages.scss */ "./styles/pages.scss");
-/* harmony import */ var _styles_pages_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_styles_pages_scss__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/lib/Helmet.js");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _tools_Language__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../tools/Language */ "./tools/Language.js");
+/* harmony import */ var _tools_Viewport__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../tools/Viewport */ "./tools/Viewport.js");
+/* harmony import */ var _Intro__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Intro */ "./pages/Intro.js");
+/* harmony import */ var _Who__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Who */ "./pages/Who.js");
+/* harmony import */ var _Skills__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Skills */ "./pages/Skills.js");
+/* harmony import */ var _Experience__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Experience */ "./pages/Experience.js");
+/* harmony import */ var _Education__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Education */ "./pages/Education.js");
+/* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Projects */ "./pages/Projects.js");
+/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Contact */ "./pages/Contact.js");
+/* harmony import */ var _styles_pages_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../styles/pages.scss */ "./styles/pages.scss");
+/* harmony import */ var _styles_pages_scss__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_styles_pages_scss__WEBPACK_IMPORTED_MODULE_15__);
 var _jsxFileName = "/mnt/c/Dev/giemper-site/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -26796,71 +28108,109 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
 var Index = function Index() {
-  var language = new _tools_Language__WEBPACK_IMPORTED_MODULE_5__["default"]();
+  var language = new _tools_Language__WEBPACK_IMPORTED_MODULE_6__["default"]();
   language.start();
 
-  var _Viewport = Object(_tools_Viewport__WEBPACK_IMPORTED_MODULE_6__["default"])(),
+  var _Viewport = Object(_tools_Viewport__WEBPACK_IMPORTED_MODULE_7__["default"])(),
       viewHeight = _Viewport.viewHeight,
       viewWidth = _Viewport.viewWidth;
 
   var adjustedHeight = viewHeight > 930 ? viewHeight - 50 : viewHeight;
   var adjustedWidth = viewWidth - 17;
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    language: language,
-    viewWidth: adjustedWidth,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }), __jsx(_Intro__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    viewHeight: adjustedHeight,
-    viewWidth: adjustedWidth,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }), __jsx(_Who__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    languageNum: language.getLanguage(),
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(react_helmet__WEBPACK_IMPORTED_MODULE_3__["Helmet"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 27
     },
     __self: this
-  }), __jsx(_Skills__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    languageNum: language.getLanguage(),
+  }, __jsx("meta", {
+    charSet: "utf-8",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
     },
     __self: this
-  }), __jsx(_Experience__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    languageNum: language.getLanguage(),
+  }), __jsx("title", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 29
     },
     __self: this
-  }), __jsx(_Education__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    languageNum: language.getLanguage(),
+  }, "Guillermo Magdaleno"), __jsx("link", {
+    rel: "shortcut icon",
+    type: "image/png",
+    href: "/favicon.png",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 30
     },
     __self: this
-  }), __jsx(_Projects__WEBPACK_IMPORTED_MODULE_12__["default"], {
-    languageNum: language.getLanguage(),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
-  }), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  })), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    language: language,
+    viewWidth: adjustedWidth,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
+    },
+    __self: this
+  }), __jsx(_Intro__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    languageNum: language.getLanguage(),
+    viewHeight: adjustedHeight,
+    viewWidth: adjustedWidth,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: this
+  }), __jsx(_Who__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    languageNum: language.getLanguage(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }), __jsx(_Skills__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    languageNum: language.getLanguage(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
+  }), __jsx(_Experience__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    languageNum: language.getLanguage(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }), __jsx(_Education__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    languageNum: language.getLanguage(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: this
+  }), __jsx(_Projects__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    languageNum: language.getLanguage(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: this
+  }), __jsx(_Contact__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    languageNum: language.getLanguage(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: this
+  }), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
     },
     __self: this
   }));
@@ -27049,6 +28399,20 @@ var checkItem = function checkItem(object, lang) {
 
 /***/ }),
 
+/***/ "./values/VALUES_CONTACT.js":
+/*!**********************************!*\
+  !*** ./values/VALUES_CONTACT.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var VALUES_CONTACT = [{}];
+/* harmony default export */ __webpack_exports__["default"] = (VALUES_CONTACT);
+
+/***/ }),
+
 /***/ "./values/VALUES_EDUCATION.js":
 /*!************************************!*\
   !*** ./values/VALUES_EDUCATION.js ***!
@@ -27150,7 +28514,8 @@ var VALUES_PROJECTS = [{
   type: "Phone",
   sourceMain: "videos/EcoCarWash.webm",
   sourceFallback: "videos/EcoCarWash.mp4",
-  description: [["Project done for a car wash company in Baja California, Mexico.", "The app tracks follows, registers, and reports the cleaning life cycle in which a car might go through: the car entering the car wash, an employee being assigned for cleaning, and completition of work."], ["Proyecto hecho para un compañia de auto-lavados en Baja California, México.", "La aplicacion sigue, registra, y reportea el ciclo de vida del lavado por el que puede pasar cada automóvil: desde que ingresa al auto-lavado, cuando se asigna un limpeador, y cuando el trabajo fue terminado."]],
+  description: [["Project done for a car wash company in Baja California, Mexico.", "The app tracks follows, registers, and reports the cleaning life cycle in which a car might go through: the car entering the car wash, an employee being assigned for cleaning, and completition of work.", "The purpose was not only to report assistance and performance, but also to balance the workload by assigning the next jobs automatically among employees."], ["Proyecto hecho para un compañia de auto-lavados en Baja California, México.", "La aplicacion sigue, registra, y reportea el ciclo de vida del lavado por el que puede pasar cada automóvil: desde que ingresa al auto-lavado, cuando se asigna un limpeador, y cuando el trabajo fue terminado.", "El proposito era no solo reportar la asistencia y desempeño, si no tambien balancear la carga de trabajo al asignar automaticamente lo siguentes trabajos entre empleados."]],
+  skills: ["Java", "Android Development", "Firebase"],
   availability: [{
     title: "Play Store",
     link: "https://play.google.com/store/apps/details?id=com.giemper.ecocarwash"
@@ -27160,14 +28525,45 @@ var VALUES_PROJECTS = [{
   }]
 }, {
   title: "Colour App",
-  type: 'Phone',
+  type: "Phone",
   sourceMain: "videos/Colour.webm",
   sourceFallback: "videos/Colour.mp4",
   description: [["This project was done a few years ago as practice for Android Development", "The goal of Colour is to be a minimalist color picker for your phone for when you're in need of picking a quick color reference for a project."], ["Este projecto fue hecho hace un par de años como practica en desarrollo para Android", "La meta de Colour es ser un seleccionador de colores minimalista, para cuando uno este en necesidad de escoger una referencia de color rapida para un proyecto."]],
+  skills: ["Java", "Android Development"],
   availability: [{
     title: "Github",
     link: "https://github.com/Giemper/Colour"
   }]
+}, {
+  title: "Giemper.com",
+  type: "Browser",
+  sourceMain: "videos/Giempercom.webm",
+  sourceFallback: "videos/Giempercom.mp4",
+  description: [["Look! It's the site you're on right now!", "The site was done using React + NextJS, Bootstrap Grids, Google Fonts, and a few Font Awesome icons.", "Fun Fact: The domain is called Giemper.com because of my full name initials.", "Guillermo Magdaleno Perez. GMP. Gee-Em-Pe. Giemper."], ["¡Mira, es el sitio en el que estas ahorita mismo!", "El sitio fue hecho usando React + NextJS, Bootstrap Grids, Google Fonts, y unos cuantos iconos de Font Awesome.", "Dato Curioso: El dominio se llama Giemper.com gracias a las iniciales de mi nombre completo.", "Guillermo Magdaleno Perez. GMP. Gee-Em-Pe. Giemper."]],
+  skills: ["React", "NextJS", "SASS"],
+  availability: [{
+    title: "Giemper.com",
+    link: "#nav_home"
+  }, {
+    title: "Github",
+    link: "https://github.com/Giemper/giemper-site"
+  }]
+}, {
+  title: "Posada 2016",
+  type: "Browser",
+  sourceMain: "videos/Posada.webm",
+  sourceFallback: "videos/Posada.mp4",
+  description: [["Since high school, every year around Christmas eve a my friends and I organized a Secret Santa gift exchange amoung ourselves. While we all get along, there are sometimes when you just don't want to get matched with someone specific.", "Starting on 2014, I came up with the idea of doing a site to help us with that conundrum. The site not only did the matching without ruining the surprise for anyone, but filtered out any 'incompatible' matches.", "Every participant was able to create a profile, answer some questions about themselves to help their Santa, read the preferences and send annonymous messages to who they were supposed to give a gift to.", "While we keep meeting for our annual Christmas party, sadly 2016 was the last year of our Secret Santa exchange. Maybe I should give this project another go soon!"], ["Desde que estabamos en preparatoria, cada año cerca de Navidad mis amigos y yo nos organizamos para un intercambio navideño 'Santa Secreto' entre nosotros. Aunque todos nos llevamos muy bien, hay ocaciones en los cuales uno no quiere ser asignado con alguien especifico.", "Empezando en 2014, tuve la idea de diseñar un sitio que nos ayude con este problema. El sitio no solo permite hacer la asignación del intercambio sin arruinar la sorpresa para nadie, si no tambien filtra cualquier asignación 'incompatible'.", "Cada participante puede crear su perfil, responder algunas preguntas sobre si mismos para ayudar a su Santa, y enviar mensajes anonimos y leer las preferencias de la persona a quien le tienen que dar un regalo.", "Aunque seguimos haciendo nuestra fiesta Navideña Anual, tristemente 2016 fue el ultimo año del intercambio de regalos. Quizas deberia pronto darle otra oportunidad a este proyecto."]],
+  skills: ["AngularJS", "PHP", "SQL", "jQuery"],
+  availability: [{
+    title: "Github",
+    link: "https://github.com/Giemper/Posada2016"
+  }]
+}, {
+  title: "HRPoint",
+  type: "None",
+  skills: ["VueJS", "Sharepoint", ".NET", "SQL", "Azure"],
+  description: [["HRPoint is the intranet webpage for Collins Aerospace Mexicali.", "Employees of Collins Aerospace can get into the site to check the latest news and happenings in our facilities, check a roadmap of their career development in the company, check employee benefits, find and fill request forms for things like Paid Time Off, check the weekly cafeteria menu, calendars, and inquiries with Human Resources, Finance, and Health & Security departments.", "Some features and sections are locked depending on the management level, as they might have information and forms limited for exclusive use of supervisors, like requesting monetary rewards for employees based on performance.", "The newsletter and content of the site is constantly updated by the Communications department by using a blog-like interface in which they can choose how the information is going to be deployed. It could be just a new post, it could be an announcent with a header image in the homepage, or a site-wide email.", "HRPoint is available only in the Collins Aerospace internal network."], ["HRPoint es la pagina intranet de Collins Aerospace Mexicali.", "Empleados de Collins Aerospace puenden entrar al sitio para checar las noticias y eventos más recientes en nuestras instalaciones, ver opciones para desarollo profesional, consultar los beneficios como empleado, encontrar y llenar formatos para cosas como permisos con gose, ver el menú semanal de la cafetería, calendarios, y consultas con los departamentos de Recursos Humanos, Finanzas, y Seguridad.", "Algunas funciones estan restrigidas dependiendo del nivel de manejo, ya que pueden contar con información y formatos limitadas para uso exclusivo de supervisores, como solitar recomentazas economicas para empleados basado en desempeño.", "El boletin informativo y contenido del sitio es constantemente actualizado por el departamento de Comunicación usando una interface tipo blog, en el cual pueden escoger como la información va a ser distribuida. Puede ser solamente un nueva publicación, puede ser un anuncio visual en la página de inicio, o puede ser un correo electronico para toda el sitio.", "HRPoint esta disponible solamente en la red interna de Collins Aerospace."]]
 }];
 /* harmony default export */ __webpack_exports__["default"] = (VALUES_PROJECTS);
 
@@ -27222,6 +28618,9 @@ var VALUES_SKILLS = [{
   skill: "jQuery",
   tags: ["Web"]
 }, {
+  skill: "Bootstrap",
+  tags: ["Web"]
+}, {
   skill: "ASP.NET",
   tags: ["Web"]
 }, {
@@ -27243,6 +28642,9 @@ var VALUES_SKILLS = [{
   skill: "Sharepoint",
   tags: ["Web"]
 }, {
+  skill: "Azure",
+  tags: ["Web"]
+}, {
   skill: "Android Development",
   tags: ["Mobile"]
 }, {
@@ -27250,6 +28652,20 @@ var VALUES_SKILLS = [{
   tags: ["Mobile"]
 }];
 /* harmony default export */ __webpack_exports__["default"] = (VALUES_SKILLS);
+
+/***/ }),
+
+/***/ "./values/VALUES_WHO.js":
+/*!******************************!*\
+  !*** ./values/VALUES_WHO.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var VALUES_WHO = [["Without getting into an existencial crisis, I can briefly describe myself as a guy from the bordertown of Mexicali, Baja California Mexico that has been working as a Software Developer for more than four years doing Full Stack, Desktop, and Mobile projects (some of which can be found below).", "I have a Computer Science degree from CETYS University Mexicali. During my undergraduate years I had the oportunity to do a semester abroad at the Ecolé Polytechnique of Montreal, Quebec for which I was awared the Emerging Leaders in the Americas scholarship granted by the Government of Canada. I was also selected to participate in the International Summer Program for Entrepreneurs, an event organized by Stanford University and the Ministry of Foreign Affairs of Mexico."], ["Sin meterme en una crisis existencial, puedo brevemente describirme como una persona de la ciudad fronteriza de Mexicali, Baja California, México que ha trabajado como Software Developer por más de cuatro años con aplicaciones Full Stack, de Escritorio, y Móviles (algunos de ellos pueden ser encontrados abajo).", "Obtuve mi título de Ing. en Ciencias Computacionales en CETYS Universidad Mexicali. Durante mis años universitarios tuve la oportunidad de hacer un semestre de intercambio académico en la Escuela Politécnica de Montreal, Quebec en la cual recibí la beca Lideres Emergentes en las Américas otorgada por el Gobierno de Canadá. También fui seleccionado para participar en el Programa de Verano Internacional para Emprendedores, un evento organizado por la Universidad de Stanford y la Secretaria de Relaciones Exteriores de México."]];
+/* harmony default export */ __webpack_exports__["default"] = (VALUES_WHO);
 
 /***/ }),
 

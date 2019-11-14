@@ -45,6 +45,7 @@
 
     .intro-panel {
         padding-left: 15%;
+        padding-right: 24px;
         width: fit-content;
 
         p {
@@ -89,6 +90,16 @@
             border-radius: 50%;
             margin-left: 12px;
         }
+
+        .fix-bg,
+        .fix-img {
+            position: fixed;
+        }
+
+        .fix-bg.stop,
+        .fix-img.stop {
+            position: absolute;
+        }
     }
 }
 
@@ -103,6 +114,16 @@
 @media (max-width: $media-md) {
     .intro {
         font-size: 2.5em;
+
+        .intro-picture {
+            .fix-bg,
+            .fix-img,
+            .fix-bg.stop,
+            .fix-img.stop {
+                position: absolute;
+                top: unset;
+            }
+        }
     }
 }
 
@@ -137,15 +158,12 @@
 
             img {
                 border-radius: 50%;
-                position: relative;
+                position: relative !important;
                 -ms-transform: translateY(0);
                 transform: translateY(0);
                 margin-left: auto;
                 margin-right: auto;
-                top: 20%;
-
-                // height: initial !important;
-                // width: 30% !important;
+                top: 20% !important;
             }
         }
     }

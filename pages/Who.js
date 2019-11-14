@@ -7,12 +7,11 @@ const Who = (props) => {
     const title = ["Who am I?", "¿Quien Soy?"];
     const valuesWho = checkItem(VALUES_WHO, lang);
     
-
     return (
-        <div className="page">
+        <div className="page who-item">
             <div className="container">
                 <PageHeader title={checkItem(title, lang)} id="nav_who" />
-                <div className="col-lg-8 col-md-12 col-sm-12 who-item">
+                <div className="col-lg-7 col-md-12 col-sm-12 who-item">
                     {
                         valuesWho.map((item, index)=>(
                             <p key={index}>{item}</p>

@@ -50,14 +50,15 @@ li {
 }
 
 .page.shadow {
-    background-color: rgba(0, 0, 0, 0.4);
+    // background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(24, 25, 32, 1);
     box-shadow: $shadow;
     padding-bottom: 64px;
     margin-bottom: 0;
 }
 
 .who-item {
-    text-align: justify;
+    padding: 24px 0;
 }
 
 .skill-item {

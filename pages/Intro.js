@@ -1,7 +1,10 @@
+import { useState, useEffect } from 'react';
 import checkItem from '../tools/checkItem';
 import '../styles/Intro.scss';
 
 const ProfilePicture = (props) => {
+    const [stop, setStop] = useState("none");
+    const [topState, setTopState] = useState("initial");
     const canvasHeight = (props.height / 1.5 > 500) 
                             ? props.height / 1.5
                             : 450;
@@ -13,13 +16,27 @@ const ProfilePicture = (props) => {
     const canvasMargin = canvasHeight * 0.1;
     const canvasSquare = (canvasHeight - canvasMargin) * canvasWidth;
     const canvasSize = canvasPhone ? (canvasHeight + canvasMargin) * canvasWidth : 0;
-    const imageAdapter =  { width: canvasSquare + "px", height: canvasSquare + "px" };
-    const bgAdapter = { width: canvasSize + "px", height: canvasSize + "px" };
+    const imageAdapter =  { width: canvasSquare + "px", height: canvasSquare + "px", top: topState };
+    const bgAdapter = { width: canvasSize + "px", height: canvasSize + "px", top: topState };
+
+    useEffect(() => {
+        document.addEventListener('scroll', () => {
+            const maxTop = (props.height <= 720) ? props.height : 720;
+            if (window.scrollY > maxTop) {
+                setStop("stop");
+                setTopState(maxTop + "px");
+            }
+            else {
+                setStop("none");
+                setTopState("initial");
+            }
+        });
+    });
 
     return (
         <div className="intro-picture row justify-content-end">
-            <div className="picture-bg" style={bgAdapter}/>
-            <img src={props.source} style={imageAdapter} />
+            <div className={`picture-bg fix-bg ${stop}`} style={bgAdapter}/>
+            <img className={`fix-img ${stop}`} src={props.source} style={imageAdapter} />
         </div>
     );
 }

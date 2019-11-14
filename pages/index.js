@@ -1,5 +1,6 @@
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
+import { Helmet } from 'react-helmet';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Language from '../tools/Language';
@@ -10,6 +11,7 @@ import Skills from './Skills';
 import Experience from './Experience';
 import Education from './Education';
 import Projects from './Projects';
+import Contact from './Contact';
 import '../styles/pages.scss';
 
 const Index = () => {
@@ -22,6 +24,11 @@ const Index = () => {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8"/>
+                <title>Guillermo Magdaleno</title>
+                <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+            </Helmet>
             <Navbar language={language} viewWidth={adjustedWidth} />
             <Intro languageNum={language.getLanguage()} viewHeight={adjustedHeight} viewWidth={adjustedWidth} />
             <Who languageNum={language.getLanguage()} />
@@ -29,6 +36,7 @@ const Index = () => {
             <Experience languageNum={language.getLanguage()} />
             <Education languageNum={language.getLanguage()} />
             <Projects languageNum={language.getLanguage()} />
+            <Contact languageNum={language.getLanguage()} />
             <Footer />
         </>
     );

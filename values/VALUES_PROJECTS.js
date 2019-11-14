@@ -93,7 +93,7 @@ const VALUES_PROJECTS = [
     {
         title: "HRPoint",
         type: "None",
-        skills: ["VueJS", "jQuery", "Sharepoint", ".NET", "SQL", "Azure"],
+        skills: ["VueJS", "Sharepoint", ".NET", "SQL", "Azure"],
         description: [
             [
                 "HRPoint is the intranet webpage for Collins Aerospace Mexicali.",

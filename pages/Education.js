@@ -1,6 +1,5 @@
 import PageHeader from '../components/PageHeader';
 import BoxItem from '../components/BoxItem';
-
 import VALUES_EDUCATION from '../values/VALUES_EDUCATION';
 import checkItem from '../tools/checkItem';
 

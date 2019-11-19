@@ -1,0 +1,84 @@
+@import 'variables';
+
+.contact-form {
+    .form-subtitle {
+        font-weight: 700;
+        margin-block-start: 4px;
+        margin-block-end: 4px;
+    }
+
+    .form-text,
+    .form-button {
+        width: 100%;
+        margin: 4px 0;
+        font-family: 'Poppins';
+    }
+
+    .form-button {
+        text-decoration: none;
+        border: none;
+        background-color: $white;
+        color: $secundary-dark;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 700;
+        text-align: center;
+        border-radius: 32px;
+        width: 100%;
+        padding: 4px 8px;
+        margin: 12px 0;
+    }
+
+    .form-text {
+        height: 32px;
+        font-size: 1em;
+        color: $white;
+        background-color: unset;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        border-bottom: 1px solid $white;
+        padding: 0 8px;
+        resize: none;
+        outline: none;
+        margin-bottom: 16px;
+    }
+
+    .form-text.area {
+        height: 100px;
+    }
+
+    .form-text:focus {
+        border-bottom: 3px solid #35d0f3;
+    }
+
+    .form-text.alert,
+    input[data-state="invalid"] {
+        border-bottom-color: $secundary-dark;
+    }
+
+    .message-error,
+    .message-success {
+        padding: 4px 20px;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+    }
+
+    .message-error {
+        // border: 2px solid $red;
+        // background-color: rgba(255, 85, 85, 0.1);
+        border: 2px solid $secundary-dark;
+        background-color: rgba(53, 55, 73, 0.3);
+    }
+
+    .message-success {
+        border: 2px solid $cyan;
+        background-color: rgba(139, 233, 253, 0.4);
+    }
+}
+
+@media (max-width: $media-md) {
+    .contact-form {
+        width: 100%;
+    }
+}

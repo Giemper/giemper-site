@@ -73,6 +73,218 @@ var BoxItem = function BoxItem(props) {
 
 /***/ }),
 
+/***/ "./components/Contact.js":
+/*!*******************************!*\
+  !*** ./components/Contact.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! emailjs-com */ "./node_modules/emailjs-com/source/index.js");
+/* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(emailjs_com__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../values/VALUES_CONTACT */ "./values/VALUES_CONTACT.js");
+/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
+/* harmony import */ var _styles_Contact_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/Contact.scss */ "./styles/Contact.scss");
+/* harmony import */ var _styles_Contact_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_Contact_scss__WEBPACK_IMPORTED_MODULE_5__);
+
+var _jsxFileName = "/mnt/c/Dev/giemper-site/components/Contact.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+
+
+var Feedback = function Feedback(props) {
+  if (props.status === "error") return __jsx("div", {
+    className: "message-error",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, props.errorList.map(function (item, index) {
+    return __jsx("p", {
+      key: index,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(item, props.language));
+  }));else if (props.status === "sent") return __jsx("div", {
+    className: "message-success",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].success, props.language)));else return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null);
+};
+
+var Contact = function Contact(props) {
+  var lang = props.languageNum;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
+      status = _useState[0],
+      setStatus = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
+      errorList = _useState2[0],
+      setErrorList = _useState2[1];
+
+  var validateText = function validateText(target, valueContact) {
+    var trim = target.value.trim();
+
+    if (!trim) {
+      target.dataset.state = 'invalid';
+      setStatus("error");
+      setErrorList(function (old) {
+        return [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(old), [valueContact]);
+      });
+    } else target.dataset.state = 'valid';
+  };
+
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("");
+    setErrorList([]);
+    validateText(e.target.user_name, _values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].errorName);
+    validateText(e.target.user_email, _values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].errorEmail);
+
+    if (e.target.user_name.value.trim() && e.target.user_email.value.trim()) {
+      emailjs_com__WEBPACK_IMPORTED_MODULE_2___default.a.sendForm('gmail', 'giemper_6OSriQM4', e.target).then(function (result) {
+        setStatus("sent");
+      }), function (error) {
+        setStatus("error");
+        setErrorList([_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].errorServer]);
+      };
+    }
+  };
+
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: this
+  }, __jsx("form", {
+    className: "contact-form",
+    onSubmit: handleSubmit,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: this
+  }, __jsx("h2", {
+    className: "form-title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: this
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].head, lang)), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: this
+  }, __jsx("p", {
+    className: "form-subtitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: this
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].name, lang)), __jsx("input", {
+    className: "form-text",
+    type: "text",
+    name: "user_name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: this
+  })), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: this
+  }, __jsx("p", {
+    className: "form-subtitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: this
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].email, lang)), __jsx("input", {
+    className: "form-text",
+    type: "email",
+    name: "user_email",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  })), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: this
+  }, __jsx("p", {
+    className: "form-subtitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: this
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].message, lang)), __jsx("textarea", {
+    className: "form-text area",
+    name: "message_html",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: this
+  })), __jsx(Feedback, {
+    status: status,
+    errorList: errorList,
+    language: lang,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: this
+  }), __jsx("input", {
+    className: "form-button",
+    type: "submit",
+    value: Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].send, lang),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: this
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Contact);
+
+/***/ }),
+
 /***/ "./components/Footer.js":
 /*!******************************!*\
   !*** ./components/Footer.js ***!
@@ -84,11 +296,20 @@ var BoxItem = function BoxItem(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
+/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Contact */ "./components/Contact.js");
+/* harmony import */ var _styles_Footer_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/Footer.scss */ "./styles/Footer.scss");
+/* harmony import */ var _styles_Footer_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_Footer_scss__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/mnt/c/Dev/giemper-site/components/Footer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+
+
+
 var Footer = function Footer(props) {
+  var lang = props.languageNum;
+  var findme = ["Find me at", "Encuentrame en"];
   var sites = [{
     site: "LinkedIn",
     link: "http://www.linkedin.com/in/gmomagdaleno"
@@ -103,51 +324,58 @@ var Footer = function Footer(props) {
     className: "footer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 16
     },
     __self: this
   }, __jsx("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 17
     },
     __self: this
   }, __jsx("div", {
     className: "row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 18
     },
     __self: this
   }, __jsx("div", {
     className: "col-lg-6 col-md-6 col-sm-12 align-self-end foot-block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 19
     },
     __self: this
-  }, __jsx("p", {
-    className: "title",
+  }, __jsx(_Contact__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    languageNum: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 20
     },
     __self: this
-  }, "Guillermo Magdaleno"), __jsx("p", {
+  })), __jsx("div", {
+    className: "col-lg-6 col-md-6 col-sm-12",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 22
     },
     __self: this
-  }, "Software Developer")), __jsx("div", {
-    className: "col-lg-6 col-md-6 col-sm-12 align-self-center",
+  }, __jsx("div", {
+    className: "foot-social",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 23
     },
     __self: this
-  }, sites.map(function (item, index) {
+  }, __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_1__["default"])(findme, lang)), sites.map(function (item, index) {
     return __jsx("a", {
       key: index,
       className: "foot-links",
@@ -156,11 +384,11 @@ var Footer = function Footer(props) {
       draggable: "false",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 27
       },
       __self: this
     }, item.site);
-  })))));
+  }))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -598,6 +826,17 @@ var SkillBox = function SkillBox(props) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/array/from.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/array/from */ "./node_modules/core-js/library/fn/array/from.js");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
@@ -617,6 +856,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/array/is-array */ ".
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/get-iterator */ "./node_modules/core-js/library/fn/get-iterator.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/is-iterable */ "./node_modules/core-js/library/fn/is-iterable.js");
 
 /***/ }),
 
@@ -948,6 +1198,31 @@ function _arrayWithHoles(arr) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithoutHoles; });
+/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__);
+
+function _arrayWithoutHoles(arr) {
+  if (_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default()(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js":
 /*!**********************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js ***!
@@ -1076,6 +1351,28 @@ function _inherits(subClass, superClass) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArray; });
+/* harmony import */ var _core_js_array_from__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/array/from */ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js");
+/* harmony import */ var _core_js_array_from__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_array_from__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/is-iterable */ "./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js");
+/* harmony import */ var _core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function _iterableToArray(iter) {
+  if (_core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1___default()(Object(iter)) || Object.prototype.toString.call(iter) === "[object Arguments]") return _core_js_array_from__WEBPACK_IMPORTED_MODULE_0___default()(iter);
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArrayLimit.js":
 /*!*********************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArrayLimit.js ***!
@@ -1129,6 +1426,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableRest; });
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableSpread; });
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
 }
 
 /***/ }),
@@ -1199,6 +1512,28 @@ __webpack_require__.r(__webpack_exports__);
 
 function _slicedToArray(arr, i) {
   return Object(_arrayWithHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArrayLimit__WEBPACK_IMPORTED_MODULE_1__["default"])(arr, i) || Object(_nonIterableRest__WEBPACK_IMPORTED_MODULE_2__["default"])();
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _toConsumableArray; });
+/* harmony import */ var _arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js");
+/* harmony import */ var _iterableToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js");
+/* harmony import */ var _nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js");
+
+
+
+function _toConsumableArray(arr) {
+  return Object(_arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(arr) || Object(_nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__["default"])();
 }
 
 /***/ }),
@@ -1777,6 +2112,20 @@ rawAsap.makeRequestCallFromTimer = makeRequestCallFromTimer;
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/fn/array/from.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/library/fn/array/from.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
+__webpack_require__(/*! ../../modules/es6.array.from */ "./node_modules/core-js/library/modules/es6.array.from.js");
+module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Array.from;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/fn/array/is-array.js":
 /*!***********************************************************!*\
   !*** ./node_modules/core-js/library/fn/array/is-array.js ***!
@@ -1800,6 +2149,20 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 __webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/core-js/library/modules/web.dom.iterable.js");
 __webpack_require__(/*! ../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
 module.exports = __webpack_require__(/*! ../modules/core.get-iterator */ "./node_modules/core-js/library/modules/core.get-iterator.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/is-iterable.js":
+/*!********************************************************!*\
+  !*** ./node_modules/core-js/library/fn/is-iterable.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/core-js/library/modules/web.dom.iterable.js");
+__webpack_require__(/*! ../modules/es6.string.iterator */ "./node_modules/core-js/library/modules/es6.string.iterator.js");
+module.exports = __webpack_require__(/*! ../modules/core.is-iterable */ "./node_modules/core-js/library/modules/core.is-iterable.js");
 
 
 /***/ }),
@@ -2537,6 +2900,26 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 
 var core = module.exports = { version: '2.6.10' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_create-property.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_create-property.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $defineProperty = __webpack_require__(/*! ./_object-dp */ "./node_modules/core-js/library/modules/_object-dp.js");
+var createDesc = __webpack_require__(/*! ./_property-desc */ "./node_modules/core-js/library/modules/_property-desc.js");
+
+module.exports = function (object, index, value) {
+  if (index in object) $defineProperty.f(object, index, createDesc(0, value));
+  else object[index] = value;
+};
 
 
 /***/ }),
@@ -4339,6 +4722,76 @@ module.exports = __webpack_require__(/*! ./_core */ "./node_modules/core-js/libr
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/modules/core.is-iterable.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/core.is-iterable.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var classof = __webpack_require__(/*! ./_classof */ "./node_modules/core-js/library/modules/_classof.js");
+var ITERATOR = __webpack_require__(/*! ./_wks */ "./node_modules/core-js/library/modules/_wks.js")('iterator');
+var Iterators = __webpack_require__(/*! ./_iterators */ "./node_modules/core-js/library/modules/_iterators.js");
+module.exports = __webpack_require__(/*! ./_core */ "./node_modules/core-js/library/modules/_core.js").isIterable = function (it) {
+  var O = Object(it);
+  return O[ITERATOR] !== undefined
+    || '@@iterator' in O
+    // eslint-disable-next-line no-prototype-builtins
+    || Iterators.hasOwnProperty(classof(O));
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/es6.array.from.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es6.array.from.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var ctx = __webpack_require__(/*! ./_ctx */ "./node_modules/core-js/library/modules/_ctx.js");
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var toObject = __webpack_require__(/*! ./_to-object */ "./node_modules/core-js/library/modules/_to-object.js");
+var call = __webpack_require__(/*! ./_iter-call */ "./node_modules/core-js/library/modules/_iter-call.js");
+var isArrayIter = __webpack_require__(/*! ./_is-array-iter */ "./node_modules/core-js/library/modules/_is-array-iter.js");
+var toLength = __webpack_require__(/*! ./_to-length */ "./node_modules/core-js/library/modules/_to-length.js");
+var createProperty = __webpack_require__(/*! ./_create-property */ "./node_modules/core-js/library/modules/_create-property.js");
+var getIterFn = __webpack_require__(/*! ./core.get-iterator-method */ "./node_modules/core-js/library/modules/core.get-iterator-method.js");
+
+$export($export.S + $export.F * !__webpack_require__(/*! ./_iter-detect */ "./node_modules/core-js/library/modules/_iter-detect.js")(function (iter) { Array.from(iter); }), 'Array', {
+  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
+  from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
+    var O = toObject(arrayLike);
+    var C = typeof this == 'function' ? this : Array;
+    var aLen = arguments.length;
+    var mapfn = aLen > 1 ? arguments[1] : undefined;
+    var mapping = mapfn !== undefined;
+    var index = 0;
+    var iterFn = getIterFn(O);
+    var length, result, step, iterator;
+    if (mapping) mapfn = ctx(mapfn, aLen > 2 ? arguments[2] : undefined, 2);
+    // if object isn't iterable or it's array with default iterator - use simple case
+    if (iterFn != undefined && !(C == Array && isArrayIter(iterFn))) {
+      for (iterator = iterFn.call(O), result = new C(); !(step = iterator.next()).done; index++) {
+        createProperty(result, index, mapping ? call(iterator, mapfn, [step.value, index], true) : step.value);
+      }
+    } else {
+      length = toLength(O.length);
+      for (result = new C(length); length > index; index++) {
+        createProperty(result, index, mapping ? mapfn(O[index], index) : O[index]);
+      }
+    }
+    result.length = index;
+    return result;
+  }
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/modules/es6.array.is-array.js":
 /*!********************************************************************!*\
   !*** ./node_modules/core-js/library/modules/es6.array.is-array.js ***!
@@ -5419,6 +5872,185 @@ var defineProperties = function (object, map) {
 defineProperties.supportsDescriptors = !!supportsDescriptors;
 
 module.exports = defineProperties;
+
+
+/***/ }),
+
+/***/ "./node_modules/emailjs-com/source/index.js":
+/*!**************************************************!*\
+  !*** ./node_modules/emailjs-com/source/index.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var EmailJSResponseStatus_1 = __webpack_require__(/*! ./models/EmailJSResponseStatus */ "./node_modules/emailjs-com/source/models/EmailJSResponseStatus.js");
+exports.EmailJSResponseStatus = EmailJSResponseStatus_1.EmailJSResponseStatus;
+var UI_1 = __webpack_require__(/*! ./services/ui/UI */ "./node_modules/emailjs-com/source/services/ui/UI.js");
+var _userID = null;
+var _origin = 'https://api.emailjs.com';
+function sendPost(url, data, headers) {
+    if (headers === void 0) { headers = {}; }
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener('load', function (event) {
+            var responseStatus = new EmailJSResponseStatus_1.EmailJSResponseStatus(event.target);
+            if (responseStatus.status === 200 || responseStatus.text === 'OK') {
+                resolve(responseStatus);
+            }
+            else {
+                reject(responseStatus);
+            }
+        });
+        xhr.addEventListener('error', function (event) {
+            reject(new EmailJSResponseStatus_1.EmailJSResponseStatus(event.target));
+        });
+        xhr.open('POST', url, true);
+        for (var key in headers) {
+            xhr.setRequestHeader(key, headers[key]);
+        }
+        xhr.send(data);
+    });
+}
+function appendGoogleCaptcha(templatePrams) {
+    var element = document.getElementById('g-recaptcha-response');
+    if (element && element.value) {
+        templatePrams['g-recaptcha-response'] = element.value;
+    }
+    element = null;
+    return templatePrams;
+}
+/**
+ * Initiation
+ * @param {string} userID - set the EmailJS user ID
+ * @param {string} origin - set the EmailJS origin
+ */
+function init(userID, origin) {
+    _userID = userID;
+    _origin = origin || 'https://api.emailjs.com';
+}
+exports.init = init;
+/**
+ * Send a template to the specific EmailJS service
+ * @param {string} serviceID - the EmailJS service ID
+ * @param {string} templateID - the EmailJS template ID
+ * @param {Object} templatePrams - the template params, what will be set to the EmailJS template
+ * @param {string} userID - the EmailJS user ID
+ * @returns {Promise<EmailJSResponseStatus>}
+ */
+function send(serviceID, templateID, templatePrams, userID) {
+    var params = {
+        lib_version: '2.4.1',
+        user_id: userID || _userID,
+        service_id: serviceID,
+        template_id: templateID,
+        template_params: appendGoogleCaptcha(templatePrams)
+    };
+    return sendPost(_origin + '/api/v1.0/email/send', JSON.stringify(params), {
+        'Content-type': 'application/json'
+    });
+}
+exports.send = send;
+/**
+ * Send a form the specific EmailJS service
+ * @param {string} serviceID - the EmailJS service ID
+ * @param {string} templateID - the EmailJS template ID
+ * @param {string | HTMLFormElement} form - the form element or selector
+ * @param {string} userID - the EmailJS user ID
+ * @returns {Promise<EmailJSResponseStatus>}
+ */
+function sendForm(serviceID, templateID, form, userID) {
+    if (typeof form === 'string') {
+        form = document.querySelector(form);
+    }
+    if (!form || form.nodeName !== 'FORM') {
+        throw 'Expected the HTML form element or the style selector of form';
+    }
+    UI_1.UI.progressState(form);
+    var formData = new FormData(form);
+    formData.append('lib_version', '2.4.1');
+    formData.append('service_id', serviceID);
+    formData.append('template_id', templateID);
+    formData.append('user_id', userID || _userID);
+    return sendPost(_origin + '/api/v1.0/email/send-form', formData)
+        .then(function (response) {
+        UI_1.UI.successState(form);
+        return response;
+    }, function (error) {
+        UI_1.UI.errorState(form);
+        return Promise.reject(error);
+    });
+}
+exports.sendForm = sendForm;
+exports.default = {
+    init: init,
+    send: send,
+    sendForm: sendForm
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/emailjs-com/source/models/EmailJSResponseStatus.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/emailjs-com/source/models/EmailJSResponseStatus.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var EmailJSResponseStatus = /** @class */ (function () {
+    function EmailJSResponseStatus(httpResponse) {
+        this.status = httpResponse.status;
+        this.text = httpResponse.responseText;
+    }
+    return EmailJSResponseStatus;
+}());
+exports.EmailJSResponseStatus = EmailJSResponseStatus;
+
+
+/***/ }),
+
+/***/ "./node_modules/emailjs-com/source/services/ui/UI.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/emailjs-com/source/services/ui/UI.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var UI = /** @class */ (function () {
+    function UI() {
+    }
+    UI.clearAll = function (form) {
+        form.classList.remove(this.PROGRESS);
+        form.classList.remove(this.DONE);
+        form.classList.remove(this.ERROR);
+    };
+    UI.progressState = function (form) {
+        this.clearAll(form);
+        form.classList.add(this.PROGRESS);
+    };
+    UI.successState = function (form) {
+        form.classList.remove(this.PROGRESS);
+        form.classList.add(this.DONE);
+    };
+    UI.errorState = function (form) {
+        form.classList.remove(this.PROGRESS);
+        form.classList.add(this.ERROR);
+    };
+    UI.PROGRESS = 'emailjs-sending';
+    UI.DONE = 'emailjs-success';
+    UI.ERROR = 'emailjs-error';
+    return UI;
+}());
+exports.UI = UI;
 
 
 /***/ }),
@@ -27387,65 +28019,6 @@ if (!self.fetch) {
 
 /***/ }),
 
-/***/ "./pages/Contact.js":
-/*!**************************!*\
-  !*** ./pages/Contact.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_PageHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PageHeader */ "./components/PageHeader.js");
-/* harmony import */ var _values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../values/VALUES_CONTACT */ "./values/VALUES_CONTACT.js");
-/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
-var _jsxFileName = "/mnt/c/Dev/giemper-site/pages/Contact.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-var Contact = function Contact(props) {
-  var lang = props.languageNum;
-  var title = ["Contact", "Contacto"];
-  return __jsx("div", {
-    className: "page",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "container",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  }, __jsx(_components_PageHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_3__["default"])(title, lang),
-    id: "nav_cont",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, "Let's get in contact")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Contact);
-
-/***/ }),
-
 /***/ "./pages/Education.js":
 /*!****************************!*\
   !*** ./pages/Education.js ***!
@@ -27662,7 +28235,7 @@ var ProfilePicture = function ProfilePicture(props) {
     document.addEventListener('scroll', function () {
       var maxTop = props.height <= 720 ? props.height : 720;
 
-      if (window.scrollY > maxTop) {
+      if (window.scrollY > maxTop && props.width > 992) {
         setStop("stop");
         setTopState(maxTop + "px");
       } else {
@@ -28045,12 +28618,12 @@ var Who = function Who(props) {
       lineNumber: 14
     },
     __self: this
-  }, valuesWho.map(function (item, index) {
+  }, valuesWho !== undefined && valuesWho.map(function (item, index) {
     return __jsx("p", {
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 18
       },
       __self: this
     }, item);
@@ -28078,17 +28651,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_app_polyfill_stable__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_app_polyfill_stable__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/lib/Helmet.js");
 /* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
-/* harmony import */ var _tools_Language__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../tools/Language */ "./tools/Language.js");
-/* harmony import */ var _tools_Viewport__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../tools/Viewport */ "./tools/Viewport.js");
-/* harmony import */ var _Intro__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Intro */ "./pages/Intro.js");
-/* harmony import */ var _Who__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Who */ "./pages/Who.js");
-/* harmony import */ var _Skills__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Skills */ "./pages/Skills.js");
-/* harmony import */ var _Experience__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Experience */ "./pages/Experience.js");
-/* harmony import */ var _Education__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Education */ "./pages/Education.js");
-/* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Projects */ "./pages/Projects.js");
-/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Contact */ "./pages/Contact.js");
+/* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! emailjs-com */ "./node_modules/emailjs-com/source/index.js");
+/* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(emailjs_com__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _tools_Language__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../tools/Language */ "./tools/Language.js");
+/* harmony import */ var _tools_Viewport__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../tools/Viewport */ "./tools/Viewport.js");
+/* harmony import */ var _Intro__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Intro */ "./pages/Intro.js");
+/* harmony import */ var _Who__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Who */ "./pages/Who.js");
+/* harmony import */ var _Skills__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Skills */ "./pages/Skills.js");
+/* harmony import */ var _Experience__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Experience */ "./pages/Experience.js");
+/* harmony import */ var _Education__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Education */ "./pages/Education.js");
+/* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Projects */ "./pages/Projects.js");
 /* harmony import */ var _styles_pages_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../styles/pages.scss */ "./styles/pages.scss");
 /* harmony import */ var _styles_pages_scss__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_styles_pages_scss__WEBPACK_IMPORTED_MODULE_15__);
 var _jsxFileName = "/mnt/c/Dev/giemper-site/pages/index.js";
@@ -28108,35 +28682,47 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+ // import Contact from './Contact';
+
 
 
 var Index = function Index() {
-  var language = new _tools_Language__WEBPACK_IMPORTED_MODULE_6__["default"]();
+  var language = new _tools_Language__WEBPACK_IMPORTED_MODULE_7__["default"]();
   language.start();
 
-  var _Viewport = Object(_tools_Viewport__WEBPACK_IMPORTED_MODULE_7__["default"])(),
+  var _Viewport = Object(_tools_Viewport__WEBPACK_IMPORTED_MODULE_8__["default"])(),
       viewHeight = _Viewport.viewHeight,
       viewWidth = _Viewport.viewWidth;
 
   var adjustedHeight = viewHeight > 930 ? viewHeight - 50 : viewHeight;
   var adjustedWidth = viewWidth - 17;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-20127186-2');
+  });
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(react_helmet__WEBPACK_IMPORTED_MODULE_3__["Helmet"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 36
     },
     __self: this
   }, __jsx("meta", {
     charSet: "utf-8",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 37
     },
     __self: this
   }), __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 38
     },
     __self: this
   }, "Guillermo Magdaleno"), __jsx("link", {
@@ -28145,72 +28731,74 @@ var Index = function Index() {
     href: "/favicon.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 39
     },
     __self: this
-  })), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), emailjs_com__WEBPACK_IMPORTED_MODULE_4___default.a.init("user_7XWSfbX3F92thbWruog2F"), __jsx("script", {
+    async: true,
+    src: "https://www.googletagmanager.com/gtag/js?id=UA-20127186-2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  })), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_5__["default"], {
     language: language,
     viewWidth: adjustedWidth,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 43
     },
     __self: this
-  }), __jsx(_Intro__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), __jsx(_Intro__WEBPACK_IMPORTED_MODULE_9__["default"], {
     languageNum: language.getLanguage(),
     viewHeight: adjustedHeight,
     viewWidth: adjustedWidth,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 44
     },
     __self: this
-  }), __jsx(_Who__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), __jsx(_Who__WEBPACK_IMPORTED_MODULE_10__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 45
     },
     __self: this
-  }), __jsx(_Skills__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }), __jsx(_Skills__WEBPACK_IMPORTED_MODULE_11__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 46
     },
     __self: this
-  }), __jsx(_Experience__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }), __jsx(_Experience__WEBPACK_IMPORTED_MODULE_12__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 47
     },
     __self: this
-  }), __jsx(_Education__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }), __jsx(_Education__WEBPACK_IMPORTED_MODULE_13__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 48
     },
     __self: this
-  }), __jsx(_Projects__WEBPACK_IMPORTED_MODULE_13__["default"], {
+  }), __jsx(_Projects__WEBPACK_IMPORTED_MODULE_14__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 49
     },
     __self: this
-  }), __jsx(_Contact__WEBPACK_IMPORTED_MODULE_14__["default"], {
+  }), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: this
-  }), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 51
     },
     __self: this
   }));
@@ -28408,7 +28996,17 @@ var checkItem = function checkItem(object, lang) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var VALUES_CONTACT = [{}];
+var VALUES_CONTACT = {
+  head: ["Get in contact", "Ponte en contacto"],
+  name: ["Name", "Nombre"],
+  email: ["Email", "Correo Electrónico"],
+  message: ["Message", "Mensaje"],
+  send: ["Send", "Enviar"],
+  errorName: ["Please enter your name.", "Por favor ingresa tu nombre."],
+  errorEmail: ["Please enter your email.", "Por favor ingresa tu correo electrónico."],
+  errorServer: ["There was an error sending the message.", "Hubo un problema al enviar el mensaje."],
+  success: ["Message was sent! I'll get back to you shortly.", "¡El mensaje fue enviado! Pronto estaremos en contacto."]
+};
 /* harmony default export */ __webpack_exports__["default"] = (VALUES_CONTACT);
 
 /***/ }),
@@ -28539,7 +29137,7 @@ var VALUES_PROJECTS = [{
   type: "Browser",
   sourceMain: "videos/Giempercom.webm",
   sourceFallback: "videos/Giempercom.mp4",
-  description: [["Look! It's the site you're on right now!", "The site was done using React + NextJS, Bootstrap Grids, Google Fonts, and a few Font Awesome icons.", "Fun Fact: The domain is called Giemper.com because of my full name initials.", "Guillermo Magdaleno Perez. GMP. Gee-Em-Pe. Giemper."], ["¡Mira, es el sitio en el que estas ahorita mismo!", "El sitio fue hecho usando React + NextJS, Bootstrap Grids, Google Fonts, y unos cuantos iconos de Font Awesome.", "Dato Curioso: El dominio se llama Giemper.com gracias a las iniciales de mi nombre completo.", "Guillermo Magdaleno Perez. GMP. Gee-Em-Pe. Giemper."]],
+  description: [["Look! It's the site you're on right now!", "The site was done using React + NextJS, EmailJS, Bootstrap Grids, Google Fonts, and a few Font Awesome icons.", "Fun Fact: The domain is called Giemper.com because of my full name initials.", "Guillermo Magdaleno Perez. GMP. Gee-Em-Pe. Giemper."], ["¡Mira, es el sitio en el que estas ahorita mismo!", "El sitio fue hecho usando React + NextJS, EmailJS, Bootstrap Grids, Google Fonts, y unos cuantos iconos de Font Awesome.", "Dato Curioso: El dominio se llama Giemper.com gracias a las iniciales de mi nombre completo.", "Guillermo Magdaleno Perez. GMP. Gee-Em-Pe. Giemper."]],
   skills: ["React", "NextJS", "SASS"],
   availability: [{
     title: "Giemper.com",

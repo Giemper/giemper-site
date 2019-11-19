@@ -50,13 +50,13 @@ const VALUES_PROJECTS = [
         description: [
             [
                 "Look! It's the site you're on right now!", 
-                "The site was done using React + NextJS, Bootstrap Grids, Google Fonts, and a few Font Awesome icons.", 
+                "The site was done using React + NextJS, EmailJS, Bootstrap Grids, Google Fonts, and a few Font Awesome icons.", 
                 "Fun Fact: The domain is called Giemper.com because of my full name initials.", 
                 "Guillermo Magdaleno Perez. GMP. Gee-Em-Pe. Giemper."
             ],
             [
                 "¡Mira, es el sitio en el que estas ahorita mismo!", 
-                "El sitio fue hecho usando React + NextJS, Bootstrap Grids, Google Fonts, y unos cuantos iconos de Font Awesome.", 
+                "El sitio fue hecho usando React + NextJS, EmailJS, Bootstrap Grids, Google Fonts, y unos cuantos iconos de Font Awesome.", 
                 "Dato Curioso: El dominio se llama Giemper.com gracias a las iniciales de mi nombre completo.", 
                 "Guillermo Magdaleno Perez. GMP. Gee-Em-Pe. Giemper."]
         ],

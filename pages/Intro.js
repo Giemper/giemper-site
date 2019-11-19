@@ -22,7 +22,7 @@ const ProfilePicture = (props) => {
     useEffect(() => {
         document.addEventListener('scroll', () => {
             const maxTop = (props.height <= 720) ? props.height : 720;
-            if (window.scrollY > maxTop) {
+            if (window.scrollY > maxTop && props.width > 992) {
                 setStop("stop");
                 setTopState(maxTop + "px");
             }

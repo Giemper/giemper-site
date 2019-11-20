@@ -312,82 +312,100 @@ var Footer = function Footer(props) {
   var findme = ["Find me at", "Encuentrame en"];
   var sites = [{
     site: "LinkedIn",
-    link: "http://www.linkedin.com/in/gmomagdaleno"
+    link: "http://www.linkedin.com/in/gmomagdaleno",
+    icon: "icons/linkedin.svg"
   }, {
     site: "Github",
-    link: "https://github.com/giemper"
+    link: "https://github.com/giemper",
+    icon: "icons/github.svg"
   }, {
     site: "Twitter",
-    link: "https://twitter.com/giemper"
+    link: "https://twitter.com/giemper",
+    icon: "icons/twitter.svg"
   }];
   return __jsx("div", {
     className: "footer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 15
     },
     __self: this
   }, __jsx("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 16
     },
     __self: this
   }, __jsx("div", {
     className: "row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 17
     },
     __self: this
   }, __jsx("div", {
     className: "col-lg-6 col-md-6 col-sm-12 align-self-end foot-block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 18
     },
     __self: this
   }, __jsx(_Contact__WEBPACK_IMPORTED_MODULE_2__["default"], {
     languageNum: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 19
     },
     __self: this
   })), __jsx("div", {
     className: "col-lg-6 col-md-6 col-sm-12",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 21
     },
     __self: this
   }, __jsx("div", {
     className: "foot-social",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 22
     },
     __self: this
   }, __jsx("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 23
     },
     __self: this
   }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_1__["default"])(findme, lang)), sites.map(function (item, index) {
     return __jsx("a", {
       key: index,
-      className: "foot-links",
+      className: "foot-combo",
       href: item.link,
       target: "_bind",
       draggable: "false",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 26
       },
       __self: this
-    }, item.site);
+    }, __jsx("img", {
+      src: item.icon,
+      className: "foot-icon",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }), __jsx("label", {
+      className: "foot-links",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: this
+    }, item.site));
   }))))));
 };
 
@@ -469,54 +487,48 @@ var Navbar = function Navbar(props) {
     },
     __self: this
   }, props.viewWidth >= 768 - 17 && _values_VALUES_NAVBAR__WEBPACK_IMPORTED_MODULE_3__["default"].map(function (item, index) {
-    return (// <Link href={`/#${item.id}`} as={`/giemper-site/#${item.id}`} key={index} replace>
-      //     <a className="nav-button" draggable="false">
-      //         { checkItem(item.title, language.lang) }
-      //     </a>
-      // </Link>
-      __jsx("a", {
-        className: "nav-button",
-        draggable: "false",
-        key: index,
-        href: "#",
-        onClick: function onClick(e) {
-          e.preventDefault();
-          document.getElementById(item.id).scrollIntoView();
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(item.title, language.lang))
-    );
+    return __jsx("a", {
+      className: "nav-button",
+      draggable: "false",
+      key: index,
+      href: "#",
+      onClick: function onClick(e) {
+        e.preventDefault();
+        document.getElementById(item.id).scrollIntoView();
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(item.title, language.lang));
   })), __jsx("div", {
     className: "col-auto",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 50
     },
     __self: this
   }, __jsx("div", {
     className: "row justify-content-end",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 51
     },
     __self: this
   }, __jsx("div", {
     className: "col-auto lang-selection",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 52
     },
     __self: this
   }, __jsx("img", {
-    src: "globe.svg",
+    src: "icons/globe.svg",
     className: "globe-icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 53
     },
     __self: this
   }), __jsx("a", {
@@ -526,13 +538,13 @@ var Navbar = function Navbar(props) {
     onClick: ChangeToEnglish,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 54
     },
     __self: this
   }, "EN"), __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 58
     },
     __self: this
   }, " / "), __jsx("a", {
@@ -542,7 +554,7 @@ var Navbar = function Navbar(props) {
     onClick: ChangeToSpanish,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 59
     },
     __self: this
   }, "ES"))))));
@@ -28682,7 +28694,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
- // import Contact from './Contact';
 
 
 
@@ -28709,20 +28720,20 @@ var Index = function Index() {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(react_helmet__WEBPACK_IMPORTED_MODULE_3__["Helmet"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 35
     },
     __self: this
   }, __jsx("meta", {
     charSet: "utf-8",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 36
     },
     __self: this
   }), __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 37
     },
     __self: this
   }, "Guillermo Magdaleno"), __jsx("link", {
@@ -28731,7 +28742,7 @@ var Index = function Index() {
     href: "/favicon.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 38
     },
     __self: this
   }), emailjs_com__WEBPACK_IMPORTED_MODULE_4___default.a.init("user_7XWSfbX3F92thbWruog2F"), __jsx("script", {
@@ -28739,7 +28750,7 @@ var Index = function Index() {
     src: "https://www.googletagmanager.com/gtag/js?id=UA-20127186-2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: this
   })), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -28747,7 +28758,7 @@ var Index = function Index() {
     viewWidth: adjustedWidth,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 42
     },
     __self: this
   }), __jsx(_Intro__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -28756,49 +28767,49 @@ var Index = function Index() {
     viewWidth: adjustedWidth,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 43
     },
     __self: this
   }), __jsx(_Who__WEBPACK_IMPORTED_MODULE_10__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 44
     },
     __self: this
   }), __jsx(_Skills__WEBPACK_IMPORTED_MODULE_11__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 45
     },
     __self: this
   }), __jsx(_Experience__WEBPACK_IMPORTED_MODULE_12__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 46
     },
     __self: this
   }), __jsx(_Education__WEBPACK_IMPORTED_MODULE_13__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 47
     },
     __self: this
   }), __jsx(_Projects__WEBPACK_IMPORTED_MODULE_14__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 48
     },
     __self: this
   }), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], {
     languageNum: language.getLanguage(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 49
     },
     __self: this
   }));

@@ -36,13 +36,7 @@ const Navbar = (props) => {
             <div className="row justify-content-between align-items-center">
                 <div className="col">
                     { props.viewWidth >= 768 - 17 &&
-                        VALUES_NAVBAR.map((item, index) => (
-                            // <Link href={`/#${item.id}`} as={`/giemper-site/#${item.id}`} key={index} replace>
-                            //     <a className="nav-button" draggable="false">
-                            //         { checkItem(item.title, language.lang) }
-                            //     </a>
-                            // </Link>
-                            
+                        VALUES_NAVBAR.map((item, index) => (                
                             <a className="nav-button" draggable="false" key={index} href="#"
                             onClick={(e) => {
                                 e.preventDefault();
@@ -56,7 +50,7 @@ const Navbar = (props) => {
                 <div className="col-auto">
                     <div className="row justify-content-end">
                         <div className="col-auto lang-selection">
-                            <img src="globe.svg" className="globe-icon"/>
+                            <img src="icons/globe.svg" className="globe-icon"/>
                             <a  id="Nav_Eng" 
                                 href="#"
                                 className={`lang-button + ${language.lang == '0' ? "selected" : "none"}`}

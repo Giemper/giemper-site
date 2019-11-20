@@ -13,7 +13,6 @@ import Skills from './Skills';
 import Experience from './Experience';
 import Education from './Education';
 import Projects from './Projects';
-// import Contact from './Contact';
 import '../styles/pages.scss';
 
 const Index = () => {
@@ -47,7 +46,6 @@ const Index = () => {
             <Experience languageNum={language.getLanguage()} />
             <Education languageNum={language.getLanguage()} />
             <Projects languageNum={language.getLanguage()} />
-            {/* <Contact languageNum={language.getLanguage()} /> */}
             <Footer languageNum={language.getLanguage()} />
         </>
     );

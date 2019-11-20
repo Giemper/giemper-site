@@ -1,7 +1,7 @@
 @import 'variables';
 
 .footer {
-    background-color: rgba(255, 85, 85, 0.9);
+    background-color: rgba(255, 85, 85, 0.95);
     box-shadow: $shadow;
     padding: 32px 0;
 
@@ -27,13 +27,27 @@
     .foot-social {
         padding-left: 12px;
     }
+
+    .foot-icon {
+        width: 20px;
+    }
+
+    .foot-links {
+        padding-left: 12px;
+        cursor: pointer;
+    }
+
+    .foot-combo {
+        width: fit-content;
+        display: flex;
+        padding-bottom: 12px;
+    }
 }
 
 @media (max-width: $media-sm) {
     .footer {
         padding: 16px 0 48px 0;
         
-    
         a {
             text-decoration: none;
             display: block;
@@ -57,6 +71,23 @@
             line-height: 0.5;
             display: inline-block;
             padding: 8px 16px 8px 0;
+        }
+
+        .foot-social {
+            display: flex;
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+
+            h2,
+            .foot-links {
+                display: none;
+            }
+
+            .foot-icon {
+                width: 36px;
+                margin: 16px 20px 0;
+            }
         }
     }   
 }

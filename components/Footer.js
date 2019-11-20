@@ -6,11 +6,10 @@ const Footer = (props) => {
     const lang = props.languageNum;
     const findme = ["Find me at", "Encuentrame en"];
     const sites = [
-        { site: "LinkedIn", link: "http://www.linkedin.com/in/gmomagdaleno" },
-        { site: "Github", link: "https://github.com/giemper" },
-        { site: "Twitter", link: "https://twitter.com/giemper" }
+        { site: "LinkedIn", link: "http://www.linkedin.com/in/gmomagdaleno", icon: "icons/linkedin.svg" },
+        { site: "Github", link: "https://github.com/giemper", icon: "icons/github.svg" },
+        { site: "Twitter", link: "https://twitter.com/giemper", icon: "icons/twitter.svg" }
     ];
-    
 
     return (
         <div className="footer">
@@ -25,10 +24,13 @@ const Footer = (props) => {
                             {
                                 sites.map((item, index) => (
                                     <a key={index} 
-                                        className="foot-links"
+                                        className="foot-combo"
                                         href={item.link} 
                                         target="_bind"  
-                                        draggable="false">{item.site}</a>
+                                        draggable="false">
+                                            <img src={item.icon} className="foot-icon"/>
+                                            <label className="foot-links">{item.site}</label>
+                                    </a>
                                 ))
                             }
                         </div>

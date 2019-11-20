@@ -1,5 +1,5 @@
 const VALUES_CONTACT = {
-    head: ["Get in contact", "Ponte en contacto"],
+    head: ["Let's get in contact", "Hay que ponernos en contacto"],
     name: ["Name", "Nombre"],
     email: ["Email", "Correo Electrónico"],
     message: ["Message", "Mensaje"],

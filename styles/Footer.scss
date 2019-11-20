@@ -24,7 +24,9 @@
         padding: 0 32px;
     }
 
-    .foot-social {
+    .foot-social,
+    .resume-title,
+    .resume-disclaimer {
         padding-left: 12px;
     }
 
@@ -42,6 +44,10 @@
         display: flex;
         padding-bottom: 12px;
     }
+
+    .resume-title {
+        margin-bottom: 8px;
+    }
 }
 
 @media (max-width: $media-sm) {
@@ -51,15 +57,6 @@
         a {
             text-decoration: none;
             display: block;
-        }
-
-        .title {
-            font-weight: 700;
-            font-size: 1.7em;
-        }
-
-        .description {
-            margin-bottom: 12px;
         }
     
         .foot-block {
@@ -79,7 +76,7 @@
             margin-right: auto;
             margin-left: auto;
 
-            h2,
+            .title-links,
             .foot-links {
                 display: none;
             }
@@ -88,6 +85,14 @@
                 width: 36px;
                 margin: 16px 20px 0;
             }
+        }
+
+        .resume-title {
+            text-align: center;
+        }
+
+        .resume-disclaimer {
+            display: none;
         }
     }   
 }

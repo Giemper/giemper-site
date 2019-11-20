@@ -153,7 +153,9 @@
   .footer .foot-block {
     border-left: 2px solid #f8f8f2;
     padding: 0 32px; }
-  .footer .foot-social {
+  .footer .foot-social,
+  .footer .resume-title,
+  .footer .resume-disclaimer {
     padding-left: 12px; }
   .footer .foot-icon {
     width: 20px; }
@@ -164,6 +166,8 @@
     width: fit-content;
     display: flex;
     padding-bottom: 12px; }
+  .footer .resume-title {
+    margin-bottom: 8px; }
 
 @media (max-width: 768px) {
   .footer {
@@ -171,11 +175,6 @@
     .footer a {
       text-decoration: none;
       display: block; }
-    .footer .title {
-      font-weight: 700;
-      font-size: 1.7em; }
-    .footer .description {
-      margin-bottom: 12px; }
     .footer .foot-block {
       border-left: 0;
       padding-bottom: 12px; }
@@ -188,12 +187,16 @@
       width: fit-content;
       margin-right: auto;
       margin-left: auto; }
-      .footer .foot-social h2,
+      .footer .foot-social .title-links,
       .footer .foot-social .foot-links {
         display: none; }
       .footer .foot-social .foot-icon {
         width: 36px;
-        margin: 16px 20px 0; } }
+        margin: 16px 20px 0; }
+    .footer .resume-title {
+      text-align: center; }
+    .footer .resume-disclaimer {
+      display: none; } }
 
 .intro {
   font-size: 3.6em;

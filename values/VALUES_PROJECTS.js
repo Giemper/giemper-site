@@ -7,7 +7,7 @@ const VALUES_PROJECTS = [
         description: [
             [
                 "Project done for a car wash company in Baja California, Mexico.", 
-                "The app tracks follows, registers, and reports the cleaning life cycle in which a car might go through: the car entering the car wash, an employee being assigned for cleaning, and completition of work.",
+                "The app tracks, follows, registers, and reports the cleaning life cycle in which a car might go through: the car entering the car wash, an employee being assigned for cleaning, and when a job has been finished.",
                 "The purpose was not only to report assistance and performance, but also to balance the workload by assigning the next jobs automatically among employees."
             ],
             [
@@ -73,9 +73,9 @@ const VALUES_PROJECTS = [
         sourceFallback: "videos/Posada.mp4",
         description: [
             [
-                "Since high school, every year around Christmas eve a my friends and I organized a Secret Santa gift exchange amoung ourselves. While we all get along, there are sometimes when you just don't want to get matched with someone specific.",
+                "Since high school, every year around Christmas Eve my friends and I organized a Secret Santa gift exchange among ourselves. While we all get along, there are sometimes when you just don't want to get matched with someone specific.",
                 "Starting on 2014, I came up with the idea of doing a site to help us with that conundrum. The site not only did the matching without ruining the surprise for anyone, but filtered out any 'incompatible' matches.",
-                "Every participant was able to create a profile, answer some questions about themselves to help their Santa, read the preferences and send annonymous messages to who they were supposed to give a gift to.",
+                "Every participant was able to create a profile, answer some questions about themselves to help their Santa, read the preferences and send anonymous messages to who they were supposed to give a gift to.",
                 "While we keep meeting for our annual Christmas party, sadly 2016 was the last year of our Secret Santa exchange. Maybe I should give this project another go soon!"
             ],
             [
@@ -99,7 +99,7 @@ const VALUES_PROJECTS = [
                 "HRPoint is the intranet webpage for Collins Aerospace Mexicali.",
                 "Employees of Collins Aerospace can get into the site to check the latest news and happenings in our facilities, check a roadmap of their career development in the company, check employee benefits, find and fill request forms for things like Paid Time Off, check the weekly cafeteria menu, calendars, and inquiries with Human Resources, Finance, and Health & Security departments.",
                 "Some features and sections are locked depending on the management level, as they might have information and forms limited for exclusive use of supervisors, like requesting monetary rewards for employees based on performance.",
-                "The newsletter and content of the site is constantly updated by the Communications department by using a blog-like interface in which they can choose how the information is going to be deployed. It could be just a new post, it could be an announcent with a header image in the homepage, or a site-wide email.",
+                "The newsletter and content of the site is constantly updated by the Communications department by using a blog-like interface in which they can choose how the information is going to be deployed. It could be just a new post, it could be an announcement with a header image in the homepage, or a site-wide email.",
                 "HRPoint is available only in the Collins Aerospace internal network."
             ],
             [

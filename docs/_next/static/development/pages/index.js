@@ -198,14 +198,14 @@ var Contact = function Contact(props) {
   }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].head, lang)), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 63
     },
     __self: this
   }, __jsx("p", {
     className: "form-subtitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 64
     },
     __self: this
   }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].name, lang)), __jsx("input", {
@@ -214,20 +214,20 @@ var Contact = function Contact(props) {
     name: "user_name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 65
     },
     __self: this
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 67
     },
     __self: this
   }, __jsx("p", {
     className: "form-subtitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 68
     },
     __self: this
   }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].email, lang)), __jsx("input", {
@@ -236,20 +236,20 @@ var Contact = function Contact(props) {
     name: "user_email",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 69
     },
     __self: this
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 71
     },
     __self: this
   }, __jsx("p", {
     className: "form-subtitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 72
     },
     __self: this
   }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].message, lang)), __jsx("textarea", {
@@ -257,7 +257,7 @@ var Contact = function Contact(props) {
     name: "message_html",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 73
     },
     __self: this
   })), __jsx(Feedback, {
@@ -266,7 +266,7 @@ var Contact = function Contact(props) {
     language: lang,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 75
     },
     __self: this
   }), __jsx("input", {
@@ -275,7 +275,7 @@ var Contact = function Contact(props) {
     value: Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_4__["default"])(_values_VALUES_CONTACT__WEBPACK_IMPORTED_MODULE_3__["default"].send, lang),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 76
     },
     __self: this
   })));
@@ -296,10 +296,11 @@ var Contact = function Contact(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
-/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Contact */ "./components/Contact.js");
-/* harmony import */ var _styles_Footer_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/Footer.scss */ "./styles/Footer.scss");
-/* harmony import */ var _styles_Footer_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_Footer_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _values_VALUES_FOOTER__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../values/VALUES_FOOTER */ "./values/VALUES_FOOTER.js");
+/* harmony import */ var _tools_checkItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tools/checkItem */ "./tools/checkItem.js");
+/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Contact */ "./components/Contact.js");
+/* harmony import */ var _styles_Footer_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/Footer.scss */ "./styles/Footer.scss");
+/* harmony import */ var _styles_Footer_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_Footer_scss__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/mnt/c/Dev/giemper-site/components/Footer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -307,9 +308,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 var Footer = function Footer(props) {
   var lang = props.languageNum;
-  var findme = ["Find me at", "Encuentrame en"];
   var sites = [{
     site: "LinkedIn",
     link: "http://www.linkedin.com/in/gmomagdaleno",
@@ -351,7 +352,7 @@ var Footer = function Footer(props) {
       lineNumber: 18
     },
     __self: this
-  }, __jsx(_Contact__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_Contact__WEBPACK_IMPORTED_MODULE_3__["default"], {
     languageNum: lang,
     __source: {
       fileName: _jsxFileName,
@@ -373,12 +374,13 @@ var Footer = function Footer(props) {
     },
     __self: this
   }, __jsx("h2", {
+    className: "title-links",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23
     },
     __self: this
-  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_1__["default"])(findme, lang)), sites.map(function (item, index) {
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_2__["default"])(_values_VALUES_FOOTER__WEBPACK_IMPORTED_MODULE_1__["default"].findme, lang)), sites.map(function (item, index) {
     return __jsx("a", {
       key: index,
       className: "foot-combo",
@@ -406,7 +408,29 @@ var Footer = function Footer(props) {
       },
       __self: this
     }, item.site));
-  }))))));
+  })), __jsx("h2", {
+    className: "resume-title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: this
+  }, __jsx("a", {
+    href: "GuillermoMagdaleno.pdf",
+    target: "_bind",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: this
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_2__["default"])(_values_VALUES_FOOTER__WEBPACK_IMPORTED_MODULE_1__["default"].resume, lang))), __jsx("p", {
+    className: "resume-disclaimer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: this
+  }, Object(_tools_checkItem__WEBPACK_IMPORTED_MODULE_2__["default"])(_values_VALUES_FOOTER__WEBPACK_IMPORTED_MODULE_1__["default"].disclaimer, lang))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -29008,7 +29032,7 @@ var checkItem = function checkItem(object, lang) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var VALUES_CONTACT = {
-  head: ["Get in contact", "Ponte en contacto"],
+  head: ["Let's get in contact", "Hay que ponernos en contacto"],
   name: ["Name", "Nombre"],
   email: ["Email", "Correo Electrónico"],
   message: ["Message", "Mensaje"],
@@ -29071,9 +29095,27 @@ var VALUES_EXPERIENCE = [{
   position: ["Software Engineer - Intern", "Software Engineer - Practicante"],
   city: ["Mexicali, Baja California, Mexico", "Mexicali, Baja California, México"],
   duration: ["May 2014 - August 2014", "Mayo 2014 - Agosto 2014"],
-  description: [["Participated as part of the Honeywell Summer Intership Program", "Worked with the Mexicali’s DevOps Tools team collecting the requirements and documentation for the new version of a work authorization tracking system."], ["Practicas fueron parte del Programa \"Honeywell Summer Intership.\"", "Trabaje con el equipo DevOps de Mexicali recolectando los requerimientos y documentación para una nueva version de un sistema de seguimiento de autorizacion de trabajos."]]
+  description: [["Participated as part of the Honeywell Summer Internship Program", "Worked with the Mexicali’s DevOps Tools team collecting the requirements and documentation for the new version of a work authorization tracking system."], ["Practicas fueron parte del Programa \"Honeywell Summer Intership.\"", "Trabaje con el equipo DevOps de Mexicali recolectando los requerimientos y documentación para una nueva version de un sistema de seguimiento de autorizacion de trabajos."]]
 }];
 /* harmony default export */ __webpack_exports__["default"] = (VALUES_EXPERIENCE);
+
+/***/ }),
+
+/***/ "./values/VALUES_FOOTER.js":
+/*!*********************************!*\
+  !*** ./values/VALUES_FOOTER.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var VALUES_FOOTER = {
+  findme: ["Find me at", "Encuentrame en"],
+  resume: ["Download my resume", "Descarga mi curriculum"],
+  disclaimer: ["Doesn't include private contact information", "No incluye información de contacto privada"]
+};
+/* harmony default export */ __webpack_exports__["default"] = (VALUES_FOOTER);
 
 /***/ }),
 
@@ -29123,7 +29165,7 @@ var VALUES_PROJECTS = [{
   type: "Phone",
   sourceMain: "videos/EcoCarWash.webm",
   sourceFallback: "videos/EcoCarWash.mp4",
-  description: [["Project done for a car wash company in Baja California, Mexico.", "The app tracks follows, registers, and reports the cleaning life cycle in which a car might go through: the car entering the car wash, an employee being assigned for cleaning, and completition of work.", "The purpose was not only to report assistance and performance, but also to balance the workload by assigning the next jobs automatically among employees."], ["Proyecto hecho para un compañia de auto-lavados en Baja California, México.", "La aplicacion sigue, registra, y reportea el ciclo de vida del lavado por el que puede pasar cada automóvil: desde que ingresa al auto-lavado, cuando se asigna un limpeador, y cuando el trabajo fue terminado.", "El proposito era no solo reportar la asistencia y desempeño, si no tambien balancear la carga de trabajo al asignar automaticamente lo siguentes trabajos entre empleados."]],
+  description: [["Project done for a car wash company in Baja California, Mexico.", "The app tracks, follows, registers, and reports the cleaning life cycle in which a car might go through: the car entering the car wash, an employee being assigned for cleaning, and when a job has been finished.", "The purpose was not only to report assistance and performance, but also to balance the workload by assigning the next jobs automatically among employees."], ["Proyecto hecho para un compañia de auto-lavados en Baja California, México.", "La aplicacion sigue, registra, y reportea el ciclo de vida del lavado por el que puede pasar cada automóvil: desde que ingresa al auto-lavado, cuando se asigna un limpeador, y cuando el trabajo fue terminado.", "El proposito era no solo reportar la asistencia y desempeño, si no tambien balancear la carga de trabajo al asignar automaticamente lo siguentes trabajos entre empleados."]],
   skills: ["Java", "Android Development", "Firebase"],
   availability: [{
     title: "Play Store",
@@ -29162,7 +29204,7 @@ var VALUES_PROJECTS = [{
   type: "Browser",
   sourceMain: "videos/Posada.webm",
   sourceFallback: "videos/Posada.mp4",
-  description: [["Since high school, every year around Christmas eve a my friends and I organized a Secret Santa gift exchange amoung ourselves. While we all get along, there are sometimes when you just don't want to get matched with someone specific.", "Starting on 2014, I came up with the idea of doing a site to help us with that conundrum. The site not only did the matching without ruining the surprise for anyone, but filtered out any 'incompatible' matches.", "Every participant was able to create a profile, answer some questions about themselves to help their Santa, read the preferences and send annonymous messages to who they were supposed to give a gift to.", "While we keep meeting for our annual Christmas party, sadly 2016 was the last year of our Secret Santa exchange. Maybe I should give this project another go soon!"], ["Desde que estabamos en preparatoria, cada año cerca de Navidad mis amigos y yo nos organizamos para un intercambio navideño 'Santa Secreto' entre nosotros. Aunque todos nos llevamos muy bien, hay ocaciones en los cuales uno no quiere ser asignado con alguien especifico.", "Empezando en 2014, tuve la idea de diseñar un sitio que nos ayude con este problema. El sitio no solo permite hacer la asignación del intercambio sin arruinar la sorpresa para nadie, si no tambien filtra cualquier asignación 'incompatible'.", "Cada participante puede crear su perfil, responder algunas preguntas sobre si mismos para ayudar a su Santa, y enviar mensajes anonimos y leer las preferencias de la persona a quien le tienen que dar un regalo.", "Aunque seguimos haciendo nuestra fiesta Navideña Anual, tristemente 2016 fue el ultimo año del intercambio de regalos. Quizas deberia pronto darle otra oportunidad a este proyecto."]],
+  description: [["Since high school, every year around Christmas Eve my friends and I organized a Secret Santa gift exchange among ourselves. While we all get along, there are sometimes when you just don't want to get matched with someone specific.", "Starting on 2014, I came up with the idea of doing a site to help us with that conundrum. The site not only did the matching without ruining the surprise for anyone, but filtered out any 'incompatible' matches.", "Every participant was able to create a profile, answer some questions about themselves to help their Santa, read the preferences and send anonymous messages to who they were supposed to give a gift to.", "While we keep meeting for our annual Christmas party, sadly 2016 was the last year of our Secret Santa exchange. Maybe I should give this project another go soon!"], ["Desde que estabamos en preparatoria, cada año cerca de Navidad mis amigos y yo nos organizamos para un intercambio navideño 'Santa Secreto' entre nosotros. Aunque todos nos llevamos muy bien, hay ocaciones en los cuales uno no quiere ser asignado con alguien especifico.", "Empezando en 2014, tuve la idea de diseñar un sitio que nos ayude con este problema. El sitio no solo permite hacer la asignación del intercambio sin arruinar la sorpresa para nadie, si no tambien filtra cualquier asignación 'incompatible'.", "Cada participante puede crear su perfil, responder algunas preguntas sobre si mismos para ayudar a su Santa, y enviar mensajes anonimos y leer las preferencias de la persona a quien le tienen que dar un regalo.", "Aunque seguimos haciendo nuestra fiesta Navideña Anual, tristemente 2016 fue el ultimo año del intercambio de regalos. Quizas deberia pronto darle otra oportunidad a este proyecto."]],
   skills: ["AngularJS", "PHP", "SQL", "jQuery"],
   availability: [{
     title: "Github",
@@ -29172,7 +29214,7 @@ var VALUES_PROJECTS = [{
   title: "HRPoint",
   type: "None",
   skills: ["VueJS", "Sharepoint", ".NET", "SQL", "Azure"],
-  description: [["HRPoint is the intranet webpage for Collins Aerospace Mexicali.", "Employees of Collins Aerospace can get into the site to check the latest news and happenings in our facilities, check a roadmap of their career development in the company, check employee benefits, find and fill request forms for things like Paid Time Off, check the weekly cafeteria menu, calendars, and inquiries with Human Resources, Finance, and Health & Security departments.", "Some features and sections are locked depending on the management level, as they might have information and forms limited for exclusive use of supervisors, like requesting monetary rewards for employees based on performance.", "The newsletter and content of the site is constantly updated by the Communications department by using a blog-like interface in which they can choose how the information is going to be deployed. It could be just a new post, it could be an announcent with a header image in the homepage, or a site-wide email.", "HRPoint is available only in the Collins Aerospace internal network."], ["HRPoint es la pagina intranet de Collins Aerospace Mexicali.", "Empleados de Collins Aerospace puenden entrar al sitio para checar las noticias y eventos más recientes en nuestras instalaciones, ver opciones para desarollo profesional, consultar los beneficios como empleado, encontrar y llenar formatos para cosas como permisos con gose, ver el menú semanal de la cafetería, calendarios, y consultas con los departamentos de Recursos Humanos, Finanzas, y Seguridad.", "Algunas funciones estan restrigidas dependiendo del nivel de manejo, ya que pueden contar con información y formatos limitadas para uso exclusivo de supervisores, como solitar recomentazas economicas para empleados basado en desempeño.", "El boletin informativo y contenido del sitio es constantemente actualizado por el departamento de Comunicación usando una interface tipo blog, en el cual pueden escoger como la información va a ser distribuida. Puede ser solamente un nueva publicación, puede ser un anuncio visual en la página de inicio, o puede ser un correo electronico para toda el sitio.", "HRPoint esta disponible solamente en la red interna de Collins Aerospace."]]
+  description: [["HRPoint is the intranet webpage for Collins Aerospace Mexicali.", "Employees of Collins Aerospace can get into the site to check the latest news and happenings in our facilities, check a roadmap of their career development in the company, check employee benefits, find and fill request forms for things like Paid Time Off, check the weekly cafeteria menu, calendars, and inquiries with Human Resources, Finance, and Health & Security departments.", "Some features and sections are locked depending on the management level, as they might have information and forms limited for exclusive use of supervisors, like requesting monetary rewards for employees based on performance.", "The newsletter and content of the site is constantly updated by the Communications department by using a blog-like interface in which they can choose how the information is going to be deployed. It could be just a new post, it could be an announcement with a header image in the homepage, or a site-wide email.", "HRPoint is available only in the Collins Aerospace internal network."], ["HRPoint es la pagina intranet de Collins Aerospace Mexicali.", "Empleados de Collins Aerospace puenden entrar al sitio para checar las noticias y eventos más recientes en nuestras instalaciones, ver opciones para desarollo profesional, consultar los beneficios como empleado, encontrar y llenar formatos para cosas como permisos con gose, ver el menú semanal de la cafetería, calendarios, y consultas con los departamentos de Recursos Humanos, Finanzas, y Seguridad.", "Algunas funciones estan restrigidas dependiendo del nivel de manejo, ya que pueden contar con información y formatos limitadas para uso exclusivo de supervisores, como solitar recomentazas economicas para empleados basado en desempeño.", "El boletin informativo y contenido del sitio es constantemente actualizado por el departamento de Comunicación usando una interface tipo blog, en el cual pueden escoger como la información va a ser distribuida. Puede ser solamente un nueva publicación, puede ser un anuncio visual en la página de inicio, o puede ser un correo electronico para toda el sitio.", "HRPoint esta disponible solamente en la red interna de Collins Aerospace."]]
 }];
 /* harmony default export */ __webpack_exports__["default"] = (VALUES_PROJECTS);
 
@@ -29273,7 +29315,7 @@ var VALUES_SKILLS = [{
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var VALUES_WHO = [["Without getting into an existencial crisis, I can briefly describe myself as a guy from the bordertown of Mexicali, Baja California Mexico that has been working as a Software Developer for more than four years doing Full Stack, Desktop, and Mobile projects (some of which can be found below).", "I have a Computer Science degree from CETYS University Mexicali. During my undergraduate years I had the oportunity to do a semester abroad at the Ecolé Polytechnique of Montreal, Quebec for which I was awared the Emerging Leaders in the Americas scholarship granted by the Government of Canada. I was also selected to participate in the International Summer Program for Entrepreneurs, an event organized by Stanford University and the Ministry of Foreign Affairs of Mexico."], ["Sin meterme en una crisis existencial, puedo brevemente describirme como una persona de la ciudad fronteriza de Mexicali, Baja California, México que ha trabajado como Software Developer por más de cuatro años con aplicaciones Full Stack, de Escritorio, y Móviles (algunos de ellos pueden ser encontrados abajo).", "Obtuve mi título de Ing. en Ciencias Computacionales en CETYS Universidad Mexicali. Durante mis años universitarios tuve la oportunidad de hacer un semestre de intercambio académico en la Escuela Politécnica de Montreal, Quebec en la cual recibí la beca Lideres Emergentes en las Américas otorgada por el Gobierno de Canadá. También fui seleccionado para participar en el Programa de Verano Internacional para Emprendedores, un evento organizado por la Universidad de Stanford y la Secretaria de Relaciones Exteriores de México."]];
+var VALUES_WHO = [["Without getting into an existential crisis, I can briefly describe myself as a guy from the border town of Mexicali, Baja California Mexico that has been working as a Software Developer for more than four years doing Full Stack, Desktop, and Mobile projects (some of which can be found below).", "I have a Computer Science degree from CETYS University Mexicali. During my undergraduate years I had the opportunity to do a semester abroad at the Ecolé Polytechnique of Montreal, Quebec for which I was awarded the Emerging Leaders in the Americas scholarship granted by the Government of Canada. I was also selected to participate in the International Summer Program for Entrepreneurs, an event organized by Stanford University and the Ministry of Foreign Affairs of Mexico."], ["Sin meterme en una crisis existencial, puedo brevemente describirme como una persona de la ciudad fronteriza de Mexicali, Baja California, México que ha trabajado como Software Developer por más de cuatro años con aplicaciones Full Stack, de Escritorio, y Móviles (algunos de ellos pueden ser encontrados abajo).", "Obtuve mi título de Ing. en Ciencias Computacionales en CETYS Universidad Mexicali. Durante mis años universitarios tuve la oportunidad de hacer un semestre de intercambio académico en la Escuela Politécnica de Montreal, Quebec en la cual recibí la beca Lideres Emergentes en las Américas otorgada por el Gobierno de Canadá. También fui seleccionado para participar en el Programa de Verano Internacional para Emprendedores, un evento organizado por la Universidad de Stanford y la Secretaria de Relaciones Exteriores de México."]];
 /* harmony default export */ __webpack_exports__["default"] = (VALUES_WHO);
 
 /***/ }),

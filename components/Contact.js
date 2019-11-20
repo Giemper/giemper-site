@@ -60,7 +60,6 @@ const Contact = (props) => {
         <div>
             <form className="contact-form" onSubmit={handleSubmit}>
                 <h2 className="form-title">{checkItem(VALUES_CONTACT.head, lang)}</h2>
-                {/* <Feedback status={status} errorList={errorList} language={lang} /> */}
                 <div>
                     <p className="form-subtitle">{checkItem(VALUES_CONTACT.name, lang)}</p>
                     <input className="form-text" type="text" name="user_name" />

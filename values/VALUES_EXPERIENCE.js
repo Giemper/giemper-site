@@ -26,7 +26,7 @@ const VALUES_EXPERIENCE = [
         duration: ["May 2014 - August 2014", "Mayo 2014 - Agosto 2014"],
         description: [
             [
-                "Participated as part of the Honeywell Summer Intership Program",
+                "Participated as part of the Honeywell Summer Internship Program",
                 "Worked with the Mexicali’s DevOps Tools team collecting the requirements and documentation for the new version of a work authorization tracking system."
             ],
             [

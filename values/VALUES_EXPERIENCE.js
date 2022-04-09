@@ -1,9 +1,27 @@
 const VALUES_EXPERIENCE = [
     {
+        title: "Paccar ITD",
+        position: "Software Engineer",
+        city: ["Mexicali, Baja California, Mexico (Remote)", "Mexicali, Baja California, México (Remoto)"],
+        duration: ["April 2021 - April 2022", "Abril 2021 - Abril 2022"],
+        description: [
+            [
+                "Worked in the Sales Tool Platform Team, which focuses on delivering services for Paccar dealerships and salespeople around the world. Our tasks involve developing and configuring both the front-end and back-end interfaces for quoting, selling, customizing, reporting, and other steps in the life cycle of a Paccar vehicle.",
+                "Implemented multi-language support to our platform to facilitate the use of our tools for dealers in different regions.",
+                "Refactored Test Automation library for quality assurance of the platform."
+            ],
+            [
+                "Trabaje en el Equipo de Plataforma de Ventas, el cual se enfoca en desarrollar servicios para los concesionarios y vendedores Paccar alrededor del mundo. Nuestras funciones involucraban desarrollar y configurar tanto el front-end y back-end para las interfaces de cotización, ventas, personalizacion, reporteo, y otros pasos en el ciclo de vida de un vehiculo Paccar.",
+                "Implementacion de soporte multi-lenguaje de nuestra plataforma para el uso de nuestras herramientas para los concesionarios en distintas regiones.",
+                "Refactorización de la libraria de Automatización de pruebas para asegurar la calidad de la plataforma."
+            ]
+        ]
+    },
+    {
         title: "Collins Aerospace",
         position: "Software Engineer",
         city: ["Mexicali, Baja California, Mexico", "Mexicali, Baja California, México"],
-        duration: ["October 2015 - Current", "Octubre 2015 - Presente"],
+        duration: ["October 2015 - April 2021", "Octubre 2015 - Abril 2021"],
         description: [
             [
                 "Developed Intranet webpage for Mexicali's HR department. The page helps employees and managers on our site, allowing them to not only keep up to date with our company's news, but also to fill requests for paid time off, inquiries with HR, work authorizations, and even create monetary rewards based on employee's performance.",

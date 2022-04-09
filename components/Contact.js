@@ -11,7 +11,7 @@ const Feedback = (props) => {
                 props.errorList.map((item, index) => (
                     <p key={index}>{checkItem(item, props.language)}</p>
                 ))
-            }
+            }+
         </div>
     );
     else if (props.status === "sent") return (
